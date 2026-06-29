@@ -595,7 +595,7 @@ figcaption {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
 
@@ -628,34 +628,14 @@ figcaption {
   border-top-color: var(--green-dark);
 }
 
-.project-card.literature-card,
-.project-card.patent-card {
+.project-card.literature-card {
   grid-column: 1 / -1;
 }
 
-.patent-card .tag {
-  color: var(--violet);
-}
-
-.patent-list {
-  list-style: none;
-  margin: 6px 0 22px;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px 26px;
-}
-
-.patent-list li {
-  display: flex;
-  gap: 10px;
-  align-items: baseline;
-  line-height: 1.5;
-}
-
 .patent-id {
-  flex: none;
-  padding: 2px 8px;
+  align-self: flex-start;
+  margin: 2px 0 16px;
+  padding: 3px 9px;
   border: 1px solid var(--line);
   border-radius: 5px;
   background: #fff;
@@ -795,8 +775,11 @@ footer p {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .project-card.literature-card,
-  .project-card.patent-card {
+  .project-card.literature-card {
+    grid-column: 1 / -1;
+  }
+
+  .project-card:nth-child(3) {
     grid-column: 1 / -1;
   }
 
@@ -902,7 +885,6 @@ footer p {
   .analog-gallery,
   .project-grid,
   .literature-gallery,
-  .patent-list,
   .experience-grid,
   .experience-media.double,
   .life-grid {
