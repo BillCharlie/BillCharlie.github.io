@@ -39,7 +39,7 @@ const translations = {
     "research.cardQuestionTag": "Core question",
     "research.cardQuestionTitle": "GaN Power FET 的關鍵 tradeoff",
     "research.body":
-      "我目前關注的是 GaN Power FET 在臨界電壓、導通電阻、崩潰電壓與開關損耗之間的取捨。研究主線圍繞 Vth-Ron tradeoff、RonQg / RonQgd FOM tradeoff、BV 與 Epeak 限制，以及結構可製造性如何一起收斂。",
+      "我目前關注的是 GaN Power FET 在臨界電壓、導通電阻、崩潰電壓與開關損耗之間的取捨。研究主線圍繞 Vth-Ronsp tradeoff、RonspQg / RonspQgd FOM tradeoff、BV 與 Epeak 限制，以及結構可製造性如何一起收斂。",
     "research.cardSimTitle": "GaN Trigate TCAD 3D simulation",
     "research.li1":
       "建立 GaN Trigate 三維元件模型，掃描 fin geometry、Al composition、tox、Lg 與 field profile，觀察 Vth、Ron、BV、Epeak 與電荷相關 FOM 的變化。",
@@ -149,7 +149,7 @@ const translations = {
     "research.cardQuestionTag": "Core question",
     "research.cardQuestionTitle": "Key Tradeoffs In GaN Power FETs",
     "research.body":
-      "My current focus is the tradeoff space of GaN Power FETs: threshold voltage, on-resistance, breakdown voltage, and switching loss. The main questions are Vth-Ron, RonQg / RonQgd FOMs, BV and Epeak limits, and whether the structure can converge with a realistic process flow.",
+      "My current focus is the tradeoff space of GaN Power FETs: threshold voltage, on-resistance, breakdown voltage, and switching loss. The main questions are Vth-Ronsp, RonspQg / RonspQgd FOMs, BV and Epeak limits, and whether the structure can converge with a realistic process flow.",
     "research.cardSimTitle": "GaN Trigate TCAD 3D Simulation",
     "research.li1":
       "I build 3D GaN Trigate TCAD models and sweep fin geometry, Al composition, tox, Lg, and field profiles to study Vth, Ron, BV, Epeak, and charge-related FOMs.",
