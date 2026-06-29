@@ -1,0 +1,457 @@
+:root {
+  --ink: #182022;
+  --muted: #647174;
+  --paper: #f7f4ef;
+  --surface: #ffffff;
+  --line: #d9dedb;
+  --teal: #0c6b62;
+  --teal-dark: #063c38;
+  --amber: #c58b24;
+  --rust: #a44935;
+  --blue: #315e85;
+  --shadow: 0 18px 45px rgba(24, 32, 34, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 64px;
+  padding: 14px 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(24, 32, 34, 0.78);
+  color: #fff;
+  backdrop-filter: blur(14px);
+}
+
+.brand {
+  font-weight: 800;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: 14px;
+}
+
+nav a {
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: #fff;
+}
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - 64px);
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  background: #111;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(8, 21, 22, 0.84) 0%, rgba(8, 21, 22, 0.56) 42%, rgba(8, 21, 22, 0.08) 100%),
+    linear-gradient(0deg, rgba(8, 21, 22, 0.74) 0%, rgba(8, 21, 22, 0) 48%),
+    url("assets/life-cycling.jpg") center / cover;
+  transform: scale(1.02);
+}
+
+.hero-content {
+  position: relative;
+  width: min(980px, calc(100% - 48px));
+  padding: 96px 0 92px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.eyebrow,
+.section-kicker {
+  margin: 0 0 14px;
+  color: var(--amber);
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(48px, 8vw, 104px);
+  line-height: 0.96;
+}
+
+.hero h1 span {
+  display: block;
+  color: #dfe9e5;
+}
+
+.hero-copy {
+  max-width: 660px;
+  margin: 28px 0 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 19px;
+}
+
+.hero-actions,
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.button,
+.contact-links a,
+.project-card a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 16px;
+  border: 1px solid currentColor;
+  border-radius: 6px;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.button.primary {
+  border-color: #f1c267;
+  background: #f1c267;
+  color: #1d211d;
+}
+
+.section {
+  width: min(1160px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 88px 0;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 56px;
+  align-items: start;
+  border-bottom: 1px solid var(--line);
+}
+
+h2 {
+  margin: 0;
+  font-size: clamp(31px, 4vw, 55px);
+  line-height: 1.08;
+}
+
+h3 {
+  margin: 0 0 10px;
+  font-size: 21px;
+  line-height: 1.2;
+}
+
+p {
+  font-size: 17px;
+}
+
+.intro-grid p:last-child,
+.section-text p,
+.life-copy p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.visual-split {
+  display: grid;
+  grid-template-columns: 0.78fr 1.22fr;
+  gap: 44px;
+  align-items: center;
+}
+
+.section-text {
+  display: grid;
+  gap: 22px;
+}
+
+.clean-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  color: var(--ink);
+}
+
+.clean-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.clean-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--rust);
+}
+
+.feature-figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.feature-figure img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+figcaption {
+  padding: 12px 16px 16px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin-bottom: 32px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.project-card {
+  overflow: hidden;
+  min-height: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 10px 25px rgba(24, 32, 34, 0.06);
+}
+
+.project-card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-bottom: 1px solid var(--line);
+}
+
+.project-card div {
+  padding: 20px;
+}
+
+.project-card p {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.project-card.text-only {
+  display: flex;
+  align-items: stretch;
+}
+
+.project-card.text-only div {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card.text-only p {
+  flex: 1;
+}
+
+.project-card a {
+  width: fit-content;
+  min-height: 38px;
+  color: var(--teal);
+  font-size: 14px;
+}
+
+.status {
+  color: var(--blue);
+  font-size: 14px;
+  font-weight: 760;
+}
+
+.skills-band {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 42px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.skill-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px;
+}
+
+.skill-columns p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.life-section {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 42px;
+  align-items: center;
+}
+
+.life-section img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.contact-section {
+  max-width: 960px;
+  text-align: center;
+}
+
+.contact-section .section-kicker {
+  color: var(--rust);
+}
+
+.contact-section h2 {
+  margin-bottom: 26px;
+}
+
+.contact-links {
+  justify-content: center;
+}
+
+.contact-links a {
+  color: var(--teal-dark);
+  background: rgba(255, 255, 255, 0.56);
+}
+
+footer {
+  padding: 28px 24px 40px;
+  color: rgba(255, 255, 255, 0.76);
+  background: var(--teal-dark);
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+@media (max-width: 920px) {
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 14px 22px;
+  }
+
+  .hero {
+    min-height: 720px;
+  }
+
+  .hero-media {
+    background:
+      linear-gradient(0deg, rgba(8, 21, 22, 0.78) 0%, rgba(8, 21, 22, 0.2) 72%),
+      url("assets/life-cycling.jpg") center / cover;
+  }
+
+  .intro-grid,
+  .visual-split,
+  .skills-band,
+  .life-section {
+    grid-template-columns: 1fr;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  nav {
+    gap: 12px;
+  }
+
+  .hero {
+    min-height: 680px;
+  }
+
+  .hero-content,
+  .section {
+    width: min(100% - 32px, 1160px);
+  }
+
+  .hero-content {
+    padding: 74px 0 58px;
+  }
+
+  .hero-copy,
+  p {
+    font-size: 16px;
+  }
+
+  .section {
+    padding: 66px 0;
+  }
+
+  .project-grid,
+  .skill-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .button,
+  .contact-links a {
+    width: 100%;
+  }
+}

@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Ping Yu-Chen / Bill Chen - GaN power semiconductor research, AI-assisted EDA, TCAD planning, and engineering tools."
+    />
+    <title>Ping Yu-Chen | Bill Chen</title>
+    <link rel="preload" href="assets/life-cycling.jpg" as="image" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="brand" href="#top">Ping Yu-Chen</a>
+      <nav>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#life">Life</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="Introduction">
+        <div class="hero-media" role="img" aria-label="Cycling through a green campus path"></div>
+        <div class="hero-content">
+          <p class="eyebrow">GaN power devices · AI-assisted EDA · TCAD research</p>
+          <h1>Ping Yu-Chen <span>Bill Chen</span></h1>
+          <p class="hero-copy">
+            Master's researcher and builder focused on normally-off GaN HEMTs,
+            TCAD-driven design loops, photomask layout automation, and practical tools
+            that turn semiconductor ideas into verifiable workflows.
+          </p>
+          <div class="hero-actions" aria-label="Profile links">
+            <a class="button primary" href="https://github.com/BillCharlie">GitHub</a>
+            <a class="button" href="mailto:chenbill718@gmail.com">Email</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro-grid" aria-label="Current focus">
+        <div>
+          <p class="section-kicker">Current focus</p>
+          <h2>Building the bridge between device physics and repeatable design automation.</h2>
+        </div>
+        <p>
+          My work sits at the intersection of GaN power semiconductor research,
+          Python/MATLAB data analysis, ML-assisted TCAD planning, and EDA workflow
+          automation. I like systems that are physical enough to be trusted and
+          software-shaped enough to be reused.
+        </p>
+      </section>
+
+      <section class="section visual-split" id="research">
+        <div class="section-text">
+          <p class="section-kicker">Research</p>
+          <h2>Normally-off GaN HEMTs, narrow-fin design, and data-guided TCAD.</h2>
+          <p>
+            My graduate research explores GaN device design through a loop of physics
+            assumptions, TCAD simulation, measurement-style metrics, and literature
+            benchmarking. Recent work focuses on narrow-fin tri-gate structures,
+            threshold voltage, breakdown voltage, on-resistance, and 2DEG sheet-density
+            modeling against published GaN HEMT data.
+          </p>
+          <ul class="clean-list">
+            <li>TCAD design-space planning with Wfin, Al fraction, and barrier thickness.</li>
+            <li>Multi-objective scoring for Vth, BV, and Ron tradeoffs.</li>
+            <li>Journal-style plotting and reproducible research notes.</li>
+          </ul>
+        </div>
+        <figure class="feature-figure">
+          <img src="assets/tcad-pareto.jpg" alt="TCAD and literature comparison plot for GaN narrow-fin devices" />
+          <figcaption>TCAD design points compared with published GaN tri-gate literature.</figcaption>
+        </figure>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="section-kicker">Development</p>
+          <h2>Research tools that behave like engineering infrastructure.</h2>
+        </div>
+        <div class="project-grid" id="projects">
+          <article class="project-card">
+            <img src="assets/gan-ohmic.jpg" alt="GaN ohmic contact research slide with plots and microscopy images" />
+            <div>
+              <h3>GaN Semiconductor Research Hub</h3>
+              <p>
+                Public-facing research notes and ChyiLab materials around GaN devices,
+                ohmic contacts, and microwave/optoelectronic device work.
+              </p>
+              <a href="https://billcharlie.github.io/ChyiLab/">Open site</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="assets/research-preview.jpg" alt="Research profile preview related to semiconductor publications" />
+            <div>
+              <h3>AI TCAD Agent</h3>
+              <p>
+                A planning assistant for GaN/nitride TCAD optimization: data ingestion,
+                surrogate modeling, physical constraints, and next-round parameter grids.
+              </p>
+              <span class="status">Private research prototype</span>
+            </div>
+          </article>
+
+          <article class="project-card text-only">
+            <div>
+              <h3>Layout Assistant</h3>
+              <p>
+                AI-assisted photomask layout editor for GaN process research, turning
+                natural-language commands into checked GDS/DXF operations.
+              </p>
+              <span class="status">GDS · DXF · rule checking</span>
+            </div>
+          </article>
+
+          <article class="project-card text-only">
+            <div>
+              <h3>LTSPICE Assistant</h3>
+              <p>
+                Repeatable LTspice workflow: build netlists, run headless simulations,
+                parse waveform data, verify numbers, and write analysis documents.
+              </p>
+              <a href="https://github.com/BillCharlie/LTSPICE-Assistant">GitHub repo</a>
+            </div>
+          </article>
+
+          <article class="project-card text-only">
+            <div>
+              <h3>Cadence Assistant</h3>
+              <p>
+                Scripted Cadence IC618/Spectre automation through SSH, SKILL, and OCEAN
+                for reliable schematic creation and simulation runs.
+              </p>
+              <a href="https://github.com/BillCharlie/Candence-Assistant">GitHub repo</a>
+            </div>
+          </article>
+
+          <article class="project-card text-only">
+            <div>
+              <h3>GaN Industry Monitor</h3>
+              <p>
+                Automated GaN intelligence pipeline that tracks news, papers, company
+                updates, and stocks, then summarizes signals into reports.
+              </p>
+              <a href="https://github.com/BillCharlie/Real-time-GaN-industry-intelligence">GitHub repo</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section skills-band" id="skills">
+        <div>
+          <p class="section-kicker">Skills</p>
+          <h2>Where I spend most of my build time.</h2>
+        </div>
+        <div class="skill-columns">
+          <div>
+            <h3>Semiconductor</h3>
+            <p>GaN HEMT, p-GaN process analysis, tri-gate/narrow-fin devices, TCAD, measurement interpretation.</p>
+          </div>
+          <div>
+            <h3>EDA & Simulation</h3>
+            <p>Cadence Virtuoso/Spectre, LTspice, KLayout, GDS/DXF workflows, photomask rule checking.</p>
+          </div>
+          <div>
+            <h3>Software</h3>
+            <p>Python, MATLAB, FastAPI, data pipelines, plotting, LLM-assisted agents, automation scripts.</p>
+          </div>
+          <div>
+            <h3>Product Thinking</h3>
+            <p>Turning research steps into reusable tools with clear inputs, verification, documentation, and deployment.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section life-section" id="life">
+        <div class="life-copy">
+          <p class="section-kicker">Life</p>
+          <h2>Curious in the lab, restless on the road.</h2>
+          <p>
+            Away from simulation runs and paper notes, I like cycling, visual thinking,
+            building small tools, following technology markets, and keeping a notebook
+            full of half-formed ideas until one of them becomes a real project.
+          </p>
+        </div>
+        <img src="assets/life-cycling.jpg" alt="Cycling along a tree-lined path" />
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <p class="section-kicker">Contact</p>
+        <h2>Open to research collaboration, tool-building conversations, and GaN/EDA ideas.</h2>
+        <div class="contact-links">
+          <a href="mailto:chenbill718@gmail.com">chenbill718@gmail.com</a>
+          <a href="https://github.com/BillCharlie">github.com/BillCharlie</a>
+          <a href="https://billcharlie.github.io/ChyiLab/">ChyiLab page</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Ping Yu-Chen / Bill Chen. Built with research notes, code, and a little momentum.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
