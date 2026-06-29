@@ -49,7 +49,7 @@ const translations = {
     "research.li4": "ICP-RIE pressure、gas chemistry、bias power 與 etch selectivity 的 window 設計。",
     "research.cardMeasureTitle": "量測回饋與動態特性",
     "research.li5":
-      "規劃 TLM、HBD/VBD、Id-Vg、Id-Vd、breakdown、高頻 C-V 與雙脈衝動態特性量測，將實驗結果回饋到下一輪元件設計與製程條件。",
+      "規劃 TLM、HBD/VBD、Id-Vg、Id-Vd、Ig-Vg、breakdown、高頻 C-V 與雙脈衝動態特性量測，將實驗結果回饋到下一輪元件設計與製程條件。",
     "notes.capProcess": "D-mode / E-mode GaN 製程流程",
     "notes.capEbeam1": "E-beam lithography：dose、density、resist 與 transfer 共同決定 CD",
     "notes.capEbeam2": "E-beam checklist：先分辨問題來源，再改變 recipe",
@@ -159,7 +159,7 @@ const translations = {
     "research.li4": "ICP-RIE pressure, gas chemistry, bias power, and etch-selectivity window design.",
     "research.cardMeasureTitle": "Measurement Feedback And Dynamics",
     "research.li5":
-      "I plan TLM, HBD/VBD, Id-Vg, Id-Vd, breakdown, high-frequency C-V, and double-pulse dynamic characterization, then feed the results into the next device and process iteration.",
+      "I plan TLM, HBD/VBD, Id-Vg, Id-Vd, Ig-Vg, breakdown, high-frequency C-V, and double-pulse dynamic characterization, then feed the results into the next device and process iteration.",
     "notes.capProcess": "D-mode / E-mode GaN process flow",
     "notes.capEbeam1": "E-beam lithography: dose, density, resist, and transfer jointly determine CD",
     "notes.capEbeam2": "E-beam checklist: identify the source before changing the recipe",
