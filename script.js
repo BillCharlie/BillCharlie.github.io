@@ -91,6 +91,11 @@ const translations = {
     "projects.chyilab": "把實驗室常用的 EDA、佈局、模擬與研究輔助工具整理成可瀏覽的入口。",
     "projects.gan": "追蹤 GaN 產業新聞、論文、公司動態與市場資訊，用來維持研究方向感。",
     "projects.literature": "本機文獻整理工具，用來管理論文、主題、筆記和閱讀狀態。",
+    "projects.literatureToggle": "展開介面截圖",
+    "projects.literatureCap1": "文獻庫、AI 搜尋與右側摘要欄",
+    "projects.literatureCap2": "PDF 預覽、摘要、創新點與備註整理",
+    "projects.literatureCap3": "精讀報告與論文對照閱讀",
+    "projects.literatureCap4": "週報文獻分組與閱讀進度整理",
     "projects.knowledge": "我從大學到研究所課程建立的個人知識圖譜，連接半導體、電子電路、製程、模擬與研究筆記。",
     "projects.openSite": "前往網站",
     "projects.openSite2": "前往網站",
@@ -106,6 +111,9 @@ const translations = {
     "footer.name": "陳秉佑 / Ping Yu-Chen / Bill Chen",
     "alt.profile": "陳秉佑個人照片",
     "alt.tcadSlide": "GaN Trigate AI-TCAD 研究投影片",
+    "alt.cats": "陳秉佑養的兩隻貓咪",
+    "photoStack.toggle": "切換前後照片",
+    "photoStack.hint": "點擊切換前後照片",
   },
   en: {
     "meta.title": "Ping Yu-Chen | Bill Chen",
@@ -193,6 +201,11 @@ const translations = {
     "projects.chyilab": "A public entry point for lab EDA, layout, simulation, and research-assistant tools.",
     "projects.gan": "A monitor for GaN industry news, papers, company updates, and market signals.",
     "projects.literature": "A local literature-management tool for papers, topics, notes, and reading status.",
+    "projects.literatureToggle": "Show interface screenshots",
+    "projects.literatureCap1": "Library, AI search, and right-side summary panel",
+    "projects.literatureCap2": "PDF preview, abstract, contribution notes, and remarks",
+    "projects.literatureCap3": "Deep-reading report with side-by-side paper review",
+    "projects.literatureCap4": "Weekly paper grouping and reading progress",
     "projects.knowledge": "My personal knowledge graph from undergraduate to graduate coursework, connecting semiconductors, circuits, process, simulation, and research notes.",
     "projects.openSite": "Open site",
     "projects.openSite2": "Open site",
@@ -209,6 +222,9 @@ const translations = {
     "footer.name": "Ping Yu-Chen / Bill Chen",
     "alt.profile": "Portrait of Ping Yu-Chen",
     "alt.tcadSlide": "GaN Trigate AI-TCAD research slide",
+    "alt.cats": "Ping Yu-Chen's two cats",
+    "photoStack.toggle": "Swap front and back photos",
+    "photoStack.hint": "Tap to swap the photos",
   },
 };
 
@@ -249,3 +265,10 @@ languageButtons.forEach((button) => {
 });
 
 setLanguage(localStorage.getItem("preferred-language") || "zh");
+
+const photoStack = document.querySelector(".photo-stack");
+if (photoStack) {
+  photoStack.addEventListener("click", () => {
+    photoStack.classList.toggle("swapped");
+  });
+}

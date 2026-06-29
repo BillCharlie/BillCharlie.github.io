@@ -64,15 +64,21 @@
           </div>
         </div>
 
-        <div class="hero-visual" aria-label="Profile and research preview">
+        <button
+          type="button"
+          class="hero-visual photo-stack"
+          aria-label="切換前後照片"
+          data-i18n-attr="aria-label:photoStack.toggle"
+        >
           <img class="portrait" src="assets/profile-photo.jpg" alt="陳秉佑個人照片" data-i18n-attr="alt:alt.profile" />
           <img
             class="slide-peek"
-            src="assets/slides/ai-tcad-framework.jpg"
-            alt="GaN Trigate AI-TCAD 研究投影片"
-            data-i18n-attr="alt:alt.tcadSlide"
+            src="assets/life-cat.jpg"
+            alt="陳秉佑養的兩隻貓咪"
+            data-i18n-attr="alt:alt.cats"
           />
-        </div>
+          <span class="stack-hint" aria-hidden="true" data-i18n="photoStack.hint">點擊切換前後照片</span>
+        </button>
       </section>
 
       <section class="section research-section" id="research">
@@ -255,14 +261,35 @@
             <a href="https://gan-monitor.up.railway.app/" data-i18n="projects.openSite2">前往網站</a>
           </article>
           <article class="project-card">
-            <p class="tag">Local tool · Literature</p>
-            <h3>Literature Manager</h3>
-            <p data-i18n="projects.literature">本機文獻整理工具，用來管理論文、主題、筆記和閱讀狀態。</p>
-          </article>
-          <article class="project-card">
             <p class="tag">Personal knowledge graph</p>
             <h3>Knowledge</h3>
             <p data-i18n="projects.knowledge">我從大學到研究所課程建立的個人知識圖譜，連接半導體、電子電路、製程、模擬和研究筆記。</p>
+          </article>
+          <article class="project-card literature-card">
+            <p class="tag">Local tool · Literature</p>
+            <h3>Literature Manager</h3>
+            <p data-i18n="projects.literature">本機文獻整理工具，用來管理論文、主題、筆記和閱讀狀態。</p>
+            <details class="project-demo">
+              <summary data-i18n="projects.literatureToggle">展開介面截圖</summary>
+              <div class="literature-gallery">
+                <figure>
+                  <img src="assets/projects/literature-manager-library.png" alt="Literature Manager 文獻庫、AI 搜尋與右側摘要欄介面" />
+                  <figcaption data-i18n="projects.literatureCap1">文獻庫、AI 搜尋與右側摘要欄</figcaption>
+                </figure>
+                <figure>
+                  <img src="assets/projects/literature-manager-pdf.png" alt="Literature Manager PDF 預覽與筆記欄介面" />
+                  <figcaption data-i18n="projects.literatureCap2">PDF 預覽、摘要、創新點與備註整理</figcaption>
+                </figure>
+                <figure>
+                  <img src="assets/projects/literature-manager-report.png" alt="Literature Manager 精讀報告雙 PDF 對照介面" />
+                  <figcaption data-i18n="projects.literatureCap3">精讀報告與論文對照閱讀</figcaption>
+                </figure>
+                <figure>
+                  <img src="assets/projects/literature-manager-weekly.png" alt="Literature Manager 週報文獻整理表格介面" />
+                  <figcaption data-i18n="projects.literatureCap4">週報文獻分組與閱讀進度整理</figcaption>
+                </figure>
+              </div>
+            </details>
           </article>
         </div>
       </section>
