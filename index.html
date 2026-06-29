@@ -1,55 +1,59 @@
 <!doctype html>
-<html lang="zh-Hans">
+<html lang="zh-Hant">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="陈秉佑 / Ping Yu-Chen / Bill Chen 的个人主页：GaN Trigate 元件、光罩设计、制程开发、类比 IC、EDA 工具、AI 科研工具与生活记录。"
+      content="陳秉佑 / Ping Yu-Chen / Bill Chen 的個人首頁：GaN Trigate 元件、光罩設計、製程開發、類比 IC、EDA 工具、AI 研究工具與生活紀錄。"
+      data-i18n-attr="content:meta.description"
     />
-    <title>陈秉佑 | Ping Yu-Chen</title>
+    <title data-i18n="meta.title">陳秉佑 | Ping Yu-Chen</title>
     <link rel="preload" href="assets/profile-photo.jpg" as="image" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#top">陈秉佑 · Ping Yu-Chen</a>
-      <nav aria-label="Primary navigation">
-        <a href="#research">Research</a>
-        <a href="#mask">Mask</a>
-        <a href="#analog">Analog IC</a>
-        <a href="#projects">Projects</a>
-        <a href="#life">Life</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <a class="brand" href="#top" data-i18n="brand">陳秉佑 · Ping Yu-Chen</a>
+      <div class="header-right">
+        <nav aria-label="Primary navigation">
+          <a href="#research" data-i18n="nav.research">研究</a>
+          <a href="#mask" data-i18n="nav.mask">光罩</a>
+          <a href="#analog" data-i18n="nav.analog">類比 IC</a>
+          <a href="#experience" data-i18n="nav.experience">經歷</a>
+          <a href="#projects" data-i18n="nav.projects">作品</a>
+          <a href="#life" data-i18n="nav.life">生活</a>
+          <a href="#contact" data-i18n="nav.contact">聯絡</a>
+        </nav>
+        <div class="language-toggle" aria-label="Language switcher">
+          <button type="button" data-lang="zh" class="active">中文</button>
+          <button type="button" data-lang="en">English</button>
+        </div>
+      </div>
     </header>
 
     <main id="top">
       <section class="hero">
         <div class="hero-copy">
-          <p class="eyebrow">GaN Trigate · Process DOE · TCAD · EDA Tools</p>
-          <h1>我在把 GaN 元件想法，做成能模拟、能制程、能量测的流程。</h1>
-          <p class="lead">
-            我是陈秉佑（Ping Yu-Chen / Bill Chen）。我的研究从 GaN Trigate 元件设计出发，延伸到 TCAD 模拟、
-            光罩与版图设计、E-beam 与 etch 制程开发，以及量测资料回馈。我也喜欢写工具，把 AI 和自动化放进科研日常。
-          </p>
-          <p class="lead en">
-            I work on GaN Trigate devices across simulation, photomask design, process development, and measurement feedback.
-            I also build small AI-assisted tools that make research workflows easier to repeat, inspect, and improve.
+          <p class="eyebrow" data-i18n="hero.eyebrow">GaN Trigate · 製程 DOE · TCAD · EDA 工具</p>
+          <h1 data-i18n="hero.title">我在把 GaN 元件想法，做成能模擬、能製作、能量測的流程。</h1>
+          <p class="lead" data-i18n="hero.lead">
+            我是陳秉佑（Ping Yu-Chen / Bill Chen）。我的研究從 GaN Trigate 元件設計出發，延伸到 TCAD 模擬、光罩與佈局設計、E-beam 與 etch 製程開發，以及量測資料回饋。我也喜歡寫工具，把 AI 和自動化放進研究日常。
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#research">Research</a>
-            <a class="button" href="#projects">Projects</a>
+            <a class="button primary" href="#research" data-i18n="hero.ctaResearch">研究內容</a>
+            <a class="button" href="#projects" data-i18n="hero.ctaProjects">工具與作品</a>
             <a class="button ghost" href="https://github.com/BillCharlie">GitHub</a>
           </div>
         </div>
 
         <div class="hero-visual" aria-label="Profile and research preview">
-          <img class="portrait" src="assets/profile-photo.jpg" alt="陈秉佑个人照片" />
+          <img class="portrait" src="assets/profile-photo.jpg" alt="陳秉佑個人照片" data-i18n-attr="alt:alt.profile" />
           <img
             class="slide-peek"
             src="assets/slides/ai-tcad-framework.jpg"
-            alt="GaN Trigate AI-TCAD research slide"
+            alt="GaN Trigate AI-TCAD 研究投影片"
+            data-i18n-attr="alt:alt.tcadSlide"
           />
         </div>
       </section>
@@ -57,52 +61,42 @@
       <section class="section focus-strip" aria-label="Research focus summary">
         <article>
           <span>01</span>
-          <h2>模拟与设计</h2>
-          <p>用 TCAD 建立 GaN Trigate / narrow-fin 结构，追踪 Vth、Ron、BV、Id-Vg、Id-Vd 与 E-field。</p>
-          <p class="en">TCAD-based device design with electrical and field extraction.</p>
+          <h2 data-i18n="focus.sim.title">模擬與設計</h2>
+          <p data-i18n="focus.sim.body">用 TCAD 建立 GaN Trigate / narrow-fin 結構，追蹤 Vth、Ron、BV、Id-Vg、Id-Vd 與 E-field。</p>
         </article>
         <article>
           <span>02</span>
-          <h2>光罩与版图</h2>
-          <p>把元件参数、测试结构、probe pad、alignment、AutoCAD / GDS / DXF 流程串起来。</p>
-          <p class="en">Photomask and layout work that connects device ideas to measurable structures.</p>
+          <h2 data-i18n="focus.mask.title">光罩與版圖</h2>
+          <p data-i18n="focus.mask.body">把元件參數、測試結構、probe pad、alignment、AutoCAD / GDS / DXF 流程串起來。</p>
         </article>
         <article>
           <span>03</span>
-          <h2>制程与 DOE</h2>
-          <p>整理 E-beam lithography、hardmask transfer、ICP-RIE etch profile 与 process window。</p>
-          <p class="en">Process DOE for lithography, hardmask transfer, and dry etching.</p>
+          <h2 data-i18n="focus.process.title">製程與 DOE</h2>
+          <p data-i18n="focus.process.body">整理 E-beam lithography、hardmask transfer、ICP-RIE etch profile 與 process window。</p>
         </article>
         <article>
           <span>04</span>
-          <h2>量测与反馈</h2>
-          <p>从 CD/SEM 到 TLM、Id-Vg、Id-Vd、breakdown，把结果带回下一轮设计。</p>
-          <p class="en">Measurement feedback closes the loop between fabrication and design.</p>
+          <h2 data-i18n="focus.measure.title">量測與回饋</h2>
+          <p data-i18n="focus.measure.body">從 CD/SEM 到 TLM、Id-Vg、Id-Vd、breakdown，把結果帶回下一輪設計。</p>
         </article>
       </section>
 
       <section class="section research-section" id="research">
         <div class="section-title">
-          <p class="eyebrow">Research</p>
-          <h2>研究内容 / Research</h2>
+          <p class="eyebrow" data-i18n="research.eyebrow">研究</p>
+          <h2 data-i18n="research.title">研究內容</h2>
         </div>
         <div class="research-grid">
           <div class="research-copy">
-            <p>
-              我的核心问题是：一个 GaN Trigate 元件，怎样从结构假设走到可制程、可量测、可解释的结果。
-              所以我不只看单点性能，也会同时考虑 Vth-Ron-BV tradeoff、Epeak 限制、fin/profile 可制造性，
-              以及后续量测 pattern 是否足够支撑判断。
-            </p>
-            <p class="en">
-              My research asks how a GaN Trigate device can move from a structural hypothesis to a fabricable,
-              measurable, and physically interpretable result. I care about the design tradeoff as much as the process path.
+            <p data-i18n="research.body">
+              我的核心問題是：一個 GaN Trigate 元件，怎樣從結構假設走到可製程、可量測、可解釋的結果。所以我不只看單點性能，也會同時考慮 Vth-Ron-BV tradeoff、Epeak 限制、fin/profile 可製造性，以及後續量測 pattern 是否足夠支撐判斷。
             </p>
             <ul class="check-list">
-              <li>GaN Trigate / narrow-fin cross-section 建模与参数扫描。</li>
-              <li>Wfin、Al composition、tox、Lg 对 Vth-Ron-BV tradeoff 的影响。</li>
-              <li>E-beam dose、PEC、development、hardmask transfer 的制程拆解。</li>
-              <li>ICP-RIE pressure、gas chemistry、bias power 与 etch selectivity 的 window 设计。</li>
-              <li>TLM、HBD/VBD、Id-Vg、Id-Vd 与 breakdown 测试结构的版图规划。</li>
+              <li data-i18n="research.li1">GaN Trigate / narrow-fin cross-section 建模與參數掃描。</li>
+              <li data-i18n="research.li2">Wfin、Al composition、tox、Lg 對 Vth-Ron-BV tradeoff 的影響。</li>
+              <li data-i18n="research.li3">E-beam dose、PEC、development、hardmask transfer 的製程拆解。</li>
+              <li data-i18n="research.li4">ICP-RIE pressure、gas chemistry、bias power 與 etch selectivity 的 window 設計。</li>
+              <li data-i18n="research.li5">TLM、HBD/VBD、Id-Vg、Id-Vd 與 breakdown 測試結構的版圖規劃。</li>
             </ul>
           </div>
           <figure class="research-figure">
@@ -110,41 +104,36 @@
               src="assets/slides/tradeoff-regime.jpg"
               alt="GaN Trigate Vth Ron tradeoff regime transition"
             />
-            <figcaption>GaN Trigate 的 Vth-Ron tradeoff 与物理限制整理 / Vth-Ron tradeoff and physics constraints.</figcaption>
+            <figcaption data-i18n="research.caption">GaN Trigate 的 Vth-Ron tradeoff 與物理限制整理。</figcaption>
           </figure>
         </div>
       </section>
 
       <section class="section mask-section" id="mask">
         <div class="section-title">
-          <p class="eyebrow">Photomask</p>
-          <h2>光罩设计 / Photomask Design</h2>
-          <p>
-            光罩设计是我把 TCAD 结果带向实验的关键环节。版图里不只要画出元件，还要让测试结构、pad、
-            routing、alignment 与制程层次能够被检查、被制作、被量测。
-          </p>
-          <p class="en">
-            Photomask design is where simulation begins to meet fabrication. I design device arrays and test cells with
-            measurement, routing, alignment, and process-layer constraints in mind.
+          <p class="eyebrow" data-i18n="mask.eyebrow">光罩設計</p>
+          <h2 data-i18n="mask.title">光罩設計</h2>
+          <p data-i18n="mask.body">
+            光罩設計是我把 TCAD 結果帶向實驗的關鍵環節。版圖裡不只要畫出元件，還要讓測試結構、pad、routing、alignment 與製程層次能夠被檢查、被製作、被量測。
           </p>
         </div>
         <div class="mask-grid">
           <figure class="mask-shot large">
-            <img src="assets/mask-design/trigate-mask-array.jpg" alt="GaN Trigate photomask array design screenshot" />
-            <figcaption>Trigate 元件阵列与测试结构 / Trigate device array and test structures</figcaption>
+            <img src="assets/mask-design/trigate-mask-array.jpg" alt="GaN Trigate 光罩陣列設計截圖" data-i18n-attr="alt:alt.maskArray" />
+            <figcaption data-i18n="mask.captionArray">Trigate 元件陣列與測試結構</figcaption>
           </figure>
           <div class="mask-side">
             <article>
-              <h3>从元件到版图 / From Device To Layout</h3>
+              <h3 data-i18n="mask.sideTitle">從元件到版圖</h3>
               <ul class="mini-list">
-                <li>整合元件阵列、测试结构与 pad placement。</li>
-                <li>把 fin / gate / ohmic / pad 等 layer 关系转成可检查的版图。</li>
-                <li>配合 TLM、Id-Vg、Id-Vd 与 breakdown 量测需求。</li>
+                <li data-i18n="mask.li1">整合元件陣列、測試結構與 pad placement。</li>
+                <li data-i18n="mask.li2">把 fin / gate / ohmic / pad 等 layer 關係轉成可檢查的版圖。</li>
+                <li data-i18n="mask.li3">配合 TLM、Id-Vg、Id-Vd 與 breakdown 量測需求。</li>
               </ul>
             </article>
             <figure class="mask-shot">
-              <img src="assets/mask-design/device-mask-cell.jpg" alt="Single device photomask cell with pads and routing screenshot" />
-              <figcaption>单一元件 cell、pad 与 routing / Single device cell and routing</figcaption>
+              <img src="assets/mask-design/device-mask-cell.jpg" alt="單一元件光罩 cell 與 pad routing 截圖" data-i18n-attr="alt:alt.maskCell" />
+              <figcaption data-i18n="mask.captionCell">單一元件 cell、pad 與 routing</figcaption>
             </figure>
           </div>
         </div>
@@ -152,15 +141,10 @@
 
       <section class="section report-section" id="reports">
         <div class="section-title narrow">
-          <p class="eyebrow">Research Notes</p>
-          <h2>研究整理 / Research Notes</h2>
-          <p>
-            这里放的是我在研究过程中整理出的关键页面：AI-guided TCAD、D-mode / E-mode 制程流程、
-            E-beam lithography 的问题拆解，以及 etch SEM diagnosis 与 DOE 设计。
-          </p>
-          <p class="en">
-            These selected pages summarize my current research notes: AI-guided TCAD, process flows,
-            E-beam lithography diagnosis, SEM-based etch interpretation, and DOE planning.
+          <p class="eyebrow" data-i18n="notes.eyebrow">研究整理</p>
+          <h2 data-i18n="notes.title">研究整理</h2>
+          <p data-i18n="notes.body">
+            這裡放的是我在研究過程中整理出的關鍵頁面：AI-guided TCAD、D-mode / E-mode 製程流程、E-beam lithography 的問題拆解，以及 etch SEM diagnosis 與 DOE 設計。
           </p>
         </div>
 
@@ -171,133 +155,172 @@
           </figure>
           <figure>
             <img src="assets/process-slides/process-overview.jpg" alt="D-mode and E-mode GaN process flow overview" />
-            <figcaption>D-mode / E-mode GaN 制程流程 / Process flow</figcaption>
+            <figcaption data-i18n="notes.capProcess">D-mode / E-mode GaN 製程流程</figcaption>
           </figure>
           <figure>
             <img src="assets/process-slides/ebeam-principle.jpg" alt="E-beam lithography process issues from writing to pattern transfer" />
-            <figcaption>E-beam lithography：dose、density、resist 与 transfer 共同决定 CD</figcaption>
+            <figcaption data-i18n="notes.capEbeam1">E-beam lithography：dose、density、resist 與 transfer 共同決定 CD</figcaption>
           </figure>
           <figure>
             <img src="assets/process-slides/ebeam-checklist.jpg" alt="Practical E-beam lithography checklist before changing dose development PEC or hardmask" />
-            <figcaption>E-beam checklist：先分辨问题来源，再改变 recipe</figcaption>
+            <figcaption data-i18n="notes.capEbeam2">E-beam checklist：先分辨問題來源，再改變 recipe</figcaption>
           </figure>
           <figure>
             <img src="assets/process-slides/etch-sem-diagnosis.jpg" alt="Etch SEM signature diagnosis table for lithography and transfer issues" />
-            <figcaption>Etch / SEM signature：区分 exposure、development 与 transfer 问题</figcaption>
+            <figcaption data-i18n="notes.capEtch1">Etch / SEM signature：區分 exposure、development 與 transfer 問題</figcaption>
           </figure>
           <figure>
             <img src="assets/process-slides/etch-doe.jpg" alt="Recommended etch DOE flow for pressure gas chemistry and bias after fixing CD and mask baseline" />
-            <figcaption>Etch DOE：固定 CD / mask baseline 后再拆 pressure、gas、bias</figcaption>
+            <figcaption data-i18n="notes.capEtch2">Etch DOE：固定 CD / mask baseline 後再拆 pressure、gas、bias</figcaption>
           </figure>
         </div>
       </section>
 
       <section class="section analog-section" id="analog">
         <div class="section-title">
-          <p class="eyebrow">Analog IC</p>
-          <h2>模拟集成电路专题：差分放大电路与迟滞比较器 / Analog IC Project</h2>
-          <p>
-            大学课程专题中，我参与差分放大电路、迟滞比较器与带隙基准相关电路设计。工作包含原理分析、
-            尺寸设计、Cadence 前仿 testbench、版图协作、DRC/LVS、寄生参数萃取与后仿验证。
-          </p>
-          <p class="en">
-            In my undergraduate Analog IC project, I worked on differential amplifier and hysteresis comparator design,
-            including schematic simulation, layout, DRC/LVS, parasitic extraction, and post-layout verification in Cadence.
+          <p class="eyebrow" data-i18n="analog.eyebrow">類比 IC</p>
+          <h2 data-i18n="analog.title">類比積體電路專題：差動放大電路與遲滯比較器</h2>
+          <p data-i18n="analog.body">
+            大學課程專題中，我參與差動放大電路、遲滯比較器與能隙參考相關電路設計。工作包含原理分析、尺寸設計、Cadence 前模擬 testbench、佈局協作、DRC/LVS、寄生參數萃取與後模擬驗證。
           </p>
         </div>
 
         <div class="analog-layout">
           <article class="analog-card">
-            <h3>从电路规格到版图验证 / From Specs To Layout Verification</h3>
-            <p>这个专题让我熟悉 CMRR、PSRR、gain、phase margin、offset、corner simulation 与 post-layout checking。</p>
-            <p class="en">It trained me to connect circuit specifications, simulation waveforms, layout matching, and verification flow.</p>
+            <h3 data-i18n="analog.cardTitle">從電路規格到版圖驗證</h3>
+            <p data-i18n="analog.cardBody">這個專題讓我熟悉 CMRR、PSRR、gain、phase margin、offset、corner simulation 與 post-layout checking。</p>
             <ul class="mini-list">
-              <li>Cadence 前仿 testbench 建立与参数量测。</li>
-              <li>tt / ff / ss 工艺角比较。</li>
-              <li>版图、DRC/LVS、PEX 与后仿结果整理。</li>
+              <li data-i18n="analog.li1">Cadence 前模擬 testbench 建立與參數量測。</li>
+              <li data-i18n="analog.li2">tt / ff / ss 製程角比較。</li>
+              <li data-i18n="analog.li3">版圖、DRC/LVS、PEX 與後仿結果整理。</li>
             </ul>
           </article>
           <div class="analog-gallery">
             <figure>
               <img src="assets/analog-ic/analog-corners.jpg" alt="Analog IC report screenshot showing corner simulation summary table" />
-              <figcaption>工艺角与性能指标 / Corner summary</figcaption>
+              <figcaption data-i18n="analog.capCorners">製程角與性能指標</figcaption>
             </figure>
             <figure>
               <img src="assets/analog-ic/analog-pre-sim.jpg" alt="Cadence schematic and waveform screenshots for analog IC simulation" />
-              <figcaption>Cadence 测试电路与波形 / Schematic and waveforms</figcaption>
+              <figcaption data-i18n="analog.capWave">Cadence 測試電路與波形</figcaption>
             </figure>
             <figure>
               <img src="assets/analog-ic/analog-layout.jpg" alt="Analog IC full layout screenshot" />
-              <figcaption>总体版图与 common-centroid input pair / Full layout</figcaption>
+              <figcaption data-i18n="analog.capLayout">總體版圖與 common-centroid input pair</figcaption>
             </figure>
             <figure>
               <img src="assets/analog-ic/analog-layout-detail.jpg" alt="Analog IC layout detail screenshot for current mirror and differential pair" />
-              <figcaption>电流镜、差动对与 dummy 设计 / Layout details</figcaption>
+              <figcaption data-i18n="analog.capDetail">電流鏡、差動對與 dummy 設計</figcaption>
             </figure>
           </div>
         </div>
       </section>
 
+      <section class="section experience-section" id="experience">
+        <div class="section-title">
+          <p class="eyebrow" data-i18n="experience.eyebrow">專案與社團</p>
+          <h2 data-i18n="experience.title">專案與社團經歷</h2>
+          <p data-i18n="experience.body">
+            除了目前的 GaN Trigate 研究，我也做過 SiC VDMOS 高溫特性專題、區塊鏈工作室專案，以及學生創業社團的活動規劃。這些經歷讓我更習慣把技術、組織和展示放在同一個專案裡思考。
+          </p>
+        </div>
+
+        <div class="experience-grid">
+          <article class="experience-card wide">
+            <div class="experience-copy">
+              <p class="tag">SiC MOSFET · TCAD · Measurement</p>
+              <h3 data-i18n="experience.sicTitle">大功率元件 SiC MOSFET 高溫特性研究</h3>
+              <p data-i18n="experience.sicBody">
+                以 TCAD Sentaurus 進行 SiC VDMOSFET 元件模擬，調整結構參數並理解 VDMOS 製作流程；同時參與蝕刻、熱氧化、光刻、金屬化、退火等製程討論，以及 CV、IV、double pulse 等特性量測整理。
+              </p>
+            </div>
+            <div class="experience-media double">
+              <figure>
+                <img src="assets/experience/sic-simulation.jpg" alt="SiC VDMOS process and structure simulation slide" />
+                <figcaption data-i18n="experience.sicCap1">VDMOS 製程與結構模擬整理</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/experience/sic-testing.jpg" alt="SiC MOSFET high temperature and electrical test platform slide" />
+                <figcaption data-i18n="experience.sicCap2">高溫加熱與電學測試平台</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="experience-card">
+            <figure class="experience-photo">
+              <img src="assets/experience/blockchain-presentation.jpg" alt="Blockchain studio project presentation" />
+            </figure>
+            <div class="experience-copy">
+              <p class="tag">Blockchain · Founder · Frontend</p>
+              <h3 data-i18n="experience.blockchainTitle">仕集區塊鏈工作室</h3>
+              <p data-i18n="experience.blockchainBody">
+                作為工作室創辦人，我負責區塊鏈底層系統架構、共識演算法開發，以及 UI 設計與前端 JavaScript 框架搭建。這段經歷讓我很早就開始把技術實作、產品呈現和團隊溝通放在一起做。
+              </p>
+            </div>
+          </article>
+
+          <article class="experience-card">
+            <figure class="experience-photo">
+              <img src="assets/experience/club-group.jpg" alt="Student entrepreneurship association group photo" />
+            </figure>
+            <div class="experience-copy">
+              <p class="tag">Student Association · Events</p>
+              <h3 data-i18n="experience.clubTitle">創業者協會與學生創業中心社團</h3>
+              <p data-i18n="experience.clubBody">
+                擔任協會會長兼社團副主席期間，我參與創新創業講座與論壇規劃，邀請創業校友交流，也協助行政執行與學生創新創業計畫活動。
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section class="section tool-section" id="projects">
         <div class="section-title">
-          <p class="eyebrow">Projects</p>
-          <h2>小工具与应用 / Tools & Apps</h2>
-          <p>
-            我喜欢把研究中反复出现的步骤做成工具：有些用来整理文献，有些用来协助 EDA 和光罩设计，
-            有些用来追踪 GaN 产业动态，也有些是我把大学到研究所课程知识整理成图谱的长期项目。
-          </p>
-          <p class="en">
-            I build small tools for recurring research tasks: literature work, EDA support, GaN industry tracking,
-            and a personal knowledge graph that connects my undergraduate and graduate coursework.
+          <p class="eyebrow" data-i18n="projects.eyebrow">作品</p>
+          <h2 data-i18n="projects.title">小工具與應用</h2>
+          <p data-i18n="projects.body">
+            我喜歡把研究中反覆出現的步驟做成工具：有些用來整理文獻，有些用來協助 EDA 和光罩設計，有些用來追蹤 GaN 產業動態，也有些是我把大學到研究所課程知識整理成圖譜的長期專案。
           </p>
         </div>
         <div class="project-grid">
           <article class="project-card featured">
             <p class="tag">Website · EDA tools</p>
             <h3>ChyiLab EDA Tools</h3>
-            <p>把实验室常用的 EDA、版图、模拟与科研辅助工具整理成可访问的入口。</p>
-            <p class="en">A public entry point for lab-oriented EDA and research-assistant tools.</p>
-            <a href="https://billcharlie.github.io/chyilab-eda-tools/">Open site</a>
+            <p data-i18n="projects.chyilab">把實驗室常用的 EDA、佈局、模擬與研究輔助工具整理成可瀏覽的入口。</p>
+            <a href="https://billcharlie.github.io/chyilab-eda-tools/" data-i18n="projects.openSite">前往網站</a>
           </article>
           <article class="project-card featured">
             <p class="tag">Railway · GaN intelligence</p>
             <h3>Real-time GaN Industry Intelligence</h3>
-            <p>追踪 GaN 产业新闻、论文、公司动态与市场资讯，用来维持研究方向感。</p>
-            <p class="en">A live GaN intelligence monitor for industry news, papers, companies, and market signals.</p>
-            <a href="https://gan-monitor.up.railway.app/">Open site</a>
+            <p data-i18n="projects.gan">追蹤 GaN 產業新聞、論文、公司動態與市場資訊，用來維持研究方向感。</p>
+            <a href="https://gan-monitor.up.railway.app/" data-i18n="projects.openSite2">前往網站</a>
           </article>
           <article class="project-card">
             <p class="tag">Local tool · Literature</p>
             <h3>Literature Manager</h3>
-            <p>本地文献整理工具，用来管理论文、主题、笔记和阅读状态；目前不放公开链接。</p>
-            <p class="en">A local literature workflow for papers, topics, notes, and reading status.</p>
+            <p data-i18n="projects.literature">本地文獻整理工具，用來管理論文、主題、筆記和閱讀狀態；目前不放公開連結。</p>
           </article>
           <article class="project-card">
             <p class="tag">Personal knowledge graph</p>
             <h3>Knowledge</h3>
-            <p>我从大学到研究所课程建立的个人知识图谱，连接半导体、电子电路、制程、模拟和研究笔记。</p>
-            <p class="en">A personal knowledge graph connecting coursework, semiconductor topics, circuits, process, and research notes.</p>
+            <p data-i18n="projects.knowledge">我從大學到研究所課程建立的個人知識圖譜，連接半導體、電子電路、製程、模擬和研究筆記。</p>
           </article>
         </div>
       </section>
 
       <section class="section life-section" id="life">
         <div class="section-title narrow">
-          <p class="eyebrow">Life</p>
-          <h2>生活片段 / Life Outside The Lab</h2>
-          <p>
-            旅行、朋友、城市、山路、拼模型和临时冒出的工具点子，都是我认识世界的方式。
-            我喜欢把生活里的观察带回研究，也喜欢用 AI 做一些让自己和同伴更省力的小应用。
-          </p>
-          <p class="en">
-            Travel, friends, cities, mountains, model kits, and tiny software ideas are all part of how I keep life vivid.
+          <p class="eyebrow" data-i18n="life.eyebrow">生活</p>
+          <h2 data-i18n="life.title">生活片段</h2>
+          <p data-i18n="life.body">
+            旅行、朋友、城市、山路、拼模型和臨時冒出的工具點子，都是我認識世界的方式。我喜歡把生活裡的觀察帶回研究，也喜歡用 AI 做一些讓自己和同伴更省力的小應用。
           </p>
           <div class="life-tags" aria-label="Interests">
-            <span>旅行 Travel</span>
-            <span>拼模型 Model kits</span>
-            <span>摄影整理 Photo notes</span>
-            <span>AI 工具 AI tools</span>
-            <span>科研自动化 Research automation</span>
+            <span data-i18n="life.tagTravel">旅行</span>
+            <span data-i18n="life.tagModel">拼模型</span>
+            <span data-i18n="life.tagPhoto">攝影整理</span>
+            <span data-i18n="life.tagAi">AI 工具</span>
+            <span data-i18n="life.tagResearch">研究自動化</span>
           </div>
         </div>
         <div class="life-grid">
@@ -321,13 +344,10 @@
       </section>
 
       <section class="section contact-section" id="contact">
-        <p class="eyebrow">Contact</p>
-        <h2>欢迎交流 / Let’s Talk</h2>
-        <p>
-          如果你也在做 GaN、TCAD、EDA automation、类比 IC 或研究工具，欢迎联系我。
-        </p>
-        <p class="en">
-          I am always happy to talk about GaN devices, TCAD, EDA automation, analog IC, and research tools.
+        <p class="eyebrow" data-i18n="contact.eyebrow">聯絡</p>
+        <h2 data-i18n="contact.title">歡迎交流</h2>
+        <p data-i18n="contact.body">
+          如果你也在做 GaN、TCAD、EDA automation、類比 IC 或研究工具，歡迎聯絡我。
         </p>
         <div class="contact-links">
           <a href="mailto:chenbill718@gmail.com">chenbill718@gmail.com</a>
@@ -338,7 +358,7 @@
     </main>
 
     <footer>
-      <p>© <span id="year"></span> 陈秉佑 / Ping Yu-Chen / Bill Chen</p>
+      <p>© <span id="year"></span> <span data-i18n="footer.name">陳秉佑 / Ping Yu-Chen / Bill Chen</span></p>
     </footer>
 
     <script src="script.js"></script>

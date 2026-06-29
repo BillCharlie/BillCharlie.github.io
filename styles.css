@@ -59,6 +59,12 @@ a {
   backdrop-filter: blur(16px);
 }
 
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .brand {
   font-weight: 850;
   text-decoration: none;
@@ -80,6 +86,32 @@ nav a {
 nav a:hover,
 nav a:focus-visible {
   color: var(--green);
+}
+
+.language-toggle {
+  display: inline-flex;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.language-toggle button {
+  min-height: 30px;
+  padding: 5px 11px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.language-toggle button.active {
+  background: var(--green);
+  color: #fff;
 }
 
 .hero {
@@ -342,7 +374,8 @@ figcaption {
 
 .report-section,
 .analog-section,
-.mask-section {
+.mask-section,
+.experience-section {
   border-top: 1px solid var(--line);
 }
 
@@ -421,6 +454,58 @@ figcaption {
   object-fit: cover;
   object-position: top;
   background: #fff;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.experience-card {
+  overflow: hidden;
+  display: grid;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 0 10px 28px rgba(23, 32, 34, 0.07);
+}
+
+.experience-card.wide {
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(300px, 0.56fr) minmax(0, 1fr);
+  align-items: stretch;
+}
+
+.experience-copy {
+  padding: 24px;
+}
+
+.experience-media.double {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--line);
+}
+
+.experience-media figure,
+.experience-photo {
+  margin: 0;
+  background: #fff;
+}
+
+.experience-media img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  padding: 10px;
+  background: #fff;
+}
+
+.experience-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
 }
 
 .project-grid {
@@ -550,6 +635,12 @@ footer p {
     padding: 14px 22px;
   }
 
+  .header-right {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
   .hero {
     grid-template-columns: 1fr;
     min-height: auto;
@@ -562,7 +653,8 @@ footer p {
 
   .research-grid,
   .analog-layout,
-  .mask-grid {
+  .mask-grid,
+  .experience-card.wide {
     grid-template-columns: 1fr;
   }
 
@@ -571,7 +663,8 @@ footer p {
   }
 
   .report-grid,
-  .life-grid {
+  .life-grid,
+  .experience-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -620,6 +713,8 @@ footer p {
   .analog-gallery,
   .project-grid,
   .mask-grid,
+  .experience-grid,
+  .experience-media.double,
   .life-grid {
     grid-template-columns: 1fr;
   }
