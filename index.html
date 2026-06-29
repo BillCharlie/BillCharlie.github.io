@@ -18,7 +18,7 @@
       <div class="header-right">
         <nav aria-label="Primary navigation">
           <a href="#research" data-i18n="nav.research">元件研究</a>
-          <a href="#analog" data-i18n="nav.analog">類比 IC</a>
+          <a href="#analog" data-i18n="nav.analog">IC 設計</a>
           <a href="#experience" data-i18n="nav.experience">經歷</a>
           <a href="#projects" data-i18n="nav.projects">作品</a>
           <a href="#life" data-i18n="nav.life">生活</a>
@@ -143,41 +143,44 @@
 
       <section class="section analog-section" id="analog">
         <div class="section-title">
-          <p class="eyebrow" data-i18n="analog.eyebrow">類比 IC</p>
-          <h2 data-i18n="analog.title">類比積體電路專題：差動放大電路與遲滯比較器</h2>
+          <p class="eyebrow" data-i18n="analog.eyebrow">IC 設計</p>
+          <h2 data-i18n="analog.title">IC 設計專題：J-K 正反器全客製化與類比放大／比較器</h2>
           <p data-i18n="analog.body">
-            大學專題中，我主持差動放大電路、遲滯比較器與能隙參考相關電路設計。工作包含原理分析、尺寸設計、Cadence 前模擬 testbench、佈局協作、DRC/LVS、寄生參數萃取與後模擬驗證。
+            大學 VLSI 專題中，我完成了兩個積體電路的全流程設計，一個數位、一個類比，皆以 Cadence 從規格走到版圖與驗證。
           </p>
         </div>
 
-        <div class="analog-layout">
-          <article class="analog-card">
-            <h3 data-i18n="analog.cardTitle">從電路規格到版圖驗證</h3>
-            <p data-i18n="analog.cardBody">這個專題讓我熟悉 CMRR、PSRR、gain、phase margin、offset、corner simulation 與 post-layout checking。</p>
-            <ul class="mini-list">
-              <li data-i18n="analog.li1">Cadence 前模擬 testbench 建立與參數量測。</li>
-              <li data-i18n="analog.li2">tt / ff / ss 製程角比較。</li>
-              <li data-i18n="analog.li3">版圖、DRC/LVS、PEX 與後仿結果整理。</li>
-            </ul>
+        <div class="ic-grid">
+          <article class="ic-card">
+            <p class="tag">Digital · Full-custom</p>
+            <h3 data-i18n="analog.digiTitle">SN74LVC112A 雙負緣觸發 J-K 正反器</h3>
+            <p data-i18n="analog.digiBody">依 datasheet 規格，以 Cadence 全客製化設計帶預置與清除的雙負緣觸發 J-K 正反器，負責電路原理圖、內部邏輯與 IO 電路、版圖繪製與 DRC/LVS 檢查。</p>
+            <details class="pdf-demo">
+              <summary data-i18n="analog.previewToggle">預覽專題報告（PDF）</summary>
+              <div class="pdf-frame">
+                <iframe
+                  src="assets/ic-design/sn74lvc112a.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+                  title="SN74LVC112A J-K 正反器專題報告"
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </details>
           </article>
-          <div class="analog-gallery">
-            <figure>
-              <img src="assets/analog-ic/analog-corners.jpg" alt="Analog IC report screenshot showing corner simulation summary table" />
-              <figcaption data-i18n="analog.capCorners">製程角與性能指標</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/analog-ic/analog-pre-sim.jpg" alt="Cadence schematic and waveform screenshots for analog IC simulation" />
-              <figcaption data-i18n="analog.capWave">Cadence 測試電路與波形</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/analog-ic/analog-layout.jpg" alt="Analog IC full layout screenshot" />
-              <figcaption data-i18n="analog.capLayout">總體版圖與 common-centroid input pair</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/analog-ic/analog-layout-detail.jpg" alt="Analog IC layout detail screenshot for current mirror and differential pair" />
-              <figcaption data-i18n="analog.capDetail">電流鏡、差動對與 dummy 設計</figcaption>
-            </figure>
-          </div>
+          <article class="ic-card">
+            <p class="tag">Analog · Differential / Comparator</p>
+            <h3 data-i18n="analog.anaTitle">差動放大、遲滯比較器與能隙基準</h3>
+            <p data-i18n="analog.anaBody">主導差動放大電路、遲滯比較器與能隙基準設計，涵蓋原理分析、尺寸設計、Cadence 前模擬 testbench、PSRR / CMRR、製程角（ff / ss）模擬、版圖、寄生參數萃取與後模擬驗證。</p>
+            <details class="pdf-demo">
+              <summary data-i18n="analog.previewToggle">預覽專題報告（PDF）</summary>
+              <div class="pdf-frame">
+                <iframe
+                  src="assets/ic-design/diff-amp-comparator.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+                  title="差動放大電路與遲滯比較器專題報告"
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </details>
+          </article>
         </div>
       </section>
 

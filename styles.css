@@ -374,8 +374,7 @@ li {
 .tool-grid p,
 .life-section p,
 .project-card p,
-.analog-card p,
-.analog-card li {
+.ic-card p {
   color: var(--muted);
 }
 
@@ -472,8 +471,7 @@ figure {
 }
 
 .report-grid figure,
-.life-grid figure,
-.analog-gallery figure {
+.life-grid figure {
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 10px;
@@ -512,33 +510,63 @@ figcaption {
   gap: 18px;
 }
 
-.analog-layout {
+.ic-grid {
   display: grid;
-  grid-template-columns: minmax(270px, 0.42fr) minmax(0, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
   align-items: start;
 }
 
-.analog-card {
-  position: sticky;
-  top: 96px;
+.ic-card {
+  display: flex;
+  flex-direction: column;
   padding: 26px;
   border-left: 4px solid var(--blue);
   background: rgba(255, 255, 255, 0.72);
 }
 
-.analog-gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+.ic-card:nth-child(2) {
+  border-left-color: var(--gold);
 }
 
-.analog-gallery img {
-  width: 100%;
-  aspect-ratio: 7 / 10;
-  object-fit: cover;
-  object-position: top;
+.ic-card h3 {
+  margin-top: 4px;
+}
+
+.pdf-demo {
+  margin-top: 16px;
+}
+
+.pdf-demo summary {
+  width: fit-content;
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 14px;
+  border: 1px solid var(--blue);
+  border-radius: 6px;
+  color: var(--blue);
+  font-weight: 850;
+  cursor: pointer;
+}
+
+.pdf-demo[open] summary {
+  margin-bottom: 14px;
+  background: rgba(49, 95, 133, 0.08);
+}
+
+.pdf-frame {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
   background: #fff;
+}
+
+.pdf-frame iframe {
+  display: block;
+  width: 100%;
+  height: 380px;
+  border: 0;
 }
 
 .experience-grid {
@@ -767,10 +795,6 @@ footer p {
 }
 
 @media (max-width: 1100px) {
-  .analog-gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .project-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -813,7 +837,7 @@ footer p {
   }
 
   .research-grid,
-  .analog-layout,
+  .ic-grid,
   .experience-card.wide {
     grid-template-columns: 1fr;
   }
@@ -829,10 +853,6 @@ footer p {
 
   .research-question .tag {
     grid-row: auto;
-  }
-
-  .analog-card {
-    position: static;
   }
 
   .report-grid,
@@ -882,7 +902,6 @@ footer p {
   }
 
   .report-grid,
-  .analog-gallery,
   .project-grid,
   .literature-gallery,
   .experience-grid,
