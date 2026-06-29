@@ -16,7 +16,7 @@ const translations = {
     "nav.projects": "作品",
     "nav.life": "生活",
     "nav.contact": "聯絡",
-    "hero.eyebrow": "GaN Trigate · 製程 DOE · TCAD · EDA 工具",
+    "hero.eyebrow": "GaN Trigate · Process DOE · Measurement · TCAD Simulation · LTSPICE · Cadence EDA × AI",
     "hero.title": "讓 GaN Power 元件從想法走向模擬、製作、驗證與應用。",
     "hero.bio1":
       "我是陳秉佑，也使用 Ping Yu-Chen / Bill Chen 這個名字。我的研究從 GaN Trigate 功率元件設計出發，逐步延伸到 TCAD 模擬、光罩與佈局設計、E-beam 微影、蝕刻製程開發，以及量測資料回饋。",
@@ -126,7 +126,7 @@ const translations = {
     "nav.projects": "Projects",
     "nav.life": "Life",
     "nav.contact": "Contact",
-    "hero.eyebrow": "GaN Trigate · Process DOE · TCAD · EDA Tools",
+    "hero.eyebrow": "GaN Trigate · Process DOE · Measurement · TCAD Simulation · LTSPICE · Cadence EDA × AI",
     "hero.title": "Bringing GaN Power Devices From Ideas To Simulation, Fabrication, Verification, And Application.",
     "hero.bio1":
       "I am Ping Yu-Chen, also known as Bill Chen. My research starts from GaN Trigate power-device design and extends into TCAD simulation, mask and layout design, E-beam lithography, etch process development, and measurement feedback.",
