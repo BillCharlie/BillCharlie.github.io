@@ -85,9 +85,9 @@ const translations = {
     "experience.clubBody":
       "擔任協會會長兼社團副主席期間，我參與創新創業講座與論壇規劃，邀請創業校友交流，也協助行政執行與學生創新創業計畫活動。",
     "projects.eyebrow": "作品",
-    "projects.title": "小工具與應用",
+    "projects.title": "作品",
     "projects.body":
-      "我喜歡把研究中反覆出現的步驟做成工具：有些用來整理文獻，有些用來協助 EDA 和光罩設計，有些用來追蹤 GaN 產業動態，也有些是我把大學到研究所課程知識整理成圖譜的長期專案。",
+      "我喜歡把可以提升生產效率的項目做成工具：有些用來整理文獻，有些用來協助 EDA 和光罩設計，有些用來追蹤 GaN 產業動態，也有些是我把大學到研究所課程知識整理成圖譜的長期專案；我也結合創業社團的經歷，認識到創業團隊面臨的創業困難，開發了 Blockchain 仕集眾籌系統並申請了多項演算法專利。",
     "projects.chyilab": "把實驗室常用的 EDA、佈局、模擬與研究輔助工具整理成可瀏覽的入口。",
     "projects.gan": "追蹤 GaN 產業新聞、論文、公司動態與市場資訊，用來維持研究方向感。",
     "projects.literature": "本機文獻整理工具，用來管理論文、主題、筆記和閱讀狀態。",
@@ -116,6 +116,11 @@ const translations = {
     "life.tagTravel": "旅行",
     "life.tagModel": "拼模型",
     "life.tagPhoto": "攝影整理",
+    "life.tagPiano": "鋼琴",
+    "life.tagGo": "圍棋",
+    "life.tagConcert": "音樂會",
+    "life.tagMovie": "電影",
+    "life.tagOpera": "歌劇",
     "contact.eyebrow": "聯絡",
     "contact.title": "歡迎交流",
     "contact.body": "如果你也在做 GaN、TCAD、EDA automation、類比 IC 或研究工具，歡迎聯絡我。",
@@ -206,9 +211,9 @@ const translations = {
     "experience.clubBody":
       "As association president and vice chair of the student organization, I helped plan entrepreneurship talks and forums, invited alumni founders, and supported administrative work for student innovation and startup activities.",
     "projects.eyebrow": "Projects",
-    "projects.title": "Tools & Apps",
+    "projects.title": "Works",
     "projects.body":
-      "I like turning repeated research steps into tools: some organize literature, some support EDA and mask design, some monitor GaN industry signals, and some form a long-term knowledge graph from my undergraduate and graduate coursework.",
+      "I like turning productivity-boosting ideas into tools: some organize literature, some support EDA and mask design, some monitor GaN industry signals, and some form a long-term knowledge graph from my undergraduate and graduate coursework. Drawing on my entrepreneurship-club experience and the real difficulties startup teams face, I also built the Blockchain 仕集 crowdfunding system and filed several algorithm patents.",
     "projects.chyilab": "A public entry point for lab EDA, layout, simulation, and research-assistant tools.",
     "projects.gan": "A monitor for GaN industry news, papers, company updates, and market signals.",
     "projects.literature": "A local literature-management tool for papers, topics, notes, and reading status.",
@@ -237,6 +242,11 @@ const translations = {
     "life.tagTravel": "Travel",
     "life.tagModel": "Model kits",
     "life.tagPhoto": "Photo notes",
+    "life.tagPiano": "Piano",
+    "life.tagGo": "Go (Weiqi)",
+    "life.tagConcert": "Concerts",
+    "life.tagMovie": "Movies",
+    "life.tagOpera": "Opera",
     "contact.eyebrow": "Contact",
     "contact.title": "Let’s Talk",
     "contact.body":
