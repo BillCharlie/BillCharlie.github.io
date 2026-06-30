@@ -86,11 +86,11 @@ const translations = {
     "projects.body":
       "我喜歡把可以提升生產效率的項目做成工具：有些用來整理文獻，有些用來協助 EDA 和光罩設計，有些用來追蹤 GaN 產業動態，也有些是我把大學到研究所課程知識整理成圖譜的長期專案；我也結合創業社團的經歷，認識到創業團隊面臨的創業困難，開發了 Blockchain 仕集眾籌系統並申請了多項演算法專利。",
     "projects.chyilabEpi":
-      "MOCVD 磊晶成長 Recipe 設計與管理系統，用來建立流程模組、管理參數與結構堆疊，並輔助磊晶成長序列設計。",
+      "MOCVD 磊晶成長 Recipe 設計工具，用來建立、管理與最佳化晶圓磊晶成長流程。",
     "projects.chyilabLayout":
-      "半導體 Layout Assistant，用來整理元件版圖資料庫、生成量測結構與輸出版本，串接 AI 輔助版圖設計。",
+      "AI 輔助的半導體版圖設計工具，以互動式 session 協助元件 Layout 與量測結構設計。",
     "projects.chyilabRuncard":
-      "製程 Runcard Builder，用來把製程步驟、Recipe、機台與參數整理成可追蹤、可匯出的晶圓製程卡。",
+      "製程 Runcard 生成工具，把晶圓製程步驟整理成結構化 step card，並支援匯出。",
     "projects.chyilabToggle": "展開工具截圖",
     "projects.chyilabOverviewCap": "ChyiLab 三個工具入口總覽",
     "projects.chyilabEpiCap": "MOCVD Recipe Manager 工作流程與結構堆疊",
@@ -222,11 +222,11 @@ const translations = {
     "projects.body":
       "I like turning productivity-boosting ideas into tools: some organize literature, some support EDA and mask design, some monitor GaN industry signals, and some form a long-term knowledge graph from my undergraduate and graduate coursework. Drawing on my entrepreneurship-club experience and the real difficulties startup teams face, I also built the Blockchain 仕集 crowdfunding system and filed several algorithm patents.",
     "projects.chyilabEpi":
-      "A MOCVD epitaxial-growth recipe design and management system for building workflow modules, managing parameters, tracking structure stacks, and supporting growth-sequence design.",
+      "A MOCVD epitaxial-growth recipe designer for building, managing, and optimizing wafer growth sequences.",
     "projects.chyilabLayout":
-      "A semiconductor Layout Assistant for organizing device-layout libraries, generating measurement structures, managing export versions, and using AI to support layout design.",
+      "An AI-powered semiconductor layout design assistant for interactive, session-based device layout and measurement-structure design.",
     "projects.chyilabRuncard":
-      "A process Runcard Builder that turns fabrication steps, recipes, tools, and parameters into traceable wafer-process cards that can be exported.",
+      "A process runcard generation tool that turns wafer fabrication steps into structured step cards and supports export.",
     "projects.chyilabToggle": "Show tool screenshots",
     "projects.chyilabOverviewCap": "ChyiLab three-tool entry overview",
     "projects.chyilabEpiCap": "MOCVD Recipe Manager workflow and structure stack",
