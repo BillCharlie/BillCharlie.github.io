@@ -573,16 +573,25 @@ if (waterCanvas) {
   }
 
   function addRipple(x, y, strength = 1) {
-    ripples.push({
-      x,
-      y,
-      strength,
-      startedAt: performance.now(),
-      life: 1450,
-      maxRadius: 120 + Math.random() * 70,
+    const now = performance.now();
+    const rippleLayers = [
+      { delay: 0, strength: 1, maxRadius: 142 },
+      { delay: 135, strength: 0.72, maxRadius: 184 },
+      { delay: 285, strength: 0.48, maxRadius: 228 },
+    ];
+
+    rippleLayers.forEach((layer) => {
+      ripples.push({
+        x,
+        y,
+        strength: strength * layer.strength,
+        startedAt: now + layer.delay,
+        life: 1720 + layer.delay * 0.55,
+        maxRadius: layer.maxRadius + Math.random() * 34,
+      });
     });
 
-    if (ripples.length > 12) {
+    while (ripples.length > 24) {
       ripples.shift();
     }
   }
@@ -667,27 +676,38 @@ if (waterCanvas) {
       const ripple = ripples[index];
       const progress = (time - ripple.startedAt) / ripple.life;
 
+      if (progress < 0) {
+        continue;
+      }
+
       if (progress >= 1) {
         ripples.splice(index, 1);
         continue;
       }
 
-      const radius = ripple.maxRadius * progress;
-      const alpha = (1 - progress) * 0.28 * ripple.strength;
+      const easedProgress = 1 - (1 - progress) ** 2;
+      const radius = ripple.maxRadius * easedProgress;
+      const alpha = (1 - progress) ** 1.35 * 0.4 * ripple.strength;
 
       waterCtx.save();
       waterCtx.translate(ripple.x, ripple.y);
       waterCtx.scale(1, 0.58);
-      waterCtx.lineWidth = 1.4;
+      waterCtx.lineWidth = 1.85;
       waterCtx.strokeStyle = `rgba(13, 106, 96, ${alpha})`;
       waterCtx.beginPath();
       waterCtx.arc(0, 0, radius, 0, Math.PI * 2);
       waterCtx.stroke();
 
-      waterCtx.lineWidth = 0.8;
-      waterCtx.strokeStyle = `rgba(189, 139, 44, ${alpha * 0.7})`;
+      waterCtx.lineWidth = 1;
+      waterCtx.strokeStyle = `rgba(189, 139, 44, ${alpha * 0.72})`;
       waterCtx.beginPath();
       waterCtx.arc(0, 0, radius * 0.62, 0, Math.PI * 2);
+      waterCtx.stroke();
+
+      waterCtx.lineWidth = 0.72;
+      waterCtx.strokeStyle = `rgba(255, 255, 255, ${alpha * 0.5})`;
+      waterCtx.beginPath();
+      waterCtx.arc(0, 0, radius * 1.18, 0, Math.PI * 2);
       waterCtx.stroke();
       waterCtx.restore();
     }
