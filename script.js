@@ -85,8 +85,17 @@ const translations = {
     "projects.title": "作品",
     "projects.body":
       "我喜歡把可以提升生產效率的項目做成工具：有些用來整理文獻，有些用來協助 EDA 和光罩設計，有些用來追蹤 GaN 產業動態，也有些是我把大學到研究所課程知識整理成圖譜的長期專案；我也結合創業社團的經歷，認識到創業團隊面臨的創業困難，開發了 Blockchain 仕集眾籌系統並申請了多項演算法專利。",
-    "projects.chyilab":
-      "把實驗室 Recipe 設計檔案、元件 Layout 製作設計檔案、Runcard 設計檔案分別製作成三個獨立的設計系統和管理系統，並且串接了 GPT 的 API 輔助設計。",
+    "projects.chyilabEpi":
+      "MOCVD 磊晶成長 Recipe 設計與管理系統，用來建立流程模組、管理參數與結構堆疊，並輔助磊晶成長序列設計。",
+    "projects.chyilabLayout":
+      "半導體 Layout Assistant，用來整理元件版圖資料庫、生成量測結構與輸出版本，串接 AI 輔助版圖設計。",
+    "projects.chyilabRuncard":
+      "製程 Runcard Builder，用來把製程步驟、Recipe、機台與參數整理成可追蹤、可匯出的晶圓製程卡。",
+    "projects.chyilabToggle": "展開工具截圖",
+    "projects.chyilabOverviewCap": "ChyiLab 三個工具入口總覽",
+    "projects.chyilabEpiCap": "MOCVD Recipe Manager 工作流程與結構堆疊",
+    "projects.chyilabLayoutCap": "Layout Assistant 版圖設計工作區",
+    "projects.chyilabRuncardCap": "Process Runcard Builder 製程步驟編排",
     "projects.gan": "追蹤 GaN 產業新聞、論文、公司動態與市場資訊，用來維持研究方向感。",
     "projects.literature": "本機文獻整理工具，用來管理論文、主題、筆記和閱讀狀態。",
     "projects.literatureToggle": "展開介面截圖",
@@ -212,8 +221,17 @@ const translations = {
     "projects.title": "Works",
     "projects.body":
       "I like turning productivity-boosting ideas into tools: some organize literature, some support EDA and mask design, some monitor GaN industry signals, and some form a long-term knowledge graph from my undergraduate and graduate coursework. Drawing on my entrepreneurship-club experience and the real difficulties startup teams face, I also built the Blockchain 仕集 crowdfunding system and filed several algorithm patents.",
-    "projects.chyilab":
-      "A set of three independent design and management systems for lab recipe design files, device layout design files, and Runcard design files, connected with the GPT API for design assistance.",
+    "projects.chyilabEpi":
+      "A MOCVD epitaxial-growth recipe design and management system for building workflow modules, managing parameters, tracking structure stacks, and supporting growth-sequence design.",
+    "projects.chyilabLayout":
+      "A semiconductor Layout Assistant for organizing device-layout libraries, generating measurement structures, managing export versions, and using AI to support layout design.",
+    "projects.chyilabRuncard":
+      "A process Runcard Builder that turns fabrication steps, recipes, tools, and parameters into traceable wafer-process cards that can be exported.",
+    "projects.chyilabToggle": "Show tool screenshots",
+    "projects.chyilabOverviewCap": "ChyiLab three-tool entry overview",
+    "projects.chyilabEpiCap": "MOCVD Recipe Manager workflow and structure stack",
+    "projects.chyilabLayoutCap": "Layout Assistant design workspace",
+    "projects.chyilabRuncardCap": "Process Runcard Builder step planning",
     "projects.gan": "A monitor for GaN industry news, papers, company updates, and market signals.",
     "projects.literature": "A local literature-management tool for papers, topics, notes, and reading status.",
     "projects.literatureToggle": "Show interface screenshots",
