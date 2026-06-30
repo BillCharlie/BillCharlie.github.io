@@ -11,7 +11,7 @@
     <title data-i18n="meta.title">陳秉佑 | Ping Yu-Chen</title>
     <link rel="preload" href="assets/profile-photo.jpg" as="image" />
     <link rel="preload" href="assets/life-cat-hero.jpg" as="image" />
-    <link rel="stylesheet" href="styles.css?v=20260630-ui" />
+    <link rel="stylesheet" href="styles.css?v=20260630-keywords" />
   </head>
   <body>
     <header class="site-header">
@@ -49,14 +49,12 @@
             </p>
           </div>
           <div class="keyword-cloud" aria-label="Research keywords">
-            <span data-i18n="keyword.power">GaN Power FET</span>
-            <span data-i18n="keyword.trigate">Trigate / Narrow-fin</span>
-            <span data-i18n="keyword.tcad">3D TCAD Simulation</span>
-            <span data-i18n="keyword.mask">Mask & Layout Automation</span>
-            <span data-i18n="keyword.process">E-beam / Etch Process</span>
-            <span data-i18n="keyword.ai">AI-assisted Device Development</span>
-            <span data-i18n="keyword.robotics">Robotics Power Electronics</span>
-            <span data-i18n="keyword.energy">High-density Power Conversion</span>
+            <button type="button" data-i18n="keyword.power" data-targets="ai-tcad,process-overview">GaN Power FET</button>
+            <button type="button" data-i18n="keyword.trigate" data-targets="ai-tcad,process-overview">Trigate / Narrow-fin</button>
+            <button type="button" data-i18n="keyword.tcad" data-targets="ai-tcad">3D TCAD Simulation</button>
+            <button type="button" data-i18n="keyword.mask" data-targets="chylab-tools">Mask & Layout Automation</button>
+            <button type="button" data-i18n="keyword.process" data-targets="ebeam-principle,ebeam-checklist,etch-sem,etch-doe">E-beam / Etch Process</button>
+            <button type="button" data-i18n="keyword.ai" data-targets="ai-tcad">AI-assisted Device Development</button>
           </div>
           <div class="hero-actions">
             <a class="button primary" href="#research" data-i18n="hero.ctaResearch">研究內容</a>
@@ -116,27 +114,27 @@
 
         <div class="report-panel" id="reports">
           <div class="report-grid">
-            <figure>
+            <figure data-highlight-id="ai-tcad">
               <img src="assets/slides/ai-tcad-framework.png" alt="AI-guided TCAD optimization framework for GaN Trigate devices" loading="lazy" decoding="async" />
               <figcaption>AI-guided TCAD optimization framework</figcaption>
             </figure>
-            <figure>
+            <figure data-highlight-id="process-overview">
               <img src="assets/process-slides/process-overview.jpg" alt="D-mode and E-mode GaN process flow overview" loading="lazy" decoding="async" />
               <figcaption data-i18n="notes.capProcess">D-mode / E-mode GaN 製程流程</figcaption>
             </figure>
-            <figure>
+            <figure data-highlight-id="ebeam-principle">
               <img src="assets/process-slides/ebeam-principle.jpg" alt="E-beam lithography process issues from writing to pattern transfer" loading="lazy" decoding="async" />
               <figcaption data-i18n="notes.capEbeam1">E-beam lithography：dose、density、resist 與 transfer 共同決定 CD</figcaption>
             </figure>
-            <figure>
+            <figure data-highlight-id="ebeam-checklist">
               <img src="assets/process-slides/ebeam-checklist.jpg" alt="Practical E-beam lithography checklist before changing dose development PEC or hardmask" loading="lazy" decoding="async" />
               <figcaption data-i18n="notes.capEbeam2">E-beam checklist：先分辨問題來源，再改變 recipe</figcaption>
             </figure>
-            <figure>
+            <figure data-highlight-id="etch-sem">
               <img src="assets/process-slides/etch-sem-diagnosis.jpg" alt="Etch SEM signature diagnosis table for lithography and transfer issues" loading="lazy" decoding="async" />
               <figcaption data-i18n="notes.capEtch1">Etch / SEM signature：區分 exposure、development 與 transfer 問題</figcaption>
             </figure>
-            <figure>
+            <figure data-highlight-id="etch-doe">
               <img src="assets/process-slides/etch-doe.jpg" alt="Recommended etch DOE flow for pressure gas chemistry and bias after fixing CD and mask baseline" loading="lazy" decoding="async" />
               <figcaption data-i18n="notes.capEtch2">Etch DOE：固定 CD / mask baseline 後再拆 pressure、gas、bias</figcaption>
             </figure>
@@ -286,7 +284,7 @@
           <div class="project-subsection">
             <h3 data-i18n="projects.toolsHeading">工具開發</h3>
           </div>
-          <article class="project-card chylab-suite-card">
+          <article class="project-card chylab-suite-card" data-highlight-id="chylab-tools">
             <div class="project-heading-row">
               <div>
                 <p class="tag">ChyiLab · EDA Tools</p>
@@ -507,6 +505,6 @@
       <p>© <span id="year"></span> <span data-i18n="footer.name">陳秉佑 / Ping Yu-Chen / Bill Chen</span></p>
     </footer>
 
-    <script src="script.js?v=20260630-ui"></script>
+    <script src="script.js?v=20260630-keywords"></script>
   </body>
 </html>

@@ -30,8 +30,6 @@ const translations = {
     "keyword.mask": "光罩與佈局自動化",
     "keyword.process": "E-beam / 蝕刻製程",
     "keyword.ai": "AI 輔助元件開發",
-    "keyword.robotics": "機器人電力電子",
-    "keyword.energy": "高密度能源轉換",
     "hero.ctaResearch": "研究內容",
     "hero.ctaProjects": "工具與作品",
     "research.eyebrow": "元件研究",
@@ -176,8 +174,6 @@ const translations = {
     "keyword.mask": "Mask & Layout Automation",
     "keyword.process": "E-beam / Etch Process",
     "keyword.ai": "AI-assisted Device Development",
-    "keyword.robotics": "Robotics Power Electronics",
-    "keyword.energy": "High-density Power Conversion",
     "hero.ctaResearch": "Research",
     "hero.ctaProjects": "Tools & Projects",
     "research.eyebrow": "Device Research",
@@ -440,7 +436,48 @@ if ("IntersectionObserver" in window) {
 }
 
 const keywordCloud = document.querySelector(".keyword-cloud");
-const keywordItems = keywordCloud ? Array.from(keywordCloud.querySelectorAll("span")) : [];
+const keywordItems = keywordCloud ? Array.from(keywordCloud.querySelectorAll("button")) : [];
+const highlightDuration = 3600;
+let highlightTimer;
+
+function highlightKeywordTargets(trigger, targetIds) {
+  const targets = targetIds
+    .map((id) => document.querySelector(`[data-highlight-id="${id}"]`))
+    .filter(Boolean);
+
+  if (!targets.length) {
+    return;
+  }
+
+  window.clearTimeout(highlightTimer);
+  keywordItems.forEach((item) => item.classList.toggle("is-keyword-active", item === trigger));
+  document.querySelectorAll(".is-keyword-highlight").forEach((item) => {
+    item.classList.remove("is-keyword-highlight");
+  });
+
+  targets.forEach((target) => {
+    target.classList.add("is-visible");
+    target.classList.add("is-keyword-highlight");
+  });
+
+  targets[0].scrollIntoView({ behavior: "smooth", block: "center" });
+
+  highlightTimer = window.setTimeout(() => {
+    targets.forEach((target) => target.classList.remove("is-keyword-highlight"));
+    keywordItems.forEach((item) => item.classList.remove("is-keyword-active"));
+  }, highlightDuration);
+}
+
+keywordItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    const targetIds = (item.dataset.targets || "")
+      .split(",")
+      .map((id) => id.trim())
+      .filter(Boolean);
+
+    highlightKeywordTargets(item, targetIds);
+  });
+});
 
 if (keywordCloud && keywordItems.length && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   keywordCloud.addEventListener("pointermove", (event) => {
