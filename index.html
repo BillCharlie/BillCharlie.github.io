@@ -10,6 +10,7 @@
     />
     <title data-i18n="meta.title">陳秉佑 | Ping Yu-Chen</title>
     <link rel="preload" href="assets/profile-photo.jpg" as="image" />
+    <link rel="preload" href="assets/life-cat-hero.jpg" as="image" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -70,12 +71,14 @@
           aria-label="查看可愛貓貓（coba&小秋）"
           data-i18n-attr="aria-label:photoStack.toggle"
         >
-          <img class="portrait" src="assets/profile-photo.jpg" alt="陳秉佑個人照片" data-i18n-attr="alt:alt.profile" />
+          <img class="portrait" src="assets/profile-photo.jpg" alt="陳秉佑個人照片" data-i18n-attr="alt:alt.profile" decoding="async" fetchpriority="high" />
           <img
             class="slide-peek"
-            src="assets/life-cat.jpg"
+            src="assets/life-cat-hero.jpg"
             alt="陳秉佑養的兩隻貓咪"
             data-i18n-attr="alt:alt.cats"
+            decoding="async"
+            fetchpriority="high"
           />
           <span class="stack-hint" aria-hidden="true" data-i18n="photoStack.hint">查看可愛貓貓（coba&小秋）</span>
         </button>
@@ -114,27 +117,27 @@
         <div class="report-panel" id="reports">
           <div class="report-grid">
             <figure>
-              <img src="assets/slides/ai-tcad-framework.png" alt="AI-guided TCAD optimization framework for GaN Trigate devices" />
+              <img src="assets/slides/ai-tcad-framework.png" alt="AI-guided TCAD optimization framework for GaN Trigate devices" loading="lazy" decoding="async" />
               <figcaption>AI-guided TCAD optimization framework</figcaption>
             </figure>
             <figure>
-              <img src="assets/process-slides/process-overview.jpg" alt="D-mode and E-mode GaN process flow overview" />
+              <img src="assets/process-slides/process-overview.jpg" alt="D-mode and E-mode GaN process flow overview" loading="lazy" decoding="async" />
               <figcaption data-i18n="notes.capProcess">D-mode / E-mode GaN 製程流程</figcaption>
             </figure>
             <figure>
-              <img src="assets/process-slides/ebeam-principle.jpg" alt="E-beam lithography process issues from writing to pattern transfer" />
+              <img src="assets/process-slides/ebeam-principle.jpg" alt="E-beam lithography process issues from writing to pattern transfer" loading="lazy" decoding="async" />
               <figcaption data-i18n="notes.capEbeam1">E-beam lithography：dose、density、resist 與 transfer 共同決定 CD</figcaption>
             </figure>
             <figure>
-              <img src="assets/process-slides/ebeam-checklist.jpg" alt="Practical E-beam lithography checklist before changing dose development PEC or hardmask" />
+              <img src="assets/process-slides/ebeam-checklist.jpg" alt="Practical E-beam lithography checklist before changing dose development PEC or hardmask" loading="lazy" decoding="async" />
               <figcaption data-i18n="notes.capEbeam2">E-beam checklist：先分辨問題來源，再改變 recipe</figcaption>
             </figure>
             <figure>
-              <img src="assets/process-slides/etch-sem-diagnosis.jpg" alt="Etch SEM signature diagnosis table for lithography and transfer issues" />
+              <img src="assets/process-slides/etch-sem-diagnosis.jpg" alt="Etch SEM signature diagnosis table for lithography and transfer issues" loading="lazy" decoding="async" />
               <figcaption data-i18n="notes.capEtch1">Etch / SEM signature：區分 exposure、development 與 transfer 問題</figcaption>
             </figure>
             <figure>
-              <img src="assets/process-slides/etch-doe.jpg" alt="Recommended etch DOE flow for pressure gas chemistry and bias after fixing CD and mask baseline" />
+              <img src="assets/process-slides/etch-doe.jpg" alt="Recommended etch DOE flow for pressure gas chemistry and bias after fixing CD and mask baseline" loading="lazy" decoding="async" />
               <figcaption data-i18n="notes.capEtch2">Etch DOE：固定 CD / mask baseline 後再拆 pressure、gas、bias</figcaption>
             </figure>
           </div>
@@ -206,11 +209,11 @@
             </div>
             <div class="experience-media double">
               <figure>
-                <img src="assets/experience/sic-simulation.jpg" alt="SiC VDMOS process and structure simulation slide" />
+                <img src="assets/experience/sic-simulation.jpg" alt="SiC VDMOS process and structure simulation slide" loading="lazy" decoding="async" />
                 <figcaption data-i18n="experience.sicCap1">VDMOS 製程與結構模擬整理</figcaption>
               </figure>
               <figure>
-                <img src="assets/experience/sic-testing.jpg" alt="SiC MOSFET high temperature and electrical test platform slide" />
+                <img src="assets/experience/sic-testing.jpg" alt="SiC MOSFET high temperature and electrical test platform slide" loading="lazy" decoding="async" />
                 <figcaption data-i18n="experience.sicCap2">高溫加熱與電學測試平台</figcaption>
               </figure>
             </div>
@@ -228,14 +231,16 @@
             <div class="experience-media double">
               <figure>
                 <img
-                  src="assets/Plan.png"
+                  src="assets/Plan-preview.jpg"
                   alt="Summer Management Trainee Internship program plan at USI"
                   data-i18n-attr="alt:experience.usiAltPlan"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <figcaption data-i18n="experience.usiCap1">價值流與標準工時表整理</figcaption>
               </figure>
               <figure>
-                <img src="assets/SMT.png" alt="SMT process workflow" data-i18n-attr="alt:experience.usiAltSmt" />
+                <img src="assets/SMT.png" alt="SMT process workflow" data-i18n-attr="alt:experience.usiAltSmt" loading="lazy" decoding="async" />
                 <figcaption data-i18n="experience.usiCap2">SMT 製程工藝與站點流程</figcaption>
               </figure>
             </div>
@@ -243,7 +248,7 @@
 
           <article class="experience-card">
             <figure class="experience-photo">
-              <img src="assets/experience/blockchain-presentation.jpg" alt="Blockchain studio project presentation" />
+              <img src="assets/experience/blockchain-presentation.jpg" alt="Blockchain studio project presentation" loading="lazy" decoding="async" />
             </figure>
             <div class="experience-copy">
               <p class="tag">Blockchain · Founder · Frontend</p>
@@ -256,7 +261,7 @@
 
           <article class="experience-card">
             <figure class="experience-photo">
-              <img src="assets/experience/club-group.jpg" alt="Student entrepreneurship association group photo" />
+              <img src="assets/experience/club-group.jpg" alt="Student entrepreneurship association group photo" loading="lazy" decoding="async" />
             </figure>
             <div class="experience-copy">
               <p class="tag">Student Association · Events</p>
@@ -298,7 +303,7 @@
                   <summary data-i18n="projects.chyilabToggle">展開工具截圖</summary>
                   <div class="literature-gallery chylab-gallery">
                     <figure>
-                      <img src="assets/projects/chylab-epi-manager.png" alt="MOCVD Recipe Manager 工作流程與結構堆疊介面" />
+                      <img src="assets/projects/chylab-epi-manager.png" alt="MOCVD Recipe Manager 工作流程與結構堆疊介面" loading="lazy" decoding="async" />
                       <figcaption data-i18n="projects.chyilabEpiCap">MOCVD Recipe Manager 工作流程與結構堆疊</figcaption>
                     </figure>
                   </div>
@@ -312,7 +317,7 @@
                   <summary data-i18n="projects.chyilabToggle">展開工具截圖</summary>
                   <div class="literature-gallery chylab-gallery">
                     <figure>
-                      <img src="assets/projects/chylab-layout-assistant.png" alt="Layout Assistant 版圖設計工作區介面" />
+                      <img src="assets/projects/chylab-layout-assistant.png" alt="Layout Assistant 版圖設計工作區介面" loading="lazy" decoding="async" />
                       <figcaption data-i18n="projects.chyilabLayoutCap">Layout Assistant 版圖設計工作區</figcaption>
                     </figure>
                   </div>
@@ -326,7 +331,7 @@
                   <summary data-i18n="projects.chyilabToggle">展開工具截圖</summary>
                   <div class="literature-gallery chylab-gallery">
                     <figure>
-                      <img src="assets/projects/chylab-runcard-builder.png" alt="Process Runcard Builder 製程步驟編排介面" />
+                      <img src="assets/projects/chylab-runcard-builder.png" alt="Process Runcard Builder 製程步驟編排介面" loading="lazy" decoding="async" />
                       <figcaption data-i18n="projects.chyilabRuncardCap">Process Runcard Builder 製程步驟編排</figcaption>
                     </figure>
                   </div>
@@ -352,15 +357,15 @@
               <summary data-i18n="projects.knowledgeToggle">展開介面截圖</summary>
               <div class="literature-gallery knowledge-gallery">
                 <figure>
-                  <img src="assets/projects/knowledge-library.png" alt="Knowledge-map 半導體知識圖譜學習資料知識庫介面" />
+                  <img src="assets/projects/knowledge-library.png" alt="Knowledge-map 半導體知識圖譜學習資料知識庫介面" loading="lazy" decoding="async" />
                   <figcaption data-i18n="projects.knowledgeCap1">學習資料知識庫與半導體知識圖譜入口</figcaption>
                 </figure>
                 <figure>
-                  <img src="assets/projects/knowledge-graph.png" alt="Knowledge-map 半導體關係圖譜節點網路介面" />
+                  <img src="assets/projects/knowledge-graph.png" alt="Knowledge-map 半導體關係圖譜節點網路介面" loading="lazy" decoding="async" />
                   <figcaption data-i18n="projects.knowledgeCap2">半導體、電路與製程概念的關係圖譜</figcaption>
                 </figure>
                 <figure>
-                  <img src="assets/projects/knowledge-preview.png" alt="Knowledge-map 課程 PDF 預覽與資料目錄介面" />
+                  <img src="assets/projects/knowledge-preview.png" alt="Knowledge-map 課程 PDF 預覽與資料目錄介面" loading="lazy" decoding="async" />
                   <figcaption data-i18n="projects.knowledgeCap3">課程資料、PDF 預覽與知識節點整理</figcaption>
                 </figure>
               </div>
@@ -374,19 +379,19 @@
               <summary data-i18n="projects.literatureToggle">展開介面截圖</summary>
               <div class="literature-gallery">
                 <figure>
-                  <img src="assets/projects/literature-manager-library.png" alt="Literature Manager 文獻庫、AI 搜尋與右側摘要欄介面" />
+                  <img src="assets/projects/literature-manager-library.png" alt="Literature Manager 文獻庫、AI 搜尋與右側摘要欄介面" loading="lazy" decoding="async" />
                   <figcaption data-i18n="projects.literatureCap1">文獻庫、AI 搜尋與右側摘要欄</figcaption>
                 </figure>
                 <figure>
-                  <img src="assets/projects/literature-manager-pdf.png" alt="Literature Manager PDF 預覽與筆記欄介面" />
+                  <img src="assets/projects/literature-manager-pdf.png" alt="Literature Manager PDF 預覽與筆記欄介面" loading="lazy" decoding="async" />
                   <figcaption data-i18n="projects.literatureCap2">PDF 預覽、摘要、創新點與備註整理</figcaption>
                 </figure>
                 <figure>
-                  <img src="assets/projects/literature-manager-report.png" alt="Literature Manager 精讀報告雙 PDF 對照介面" />
+                  <img src="assets/projects/literature-manager-report.png" alt="Literature Manager 精讀報告雙 PDF 對照介面" loading="lazy" decoding="async" />
                   <figcaption data-i18n="projects.literatureCap3">精讀報告與論文對照閱讀</figcaption>
                 </figure>
                 <figure>
-                  <img src="assets/projects/literature-manager-weekly.png" alt="Literature Manager 週報文獻整理表格介面" />
+                  <img src="assets/projects/literature-manager-weekly.png" alt="Literature Manager 週報文獻整理表格介面" loading="lazy" decoding="async" />
                   <figcaption data-i18n="projects.literatureCap4">週報文獻分組與閱讀進度整理</figcaption>
                 </figure>
               </div>
@@ -466,19 +471,19 @@
         </div>
         <div class="life-grid">
           <figure>
-            <img src="assets/life-graduation.jpg" alt="University life and graduation collage" />
+            <img src="assets/life-graduation.jpg" alt="University life and graduation collage" loading="lazy" decoding="async" />
             <figcaption>University days</figcaption>
           </figure>
           <figure>
-            <img src="assets/life-mountain.jpg" alt="Mountain travel collage" />
+            <img src="assets/life-mountain.jpg" alt="Mountain travel collage" loading="lazy" decoding="async" />
             <figcaption>Mountains and roads</figcaption>
           </figure>
           <figure>
-            <img src="assets/life-city.jpg" alt="City travel and food collage" />
+            <img src="assets/life-city.jpg" alt="City travel and food collage" loading="lazy" decoding="async" />
             <figcaption>City walks</figcaption>
           </figure>
           <figure>
-            <img src="assets/life-landscape.jpg" alt="Landscape and travel collage" />
+            <img src="assets/life-landscape.jpg" alt="Landscape and travel collage" loading="lazy" decoding="async" />
             <figcaption>Landscape notes</figcaption>
           </figure>
         </div>
