@@ -69,7 +69,7 @@ const translations = {
     "experience.eyebrow": "經歷",
     "experience.title": "經歷",
     "experience.body":
-      "除了目前的 GaN Trigate 研究，我也做過 SiC VDMOS 高溫特性專題、區塊鏈工作室創建，以及學生創業社團的活動規劃。這些經歷讓我更習慣把技術放在實用產業可行性的角度思考。",
+      "除了目前的 GaN Trigate 研究，我也做過 SiC VDMOS 高溫特性研究、實戰過工業工程生產管理基本方法、認識SMT封測技術、區塊鏈工作室創建，以及學生創業社團的活動規劃。這些經歷讓我更習慣把技術放在實用產業可行性的角度思考。",
     "experience.sicTitle": "大學畢業論文：大功率元件 SiC MOSFET 高溫特性研究",
     "experience.sicBody":
       "獨立完成以 TCAD Sentaurus 進行 SiC VDMOSFET 元件模擬，調整結構參數並設計 VDMOS 光罩製程設計；以及 CV、IV、double pulse 等特性量測整理。",
