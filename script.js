@@ -75,6 +75,13 @@ const translations = {
       "獨立完成以 TCAD Sentaurus 進行 SiC VDMOSFET 元件模擬，調整結構參數並設計 VDMOS 光罩製程設計；以及 CV、IV、double pulse 等特性量測整理。",
     "experience.sicCap1": "VDMOS 製程與結構模擬整理",
     "experience.sicCap2": "高溫加熱與電學測試平台",
+    "experience.usiTitle": "日月光集團 USI 環旭電子暑期實習",
+    "experience.usiBody":
+      "參與 Summer Management Trainee Internship，學習 SMT 封測生產流程與關鍵站點功能，整理價值流與標準工時資料，並以精益生產方法製作製造專案管理報表。",
+    "experience.usiCap1": "價值流與標準工時表整理",
+    "experience.usiCap2": "SMT 製程工藝與站點流程",
+    "experience.usiAltPlan": "USI 暑期管理培訓實習計畫與專案規劃",
+    "experience.usiAltSmt": "SMT 製程工藝與站點流程圖",
     "experience.blockchainTitle": "仕集區塊鏈工作室",
     "experience.blockchainBody":
       "作為工作室創辦人，我負責區塊鏈底層系統架構、共識演算法開發，以及 UI 設計與前端 JavaScript 框架搭建。這段經歷讓我很早就開始把技術實作、產品呈現和團隊溝通放在一起做。",
@@ -140,8 +147,8 @@ const translations = {
     "alt.profile": "陳秉佑個人照片",
     "alt.tcadSlide": "GaN Trigate AI-TCAD 研究投影片",
     "alt.cats": "陳秉佑養的兩隻貓咪",
-    "photoStack.toggle": "切換前後照片",
-    "photoStack.hint": "點擊切換前後照片",
+    "photoStack.toggle": "查看可愛貓貓（coba&小秋）",
+    "photoStack.hint": "查看可愛貓貓（coba&小秋）",
   },
   en: {
     "meta.title": "Ping Yu-Chen | Bill Chen",
@@ -213,6 +220,13 @@ const translations = {
       "Independently carried out SiC VDMOSFET device simulation with TCAD Sentaurus, tuning structural parameters and designing the VDMOS mask and process flow, along with organizing CV, IV, and double-pulse measurement work.",
     "experience.sicCap1": "VDMOS process and structure simulation notes",
     "experience.sicCap2": "High-temperature and electrical test platforms",
+    "experience.usiTitle": "USI / ASE Group Summer Management Trainee Internship",
+    "experience.usiBody":
+      "Joined the Summer Management Trainee Internship at USI, ASE Group, learning SMT production flows, key station functions, lean production methods, value-stream mapping, standard work-hour tracking, and manufacturing project management reporting.",
+    "experience.usiCap1": "Value-stream mapping and standard work-hour table",
+    "experience.usiCap2": "SMT process flow and station workflow",
+    "experience.usiAltPlan": "USI summer management trainee internship plan and project planning",
+    "experience.usiAltSmt": "SMT process flow and station workflow diagram",
     "experience.blockchainTitle": "Shiji Blockchain Studio",
     "experience.blockchainBody":
       "As the studio founder, I worked on the underlying blockchain system architecture, consensus algorithm development, UI design, and the frontend JavaScript framework. It was an early experience in connecting implementation, product presentation, and team communication.",
@@ -279,8 +293,8 @@ const translations = {
     "alt.profile": "Portrait of Ping Yu-Chen",
     "alt.tcadSlide": "GaN Trigate AI-TCAD research slide",
     "alt.cats": "Ping Yu-Chen's two cats",
-    "photoStack.toggle": "Swap front and back photos",
-    "photoStack.hint": "Tap to swap the photos",
+    "photoStack.toggle": "View the cute cats (coba & Xiao-Qiu)",
+    "photoStack.hint": "View the cute cats (coba & Xiao-Qiu)",
   },
 };
 
