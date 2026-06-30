@@ -81,10 +81,12 @@ const translations = {
     "experience.clubTitle": "創業者協會與學生創業中心社團",
     "experience.clubBody":
       "擔任協會會長兼社團副主席期間，我參與創新創業講座與論壇規劃，邀請創業校友交流，也協助行政執行與學生創新創業計畫活動。",
-    "projects.eyebrow": "作品",
-    "projects.title": "作品",
+    "projects.eyebrow": "工具開發與專利",
+    "projects.title": "工具開發與專利",
     "projects.body":
       "我喜歡把可以提升生產效率的項目做成工具：有些用來整理文獻，有些用來協助 EDA 和光罩設計，有些用來追蹤 GaN 產業動態，也有些是我把大學到研究所課程知識整理成圖譜的長期專案；我也結合創業社團的經歷，認識到創業團隊面臨的創業困難，開發了 Blockchain 仕集眾籌系統並申請了多項演算法專利。",
+    "projects.toolsHeading": "工具開發",
+    "projects.patentsHeading": "專利",
     "projects.chyilabEpi":
       "MOCVD 磊晶成長 Recipe 設計工具，用來建立、管理與最佳化晶圓磊晶成長流程。",
     "projects.chyilabLayout":
@@ -217,10 +219,12 @@ const translations = {
     "experience.clubTitle": "Entrepreneurship Association And Student Startup Center",
     "experience.clubBody":
       "As association president and vice chair of the student organization, I helped plan entrepreneurship talks and forums, invited alumni founders, and supported administrative work for student innovation and startup activities.",
-    "projects.eyebrow": "Projects",
-    "projects.title": "Works",
+    "projects.eyebrow": "Tool Development & Patents",
+    "projects.title": "Tool Development & Patents",
     "projects.body":
       "I like turning productivity-boosting ideas into tools: some organize literature, some support EDA and mask design, some monitor GaN industry signals, and some form a long-term knowledge graph from my undergraduate and graduate coursework. Drawing on my entrepreneurship-club experience and the real difficulties startup teams face, I also built the Blockchain 仕集 crowdfunding system and filed several algorithm patents.",
+    "projects.toolsHeading": "Tool Development",
+    "projects.patentsHeading": "Patents",
     "projects.chyilabEpi":
       "A MOCVD epitaxial-growth recipe designer for building, managing, and optimizing wafer growth sequences.",
     "projects.chyilabLayout":

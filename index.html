@@ -244,14 +244,17 @@
 
       <section class="section tool-section" id="projects">
         <div class="section-title">
-          <p class="eyebrow" data-i18n="projects.eyebrow">作品</p>
-          <h2 data-i18n="projects.title">作品</h2>
+          <p class="eyebrow" data-i18n="projects.eyebrow">工具開發與專利</p>
+          <h2 data-i18n="projects.title">工具開發與專利</h2>
           <p data-i18n="projects.body">
             我喜歡把可以提升生產效率的項目做成工具：有些用來整理文獻，有些用來協助 EDA 和光罩設計，有些用來追蹤 GaN 產業動態，也有些是我把大學到研究所課程知識整理成圖譜的長期專案；我也結合創業社團的經歷，認識到創業團隊面臨的創業困難，開發了 Blockchain 仕集眾籌系統並申請了多項演算法專利。
           </p>
         </div>
         <div class="project-grid">
-          <article class="project-card chylab-overview-card">
+          <div class="project-subsection">
+            <h3 data-i18n="projects.toolsHeading">工具開發</h3>
+          </div>
+          <article class="project-card chylab-suite-card">
             <div class="project-heading-row">
               <div>
                 <p class="tag">ChyiLab · EDA Tools</p>
@@ -259,52 +262,50 @@
               </div>
               <a href="https://billcharlie.github.io/ChyiLab/" data-i18n="projects.openSite">前往網站</a>
             </div>
-            <figure class="suite-preview">
-              <img src="assets/projects/chylab-overview.png" alt="ChyiLab EDA Tools 三個工具入口總覽" />
-              <figcaption data-i18n="projects.chyilabOverviewCap">ChyiLab 三個工具入口總覽</figcaption>
-            </figure>
-          </article>
-          <article class="project-card chylab-tool-card epi-card">
-            <p class="tag">ChyiLab · MOCVD</p>
-            <h3>EPI Recipe Builder</h3>
-            <p data-i18n="projects.chyilabEpi">MOCVD 磊晶成長 Recipe 設計工具，用來建立、管理與最佳化晶圓磊晶成長流程。</p>
-            <details class="project-demo chylab-demo">
-              <summary data-i18n="projects.chyilabToggle">展開工具截圖</summary>
-              <div class="literature-gallery chylab-gallery">
-                <figure>
-                  <img src="assets/projects/chylab-epi-manager.png" alt="MOCVD Recipe Manager 工作流程與結構堆疊介面" />
-                  <figcaption data-i18n="projects.chyilabEpiCap">MOCVD Recipe Manager 工作流程與結構堆疊</figcaption>
-                </figure>
+            <div class="chylab-nested-grid">
+              <div class="nested-tool-card epi-card">
+                <p class="tag">ChyiLab · MOCVD</p>
+                <h3>EPI Recipe Builder</h3>
+                <p data-i18n="projects.chyilabEpi">MOCVD 磊晶成長 Recipe 設計工具，用來建立、管理與最佳化晶圓磊晶成長流程。</p>
+                <details class="project-demo chylab-demo">
+                  <summary data-i18n="projects.chyilabToggle">展開工具截圖</summary>
+                  <div class="literature-gallery chylab-gallery">
+                    <figure>
+                      <img src="assets/projects/chylab-epi-manager.png" alt="MOCVD Recipe Manager 工作流程與結構堆疊介面" />
+                      <figcaption data-i18n="projects.chyilabEpiCap">MOCVD Recipe Manager 工作流程與結構堆疊</figcaption>
+                    </figure>
+                  </div>
+                </details>
               </div>
-            </details>
-          </article>
-          <article class="project-card chylab-tool-card layout-card">
-            <p class="tag">ChyiLab · Layout</p>
-            <h3>Layout Assistant</h3>
-            <p data-i18n="projects.chyilabLayout">AI 輔助的半導體版圖設計工具，以互動式 session 協助元件 Layout 與量測結構設計。</p>
-            <details class="project-demo chylab-demo">
-              <summary data-i18n="projects.chyilabToggle">展開工具截圖</summary>
-              <div class="literature-gallery chylab-gallery">
-                <figure>
-                  <img src="assets/projects/chylab-layout-assistant.png" alt="Layout Assistant 版圖設計工作區介面" />
-                  <figcaption data-i18n="projects.chyilabLayoutCap">Layout Assistant 版圖設計工作區</figcaption>
-                </figure>
+              <div class="nested-tool-card layout-card">
+                <p class="tag">ChyiLab · Layout</p>
+                <h3>Layout Assistant</h3>
+                <p data-i18n="projects.chyilabLayout">AI 輔助的半導體版圖設計工具，以互動式 session 協助元件 Layout 與量測結構設計。</p>
+                <details class="project-demo chylab-demo">
+                  <summary data-i18n="projects.chyilabToggle">展開工具截圖</summary>
+                  <div class="literature-gallery chylab-gallery">
+                    <figure>
+                      <img src="assets/projects/chylab-layout-assistant.png" alt="Layout Assistant 版圖設計工作區介面" />
+                      <figcaption data-i18n="projects.chyilabLayoutCap">Layout Assistant 版圖設計工作區</figcaption>
+                    </figure>
+                  </div>
+                </details>
               </div>
-            </details>
-          </article>
-          <article class="project-card chylab-tool-card runcard-card">
-            <p class="tag">ChyiLab · Process</p>
-            <h3>Runcard Builder</h3>
-            <p data-i18n="projects.chyilabRuncard">製程 Runcard 生成工具，把晶圓製程步驟整理成結構化 step card，並支援匯出。</p>
-            <details class="project-demo chylab-demo">
-              <summary data-i18n="projects.chyilabToggle">展開工具截圖</summary>
-              <div class="literature-gallery chylab-gallery">
-                <figure>
-                  <img src="assets/projects/chylab-runcard-builder.png" alt="Process Runcard Builder 製程步驟編排介面" />
-                  <figcaption data-i18n="projects.chyilabRuncardCap">Process Runcard Builder 製程步驟編排</figcaption>
-                </figure>
+              <div class="nested-tool-card runcard-card">
+                <p class="tag">ChyiLab · Process</p>
+                <h3>Runcard Builder</h3>
+                <p data-i18n="projects.chyilabRuncard">製程 Runcard 生成工具，把晶圓製程步驟整理成結構化 step card，並支援匯出。</p>
+                <details class="project-demo chylab-demo">
+                  <summary data-i18n="projects.chyilabToggle">展開工具截圖</summary>
+                  <div class="literature-gallery chylab-gallery">
+                    <figure>
+                      <img src="assets/projects/chylab-runcard-builder.png" alt="Process Runcard Builder 製程步驟編排介面" />
+                      <figcaption data-i18n="projects.chyilabRuncardCap">Process Runcard Builder 製程步驟編排</figcaption>
+                    </figure>
+                  </div>
+                </details>
               </div>
-            </details>
+            </div>
           </article>
           <article class="project-card gan-card">
             <div class="project-heading-row">
@@ -318,21 +319,21 @@
           </article>
           <article class="project-card knowledge-card">
             <p class="tag">Personal knowledge graph</p>
-            <h3>Knowledge</h3>
+            <h3>Knowledge-map</h3>
             <p data-i18n="projects.knowledge">我從大學到研究所課程建立的個人知識圖譜，連接半導體、電子電路、製程、模擬和研究筆記。</p>
             <details class="project-demo">
               <summary data-i18n="projects.knowledgeToggle">展開介面截圖</summary>
               <div class="literature-gallery knowledge-gallery">
                 <figure>
-                  <img src="assets/projects/knowledge-library.png" alt="Knowledge 半導體知識圖譜學習資料知識庫介面" />
+                  <img src="assets/projects/knowledge-library.png" alt="Knowledge-map 半導體知識圖譜學習資料知識庫介面" />
                   <figcaption data-i18n="projects.knowledgeCap1">學習資料知識庫與半導體知識圖譜入口</figcaption>
                 </figure>
                 <figure>
-                  <img src="assets/projects/knowledge-graph.png" alt="Knowledge 半導體關係圖譜節點網路介面" />
+                  <img src="assets/projects/knowledge-graph.png" alt="Knowledge-map 半導體關係圖譜節點網路介面" />
                   <figcaption data-i18n="projects.knowledgeCap2">半導體、電路與製程概念的關係圖譜</figcaption>
                 </figure>
                 <figure>
-                  <img src="assets/projects/knowledge-preview.png" alt="Knowledge 課程 PDF 預覽與資料目錄介面" />
+                  <img src="assets/projects/knowledge-preview.png" alt="Knowledge-map 課程 PDF 預覽與資料目錄介面" />
                   <figcaption data-i18n="projects.knowledgeCap3">課程資料、PDF 預覽與知識節點整理</figcaption>
                 </figure>
               </div>
@@ -364,6 +365,9 @@
               </div>
             </details>
           </article>
+          <div class="project-subsection patent-subsection">
+            <h3 data-i18n="projects.patentsHeading">專利</h3>
+          </div>
           <article class="project-card">
             <p class="tag">Patent · Mechanical design</p>
             <h3 data-i18n="projects.mechPatentTitle">具防護功能的自動化設備機架</h3>
