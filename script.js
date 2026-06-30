@@ -47,7 +47,7 @@ const translations = {
     "research.li3":
       "把 TCAD 結果轉成光罩佈局、測試結構與每道製程的 Runcard，並拆解 E-beam dose、PEC、development、hardmask transfer、ICP-RIE etch profile 與 process window。",
     "research.li4": "ICP-RIE pressure、gas chemistry、bias power 與 etch selectivity 的 window 設計。",
-    "research.cardMeasureTitle": "量測回饋與動態特性",
+    "research.cardMeasureTitle": "靜態與動態特性量測",
     "research.li5":
       "規劃 TLM、HBD/VBD、Id-Vg、Id-Vd、Ig-Vg、breakdown、高頻 C-V 與雙脈衝動態特性量測，將實驗結果回饋到下一輪元件設計與製程條件。",
     "notes.capProcess": "D-mode / E-mode GaN 製程流程",
