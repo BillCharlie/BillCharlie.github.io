@@ -85,7 +85,8 @@ const translations = {
     "projects.title": "作品",
     "projects.body":
       "我喜歡把可以提升生產效率的項目做成工具：有些用來整理文獻，有些用來協助 EDA 和光罩設計，有些用來追蹤 GaN 產業動態，也有些是我把大學到研究所課程知識整理成圖譜的長期專案；我也結合創業社團的經歷，認識到創業團隊面臨的創業困難，開發了 Blockchain 仕集眾籌系統並申請了多項演算法專利。",
-    "projects.chyilab": "把實驗室常用的 EDA、佈局、模擬與研究輔助工具整理成可瀏覽的入口。",
+    "projects.chyilab":
+      "把實驗室 Recipe 設計檔案、元件 Layout 製作設計檔案、Runcard 設計檔案分別製作成三個獨立的設計系統和管理系統，並且串接了 GPT 的 API 輔助設計。",
     "projects.gan": "追蹤 GaN 產業新聞、論文、公司動態與市場資訊，用來維持研究方向感。",
     "projects.literature": "本機文獻整理工具，用來管理論文、主題、筆記和閱讀狀態。",
     "projects.literatureToggle": "展開介面截圖",
@@ -94,6 +95,10 @@ const translations = {
     "projects.literatureCap3": "精讀報告與論文對照閱讀",
     "projects.literatureCap4": "週報文獻分組與閱讀進度整理",
     "projects.knowledge": "我從大學到研究所課程建立的個人知識圖譜，連接半導體、電子電路、製程、模擬與研究筆記。",
+    "projects.knowledgeToggle": "展開介面截圖",
+    "projects.knowledgeCap1": "學習資料知識庫與半導體知識圖譜入口",
+    "projects.knowledgeCap2": "半導體、電路與製程概念的關係圖譜",
+    "projects.knowledgeCap3": "課程資料、PDF 預覽與知識節點整理",
     "projects.mechPatentTitle": "具防護功能的自動化設備機架",
     "projects.mechPatent": "實用新型 CN217890168U：以滑槽、傳動絲桿與限位板固定並翻轉金屬工件，可依加工需求調整面向，送入自動化設備進行多面加工。",
     "projects.viewPatent": "查看專利",
@@ -207,7 +212,8 @@ const translations = {
     "projects.title": "Works",
     "projects.body":
       "I like turning productivity-boosting ideas into tools: some organize literature, some support EDA and mask design, some monitor GaN industry signals, and some form a long-term knowledge graph from my undergraduate and graduate coursework. Drawing on my entrepreneurship-club experience and the real difficulties startup teams face, I also built the Blockchain 仕集 crowdfunding system and filed several algorithm patents.",
-    "projects.chyilab": "A public entry point for lab EDA, layout, simulation, and research-assistant tools.",
+    "projects.chyilab":
+      "A set of three independent design and management systems for lab recipe design files, device layout design files, and Runcard design files, connected with the GPT API for design assistance.",
     "projects.gan": "A monitor for GaN industry news, papers, company updates, and market signals.",
     "projects.literature": "A local literature-management tool for papers, topics, notes, and reading status.",
     "projects.literatureToggle": "Show interface screenshots",
@@ -216,6 +222,10 @@ const translations = {
     "projects.literatureCap3": "Deep-reading report with side-by-side paper review",
     "projects.literatureCap4": "Weekly paper grouping and reading progress",
     "projects.knowledge": "My personal knowledge graph from undergraduate to graduate coursework, connecting semiconductors, circuits, process, simulation, and research notes.",
+    "projects.knowledgeToggle": "Show interface screenshots",
+    "projects.knowledgeCap1": "Study-material knowledge base and semiconductor knowledge-graph entry",
+    "projects.knowledgeCap2": "Relationship graph across semiconductor, circuit, and process concepts",
+    "projects.knowledgeCap3": "Course files, PDF preview, and knowledge-node organization",
     "projects.mechPatentTitle": "Automation equipment rack with protection function",
     "projects.mechPatent": "Utility model CN217890168U: an automation equipment rack that uses a chute, lead-screw transmission, and limiting plate to clamp and flip metal workpieces, adjusting the working face for multi-side machining.",
     "projects.viewPatent": "View patent",

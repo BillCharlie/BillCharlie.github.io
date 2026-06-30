@@ -656,7 +656,8 @@ figcaption {
   border-top-color: var(--green-dark);
 }
 
-.project-card.literature-card {
+.project-card.literature-card,
+.project-card.knowledge-card {
   grid-column: 1 / -1;
 }
 
@@ -799,7 +800,8 @@ footer p {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .project-card.literature-card {
+  .project-card.literature-card,
+  .project-card.knowledge-card {
     grid-column: 1 / -1;
   }
 
@@ -910,7 +912,8 @@ footer p {
     grid-template-columns: 1fr;
   }
 
-  .project-card.literature-card {
+  .project-card.literature-card,
+  .project-card.knowledge-card {
     grid-column: span 1;
   }
 
