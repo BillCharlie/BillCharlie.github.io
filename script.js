@@ -4,6 +4,25 @@ if (year) {
   year.textContent = new Date().getFullYear();
 }
 
+const backToTopButton = document.querySelector(".back-to-top");
+
+function updateBackToTopButton() {
+  if (!backToTopButton) {
+    return;
+  }
+
+  backToTopButton.classList.toggle("is-visible", window.scrollY > 520);
+}
+
+updateBackToTopButton();
+window.addEventListener("scroll", updateBackToTopButton, { passive: true });
+
+if (backToTopButton) {
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
 const translations = {
   zh: {
     "meta.title": "陳秉佑 | Ping Yu-Chen",
@@ -524,13 +543,19 @@ if (waterCanvas) {
     angle: 0,
     phase: 0,
     boost: 0,
+    size: 1,
   };
-  const artFishImage = new Image();
-  let artFishReady = false;
-  artFishImage.onload = () => {
-    artFishReady = true;
+  const smallFish = {
+    x: window.innerWidth * 0.28,
+    y: window.innerHeight * 0.72,
+    vx: 0.42,
+    vy: -0.08,
+    angle: 0,
+    phase: Math.PI * 0.8,
+    boost: 0,
+    size: 0.72,
   };
-  artFishImage.src = "assets/fishdraw-gan-quiet-koi.svg";
+  const fishes = [fish, smallFish];
   const ripples = [];
   let waterWidth = 0;
   let waterHeight = 0;
@@ -591,9 +616,11 @@ if (waterCanvas) {
   }
 
   function fishWasHit(x, y) {
-    const dx = x - fish.x;
-    const dy = y - fish.y;
-    return Math.hypot(dx, dy) < 86;
+    return fishes.find((fishState) => {
+      const dx = x - fishState.x;
+      const dy = y - fishState.y;
+      return Math.hypot(dx, dy) < 70 * fishState.size;
+    });
   }
 
   function drawWaterLines(time) {
@@ -666,89 +693,88 @@ if (waterCanvas) {
     }
   }
 
-  function updateFish(delta, time) {
-    fish.phase += delta * (0.006 + fish.boost * 0.004);
+  function updateFish(fishState, delta, time, index) {
+    fishState.phase += delta * (0.006 + fishState.boost * 0.004 + index * 0.0008);
 
-    const wanderX = Math.cos(time * 0.00033) * 0.012;
-    const wanderY = Math.sin(time * 0.00041) * 0.01;
+    const wanderX = Math.cos(time * (0.00033 + index * 0.00005)) * 0.012;
+    const wanderY = Math.sin(time * (0.00041 + index * 0.00004)) * 0.01;
     let ax = wanderX;
     let ay = wanderY;
 
     if (pointer.active) {
-      ax += (pointer.x - fish.x) * 0.000055;
-      ay += (pointer.y - fish.y) * 0.000045;
+      ax += (pointer.x - fishState.x) * 0.000045;
+      ay += (pointer.y - fishState.y) * 0.000038;
     }
 
-    fish.vx += ax * delta;
-    fish.vy += ay * delta;
+    fishState.vx += ax * delta;
+    fishState.vy += ay * delta;
 
-    const maxSpeed = 1.45 + fish.boost * 4.2;
-    const speed = Math.hypot(fish.vx, fish.vy) || 1;
+    const maxSpeed = 1.25 + fishState.boost * 4.2;
+    const speed = Math.hypot(fishState.vx, fishState.vy) || 1;
     if (speed > maxSpeed) {
-      fish.vx = (fish.vx / speed) * maxSpeed;
-      fish.vy = (fish.vy / speed) * maxSpeed;
+      fishState.vx = (fishState.vx / speed) * maxSpeed;
+      fishState.vy = (fishState.vy / speed) * maxSpeed;
     }
 
-    fish.x += fish.vx * delta * 0.065;
-    fish.y += fish.vy * delta * 0.065;
+    fishState.x += fishState.vx * delta * 0.065;
+    fishState.y += fishState.vy * delta * 0.065;
 
     const margin = 90;
-    if (fish.x < margin || fish.x > waterWidth - margin) {
-      fish.vx *= -0.92;
-      fish.x = Math.min(Math.max(fish.x, margin), waterWidth - margin);
+    if (fishState.x < margin || fishState.x > waterWidth - margin) {
+      fishState.vx *= -0.92;
+      fishState.x = Math.min(Math.max(fishState.x, margin), waterWidth - margin);
     }
-    if (fish.y < margin || fish.y > waterHeight - margin) {
-      fish.vy *= -0.92;
-      fish.y = Math.min(Math.max(fish.y, margin), waterHeight - margin);
+    if (fishState.y < margin || fishState.y > waterHeight - margin) {
+      fishState.vy *= -0.92;
+      fishState.y = Math.min(Math.max(fishState.y, margin), waterHeight - margin);
     }
 
-    const targetAngle = Math.atan2(fish.vy, fish.vx);
-    fish.angle += Math.atan2(Math.sin(targetAngle - fish.angle), Math.cos(targetAngle - fish.angle)) * 0.08;
-    fish.boost *= 0.965;
+    const targetAngle = Math.atan2(fishState.vy, fishState.vx);
+    fishState.angle += Math.atan2(Math.sin(targetAngle - fishState.angle), Math.cos(targetAngle - fishState.angle)) * 0.08;
+    fishState.boost *= 0.965;
   }
 
-  function drawFish() {
-    const swim = Math.sin(fish.phase);
-    const fishWidth = waterWidth < 700 ? 148 : 220;
-    const fishHeight = fishWidth * 0.6;
+  function drawFish(fishState, index) {
+    const swim = Math.sin(fishState.phase);
+    const fishWidth = (waterWidth < 700 ? 104 : 142) * fishState.size;
+    const fishHeight = fishWidth * 0.48;
     const floatScale = 1 + swim * 0.012;
 
     waterCtx.save();
-    waterCtx.translate(fish.x, fish.y);
-    waterCtx.rotate(fish.angle + swim * 0.018);
+    waterCtx.translate(fishState.x, fishState.y);
+    waterCtx.rotate(fishState.angle + swim * 0.018);
     waterCtx.scale(floatScale, 1 - swim * 0.006);
-
-    if (artFishReady) {
-      waterCtx.globalAlpha = 0.72;
-      waterCtx.drawImage(artFishImage, -fishWidth / 2, -fishHeight / 2, fishWidth, fishHeight);
-      waterCtx.globalAlpha = 0.24;
-      waterCtx.drawImage(artFishImage, -fishWidth / 2 - 2, -fishHeight / 2 + 2, fishWidth, fishHeight);
-      waterCtx.restore();
-      return;
-    }
 
     waterCtx.lineCap = "round";
     waterCtx.lineJoin = "round";
-    waterCtx.strokeStyle = "rgba(8, 63, 58, 0.46)";
-    waterCtx.lineWidth = 1.45;
+    waterCtx.strokeStyle = index === 0 ? "rgba(8, 63, 58, 0.5)" : "rgba(49, 95, 133, 0.36)";
+    waterCtx.lineWidth = 1.9;
+
     waterCtx.beginPath();
-    waterCtx.ellipse(0, 0, fishWidth * 0.34, fishHeight * 0.32, 0, 0, Math.PI * 2);
+    waterCtx.moveTo(fishWidth * 0.42, 0);
+    waterCtx.bezierCurveTo(fishWidth * 0.2, -fishHeight * 0.34, -fishWidth * 0.18, -fishHeight * 0.34, -fishWidth * 0.38, 0);
+    waterCtx.bezierCurveTo(-fishWidth * 0.16, fishHeight * 0.32, fishWidth * 0.22, fishHeight * 0.3, fishWidth * 0.42, 0);
     waterCtx.stroke();
+
+    const tailLift = swim * fishHeight * 0.08;
     waterCtx.beginPath();
-    waterCtx.moveTo(-fishWidth * 0.34, 0);
-    waterCtx.lineTo(-fishWidth * 0.5, -fishHeight * 0.23);
-    waterCtx.lineTo(-fishWidth * 0.5, fishHeight * 0.23);
-    waterCtx.closePath();
+    waterCtx.moveTo(-fishWidth * 0.38, 0);
+    waterCtx.quadraticCurveTo(-fishWidth * 0.56, -fishHeight * 0.26 + tailLift, -fishWidth * 0.62, -fishHeight * 0.04 + tailLift);
+    waterCtx.quadraticCurveTo(-fishWidth * 0.55, fishHeight * 0.26 + tailLift, -fishWidth * 0.38, 0);
     waterCtx.stroke();
+
+    waterCtx.globalAlpha = 0.58;
     waterCtx.beginPath();
-    waterCtx.arc(fishWidth * 0.25, -fishHeight * 0.06, 2, 0, Math.PI * 2);
+    waterCtx.moveTo(-fishWidth * 0.02, -fishHeight * 0.23);
+    waterCtx.quadraticCurveTo(-fishWidth * 0.06, -fishHeight * 0.44, -fishWidth * 0.16, -fishHeight * 0.18);
     waterCtx.stroke();
-    [-0.18, -0.04, 0.1, 0.24].forEach((x, index) => {
-      waterCtx.beginPath();
-      waterCtx.moveTo(fishWidth * x, -fishHeight * 0.22);
-      waterCtx.quadraticCurveTo(fishWidth * (x - 0.08), 0, fishWidth * x, fishHeight * 0.22);
-      waterCtx.stroke();
-    });
+
+    waterCtx.globalAlpha = 0.46;
+    waterCtx.beginPath();
+    waterCtx.moveTo(-fishWidth * 0.03, fishHeight * 0.2);
+    waterCtx.quadraticCurveTo(-fishWidth * 0.12, fishHeight * 0.4, -fishWidth * 0.2, fishHeight * 0.17);
+    waterCtx.stroke();
+
     waterCtx.restore();
   }
 
@@ -759,8 +785,10 @@ if (waterCanvas) {
     waterCtx.clearRect(0, 0, waterWidth, waterHeight);
     drawWaterLines(time);
     drawRipples(time);
-    updateFish(delta, time);
-    drawFish();
+    fishes.forEach((fishState, index) => {
+      updateFish(fishState, delta, time, index);
+      drawFish(fishState, index);
+    });
 
     if (!reduceMotion.matches) {
       waterAnimationId = window.requestAnimationFrame(renderWaterFrame);
@@ -802,13 +830,14 @@ if (waterCanvas) {
       return;
     }
 
-    addRipple(event.clientX, event.clientY, fishWasHit(event.clientX, event.clientY) ? 1.45 : 1);
+    const hitFish = fishWasHit(event.clientX, event.clientY);
+    addRipple(event.clientX, event.clientY, hitFish ? 1.45 : 1);
 
-    if (fishWasHit(event.clientX, event.clientY)) {
-      const away = Math.atan2(fish.y - event.clientY, fish.x - event.clientX) + (Math.random() - 0.5) * 0.55;
-      fish.vx += Math.cos(away) * 5.8;
-      fish.vy += Math.sin(away) * 5.8;
-      fish.boost = 1;
+    if (hitFish) {
+      const away = Math.atan2(hitFish.y - event.clientY, hitFish.x - event.clientX) + (Math.random() - 0.5) * 0.55;
+      hitFish.vx += Math.cos(away) * 5.8;
+      hitFish.vy += Math.sin(away) * 5.8;
+      hitFish.boost = 1;
     }
   });
 }
