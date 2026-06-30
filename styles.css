@@ -555,6 +555,17 @@ figcaption {
   background: rgba(49, 95, 133, 0.08);
 }
 
+.pdf-mobile-note {
+  display: none;
+  margin: 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--muted);
+  font-weight: 700;
+}
+
 .pdf-frame {
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -1037,5 +1048,13 @@ footer p {
   .button,
   .contact-links a {
     width: 100%;
+  }
+
+  .pdf-mobile-note {
+    display: block;
+  }
+
+  .pdf-demo {
+    display: none;
   }
 }

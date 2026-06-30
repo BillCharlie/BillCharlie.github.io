@@ -66,6 +66,7 @@ const translations = {
     "analog.anaBody":
       "主導差動放大電路、遲滯比較器與能隙基準設計，涵蓋原理分析、尺寸設計、Cadence 前模擬 testbench、PSRR / CMRR、製程角（ff / ss）模擬、版圖、寄生參數萃取與後模擬驗證。",
     "analog.previewToggle": "預覽專題報告（PDF）",
+    "analog.mobilePdfNote": "請登錄電腦端查看此 PDF。",
     "experience.eyebrow": "經歷",
     "experience.title": "經歷",
     "experience.body":
@@ -211,6 +212,7 @@ const translations = {
     "analog.anaBody":
       "Led the design of a differential amplifier, hysteresis comparator, and bandgap reference, covering principle analysis, transistor sizing, Cadence pre-layout testbenches, PSRR / CMRR, ff / ss corner simulation, layout, parasitic extraction, and post-layout verification.",
     "analog.previewToggle": "Preview report (PDF)",
+    "analog.mobilePdfNote": "Please view this PDF on a desktop computer.",
     "experience.eyebrow": "Experience",
     "experience.title": "Experience",
     "experience.body":
@@ -342,3 +344,29 @@ if (photoStack) {
     photoStack.classList.toggle("swapped");
   });
 }
+
+const pdfPreviewQuery = window.matchMedia("(min-width: 641px)");
+const pdfIframes = document.querySelectorAll(".pdf-frame iframe[data-src]");
+
+function updatePdfPreviews() {
+  pdfIframes.forEach((iframe) => {
+    const details = iframe.closest(".pdf-demo");
+    if (pdfPreviewQuery.matches && details?.open) {
+      if (!iframe.src) {
+        iframe.src = iframe.dataset.src;
+      }
+    } else {
+      iframe.removeAttribute("src");
+    }
+  });
+}
+
+updatePdfPreviews();
+if (typeof pdfPreviewQuery.addEventListener === "function") {
+  pdfPreviewQuery.addEventListener("change", updatePdfPreviews);
+} else {
+  pdfPreviewQuery.addListener(updatePdfPreviews);
+}
+document.querySelectorAll(".pdf-demo").forEach((details) => {
+  details.addEventListener("toggle", updatePdfPreviews);
+});
