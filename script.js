@@ -370,3 +370,97 @@ if (typeof pdfPreviewQuery.addEventListener === "function") {
 document.querySelectorAll(".pdf-demo").forEach((details) => {
   details.addEventListener("toggle", updatePdfPreviews);
 });
+
+const siteHeader = document.querySelector(".site-header");
+const navLinks = Array.from(document.querySelectorAll('nav a[href^="#"]'));
+const pageSections = navLinks
+  .map((link) => document.querySelector(link.getAttribute("href")))
+  .filter(Boolean);
+
+function updateHeaderState() {
+  if (siteHeader) {
+    siteHeader.classList.toggle("is-scrolled", window.scrollY > 12);
+  }
+}
+
+updateHeaderState();
+window.addEventListener("scroll", updateHeaderState, { passive: true });
+
+if ("IntersectionObserver" in window && navLinks.length && pageSections.length) {
+  const navObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        const activeLink = navLinks.find((link) => link.getAttribute("href") === `#${entry.target.id}`);
+        navLinks.forEach((link) => {
+          const isActive = link === activeLink;
+          link.classList.toggle("is-active", isActive);
+          if (isActive) {
+            link.setAttribute("aria-current", "page");
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+      });
+    },
+    { rootMargin: "-35% 0px -55% 0px", threshold: 0.01 },
+  );
+
+  pageSections.forEach((section) => navObserver.observe(section));
+}
+
+const revealItems = document.querySelectorAll(
+  ".section-title, .research-focus-card, .report-grid figure, .ic-card, .experience-card, .project-card, .life-grid figure, .contact-section",
+);
+
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    { rootMargin: "0px 0px -12% 0px", threshold: 0.08 },
+  );
+
+  revealItems.forEach((item) => {
+    item.classList.add("reveal-item");
+    revealObserver.observe(item);
+  });
+} else {
+  revealItems.forEach((item) => item.classList.add("is-visible"));
+}
+
+const keywordCloud = document.querySelector(".keyword-cloud");
+const keywordItems = keywordCloud ? Array.from(keywordCloud.querySelectorAll("span")) : [];
+
+if (keywordCloud && keywordItems.length && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  keywordCloud.addEventListener("pointermove", (event) => {
+    const bounds = keywordCloud.getBoundingClientRect();
+    const centerX = bounds.left + bounds.width / 2;
+    const centerY = bounds.top + bounds.height / 2;
+    const pointerX = (event.clientX - centerX) / bounds.width;
+    const pointerY = (event.clientY - centerY) / bounds.height;
+
+    keywordItems.forEach((item, index) => {
+      const depth = 5 + (index % 4) * 2;
+      item.style.setProperty("--push-x", `${(pointerX * depth).toFixed(2)}px`);
+      item.style.setProperty("--push-y", `${(pointerY * depth).toFixed(2)}px`);
+    });
+  });
+
+  keywordCloud.addEventListener("pointerleave", () => {
+    keywordItems.forEach((item) => {
+      item.style.removeProperty("--push-x");
+      item.style.removeProperty("--push-y");
+    });
+  });
+}
