@@ -525,6 +525,12 @@ if (waterCanvas) {
     phase: 0,
     boost: 0,
   };
+  const artFishImage = new Image();
+  let artFishReady = false;
+  artFishImage.onload = () => {
+    artFishReady = true;
+  };
+  artFishImage.src = "assets/fishdraw-gan-quiet-koi.svg";
   const ripples = [];
   let waterWidth = 0;
   let waterHeight = 0;
@@ -703,50 +709,46 @@ if (waterCanvas) {
 
   function drawFish() {
     const swim = Math.sin(fish.phase);
-    const tail = swim * 11;
-    const scale = waterWidth < 700 ? 0.76 : 0.96;
+    const fishWidth = waterWidth < 700 ? 148 : 220;
+    const fishHeight = fishWidth * 0.6;
+    const floatScale = 1 + swim * 0.012;
 
     waterCtx.save();
     waterCtx.translate(fish.x, fish.y);
-    waterCtx.rotate(fish.angle);
-    waterCtx.scale(scale, scale);
+    waterCtx.rotate(fish.angle + swim * 0.018);
+    waterCtx.scale(floatScale, 1 - swim * 0.006);
+
+    if (artFishReady) {
+      waterCtx.globalAlpha = 0.72;
+      waterCtx.drawImage(artFishImage, -fishWidth / 2, -fishHeight / 2, fishWidth, fishHeight);
+      waterCtx.globalAlpha = 0.24;
+      waterCtx.drawImage(artFishImage, -fishWidth / 2 - 2, -fishHeight / 2 + 2, fishWidth, fishHeight);
+      waterCtx.restore();
+      return;
+    }
+
     waterCtx.lineCap = "round";
     waterCtx.lineJoin = "round";
-    waterCtx.strokeStyle = "rgba(8, 63, 58, 0.58)";
-    waterCtx.lineWidth = 1.75;
-
+    waterCtx.strokeStyle = "rgba(8, 63, 58, 0.46)";
+    waterCtx.lineWidth = 1.45;
     waterCtx.beginPath();
-    waterCtx.moveTo(45, 0);
-    waterCtx.bezierCurveTo(25, -19, -14, -23, -39, -4);
-    waterCtx.bezierCurveTo(-14, 23, 25, 19, 45, 0);
+    waterCtx.ellipse(0, 0, fishWidth * 0.34, fishHeight * 0.32, 0, 0, Math.PI * 2);
     waterCtx.stroke();
-
     waterCtx.beginPath();
-    waterCtx.moveTo(-39, -4);
-    waterCtx.quadraticCurveTo(-62, -25 + tail * 0.35, -67, -2 + tail);
-    waterCtx.quadraticCurveTo(-59, 20 + tail * 0.35, -39, 4);
+    waterCtx.moveTo(-fishWidth * 0.34, 0);
+    waterCtx.lineTo(-fishWidth * 0.5, -fishHeight * 0.23);
+    waterCtx.lineTo(-fishWidth * 0.5, fishHeight * 0.23);
+    waterCtx.closePath();
     waterCtx.stroke();
-
     waterCtx.beginPath();
-    waterCtx.moveTo(2, -17);
-    waterCtx.quadraticCurveTo(-10, -35, -20, -14);
-    waterCtx.moveTo(4, 17);
-    waterCtx.quadraticCurveTo(-9, 33, -18, 14);
+    waterCtx.arc(fishWidth * 0.25, -fishHeight * 0.06, 2, 0, Math.PI * 2);
     waterCtx.stroke();
-
-    waterCtx.strokeStyle = "rgba(49, 95, 133, 0.34)";
-    waterCtx.lineWidth = 1;
-    [-18, -6, 7, 20].forEach((x, index) => {
+    [-0.18, -0.04, 0.1, 0.24].forEach((x, index) => {
       waterCtx.beginPath();
-      waterCtx.moveTo(x, -10 + index * 0.7);
-      waterCtx.quadraticCurveTo(x - 7, 0, x, 10 - index * 0.7);
+      waterCtx.moveTo(fishWidth * x, -fishHeight * 0.22);
+      waterCtx.quadraticCurveTo(fishWidth * (x - 0.08), 0, fishWidth * x, fishHeight * 0.22);
       waterCtx.stroke();
     });
-
-    waterCtx.fillStyle = "rgba(8, 63, 58, 0.52)";
-    waterCtx.beginPath();
-    waterCtx.arc(33, -4, 1.8, 0, Math.PI * 2);
-    waterCtx.fill();
     waterCtx.restore();
   }
 
@@ -790,6 +792,7 @@ if (waterCanvas) {
       pointer.x = event.clientX;
       pointer.y = event.clientY;
       pointer.active = true;
+      document.body.classList.toggle("paw-cursor", !clickedInteractiveSurface(event.target));
     },
     { passive: true },
   );

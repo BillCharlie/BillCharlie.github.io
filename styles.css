@@ -14,6 +14,7 @@
   --shadow-soft: 0 12px 30px rgba(23, 32, 34, 0.08);
   --shadow-hover: 0 22px 54px rgba(23, 32, 34, 0.16);
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --paw-cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill='%23083f3a' fill-opacity='.78'%3E%3Cellipse cx='16' cy='20.5' rx='6.4' ry='5.2'/%3E%3Cellipse cx='8.8' cy='13' rx='3.2' ry='4.2' transform='rotate(-22 8.8 13)'/%3E%3Cellipse cx='14' cy='9.8' rx='3.1' ry='4.4'/%3E%3Cellipse cx='20.5' cy='10.4' rx='3.1' ry='4.3' transform='rotate(10 20.5 10.4)'/%3E%3Cellipse cx='25.2' cy='14.4' rx='2.8' ry='3.8' transform='rotate(24 25.2 14.4)'/%3E%3C/g%3E%3C/svg%3E") 12 10;
 }
 
 * {
@@ -35,6 +36,21 @@ body {
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Microsoft JhengHei", "Microsoft YaHei", sans-serif;
   line-height: 1.65;
+}
+
+body.paw-cursor,
+body.paw-cursor * {
+  cursor: var(--paw-cursor), auto;
+}
+
+body.paw-cursor a,
+body.paw-cursor button,
+body.paw-cursor summary,
+body.paw-cursor input,
+body.paw-cursor textarea,
+body.paw-cursor select,
+body.paw-cursor label {
+  cursor: pointer;
 }
 
 body::before {
