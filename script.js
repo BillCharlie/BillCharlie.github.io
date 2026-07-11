@@ -54,7 +54,7 @@ const translations = {
     "hero.ctaResearch": "研究內容",
     "hero.ctaProjects": "工具與作品",
     "research.eyebrow": "元件研究",
-    "research.title": "目前研究重點",
+    "research.title": "GaN Power 元件的 TCAD 模擬、設計、製程、量測",
     "research.cardQuestionTag": "Core question",
     "research.cardQuestionTitle": "GaN Power FET 的關鍵 tradeoff",
     "research.body":
@@ -69,6 +69,7 @@ const translations = {
     "research.cardMeasureTitle": "靜態與動態特性量測",
     "research.li5":
       "規劃 TLM、HBD/VBD、Id-Vg、Id-Vd、Ig-Vg、breakdown、高頻 C-V 與雙脈衝動態特性量測，將實驗結果回饋到下一輪元件設計與製程條件。",
+    "research.sicHeading": "SiC Power 元件的 TCAD 模擬、設計、量測",
     "notes.capProcess": "D-mode / E-mode GaN 製程流程",
     "notes.capEbeam1": "E-beam lithography：dose、density、resist 與 transfer 共同決定 CD",
     "notes.capEbeam2": "E-beam checklist：先分辨問題來源，再改變 recipe",
@@ -89,10 +90,10 @@ const translations = {
     "experience.eyebrow": "經歷",
     "experience.title": "經歷",
     "experience.body":
-      "除了目前的 GaN Trigate 研究，我也做過 SiC VDMOS 高溫特性研究、實戰過工業工程生產管理基本方法、認識SMT封測技術、區塊鏈工作室創建，以及學生創業社團的活動規劃。這些經歷讓我更習慣把技術放在實用產業可行性的角度思考。",
+      "除了目前的元件研究，我也實戰過工業工程生產管理基本方法、認識SMT封測技術、區塊鏈工作室創建，以及學生創業社團的活動規劃。這些經歷讓我更習慣把技術放在實用產業可行性的角度思考。",
     "experience.sicTitle": "大學畢業論文：大功率元件 SiC MOSFET 高溫特性研究",
     "experience.sicBody":
-      "獨立完成以 TCAD Sentaurus 進行 SiC VDMOSFET 元件模擬，調整結構參數並設計 VDMOS 光罩製程設計；以及 CV、IV、double pulse 等特性量測整理。",
+      "獨立完成以 TCAD Sentaurus 進行 SiC VDMOSFET 元件模擬，調整結構參數並完成 VDMOS 光罩與製程設計；以及 CV、IV、double pulse 等特性量測整理。",
     "experience.sicCap1": "VDMOS 製程與結構模擬整理",
     "experience.sicCap2": "高溫加熱與電學測試平台",
     "experience.usiTitle": "日月光集團 USI 環旭電子暑期實習",
@@ -200,7 +201,7 @@ const translations = {
     "hero.ctaResearch": "Research",
     "hero.ctaProjects": "Tools & Projects",
     "research.eyebrow": "Device Research",
-    "research.title": "Current Research Focus",
+    "research.title": "TCAD Simulation, Design, Process, And Measurement For GaN Power Devices",
     "research.cardQuestionTag": "Core question",
     "research.cardQuestionTitle": "Key Tradeoffs In GaN Power FETs",
     "research.body":
@@ -215,6 +216,7 @@ const translations = {
     "research.cardMeasureTitle": "Measurement Feedback And Dynamics",
     "research.li5":
       "I plan TLM, HBD/VBD, Id-Vg, Id-Vd, Ig-Vg, breakdown, high-frequency C-V, and double-pulse dynamic characterization, then feed the results into the next device and process iteration.",
+    "research.sicHeading": "TCAD Simulation, Design, And Measurement For SiC Power Devices",
     "notes.capProcess": "D-mode / E-mode GaN process flow",
     "notes.capEbeam1": "E-beam lithography: dose, density, resist, and transfer jointly determine CD",
     "notes.capEbeam2": "E-beam checklist: identify the source before changing the recipe",
@@ -235,7 +237,7 @@ const translations = {
     "experience.eyebrow": "Experience",
     "experience.title": "Experience",
     "experience.body":
-      "Beyond my current GaN Trigate work, I have worked on SiC VDMOS high-temperature characteristics, founding a blockchain studio, and planning student entrepreneurship events. These experiences taught me to think about technology from the angle of practical industry feasibility.",
+      "Beyond my current device research, I have worked on industrial-engineering production management, SMT packaging and testing workflows, founding a blockchain studio, and planning student entrepreneurship events. These experiences taught me to think about technology from the angle of practical industry feasibility.",
     "experience.sicTitle": "Undergraduate Thesis: High-Power SiC MOSFET High-Temperature Characterization",
     "experience.sicBody":
       "Independently carried out SiC VDMOSFET device simulation with TCAD Sentaurus, tuning structural parameters and designing the VDMOS mask and process flow, along with organizing CV, IV, and double-pulse measurement work.",

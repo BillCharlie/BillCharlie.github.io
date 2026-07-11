@@ -681,6 +681,21 @@ li {
   line-height: 1.75;
 }
 
+.device-subsection-title {
+  margin: 38px 0 18px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+}
+
+.device-subsection-title h3 {
+  margin: 0;
+  font-size: 26px;
+}
+
+.sic-research-card {
+  margin-top: 0;
+}
+
 .check-list,
 .mini-list {
   padding: 0;
