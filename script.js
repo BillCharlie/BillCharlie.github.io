@@ -88,7 +88,7 @@ const translations = {
     "analog.previewToggle": "預覽專題報告（PDF）",
     "analog.mobilePdfNote": "請登錄電腦端查看此 PDF。",
     "experience.eyebrow": "經歷",
-    "experience.title": "經歷",
+    "experience.title": "實習、專案與社團",
     "experience.body":
       "除了目前的元件研究，我也實戰過工業工程生產管理基本方法、認識SMT封測技術、區塊鏈工作室創建，以及學生創業社團的活動規劃。這些經歷讓我更習慣把技術放在實用產業可行性的角度思考。",
     "experience.sicTitle": "大學畢業論文：大功率元件 SiC MOSFET 高溫特性研究",
@@ -235,7 +235,7 @@ const translations = {
     "analog.previewToggle": "Preview report (PDF)",
     "analog.mobilePdfNote": "Please view this PDF on a desktop computer.",
     "experience.eyebrow": "Experience",
-    "experience.title": "Experience",
+    "experience.title": "Internship, Projects & Clubs",
     "experience.body":
       "Beyond my current device research, I have worked on industrial-engineering production management, SMT packaging and testing workflows, founding a blockchain studio, and planning student entrepreneurship events. These experiences taught me to think about technology from the angle of practical industry feasibility.",
     "experience.sicTitle": "Undergraduate Thesis: High-Power SiC MOSFET High-Temperature Characterization",
