@@ -54,7 +54,8 @@ const translations = {
     "hero.ctaResearch": "研究內容",
     "hero.ctaProjects": "工具開發與專利",
     "research.eyebrow": "元件研究",
-    "research.title": "GaN Power 元件的 TCAD 模擬、設計、製程、量測",
+    "research.title": "元件研究",
+    "research.ganHeading": "GaN Power 元件的 TCAD 模擬、設計、製程、量測",
     "research.cardQuestionTag": "Core question",
     "research.cardQuestionTitle": "GaN Power FET 的關鍵 tradeoff",
     "research.body":
@@ -115,6 +116,8 @@ const translations = {
       "我喜歡將能提升生產效率的想法實作成工具：有些協助 EDA 與光罩設計，也有些用來追蹤 GaN 產業動態；此外，我也持續進行一項長期專案，將大學到研究所所學整理成知識圖譜以及對GaN近5年的頂刊頂會的文獻與閱讀筆記報告進行系統化整理。另一方面，大學時結合創業社團的經歷，我深入了解創業團隊在募資與協作上的挑戰，因此開發了仕集區塊鏈眾籌系統，並申請了多項演算法專利。",
     "projects.toolsHeading": "工具開發",
     "projects.patentsHeading": "專利",
+    "projects.mechanicalPatentHeading": "機械設計專利",
+    "projects.algorithmPatentHeading": "演算法專利",
     "projects.chyilabEpi":
       "MOCVD 磊晶成長 Recipe 設計工具，用來建立、管理與最佳化晶圓磊晶成長流程。",
     "projects.chyilabLayout":
@@ -201,7 +204,8 @@ const translations = {
     "hero.ctaResearch": "Research",
     "hero.ctaProjects": "Tool Development & Patents",
     "research.eyebrow": "Device Research",
-    "research.title": "TCAD Simulation, Design, Process, And Measurement For GaN Power Devices",
+    "research.title": "Device Research",
+    "research.ganHeading": "TCAD Simulation, Design, Process, And Measurement For GaN Power Devices",
     "research.cardQuestionTag": "Core question",
     "research.cardQuestionTitle": "Key Tradeoffs In GaN Power FETs",
     "research.body":
@@ -262,6 +266,8 @@ const translations = {
       "I like turning productivity-boosting ideas into tools: some organize literature, some support EDA and mask design, some monitor GaN industry signals, and some form a long-term knowledge graph from my undergraduate and graduate coursework. Drawing on my entrepreneurship-club experience and the real difficulties startup teams face, I also built the Blockchain 仕集 crowdfunding system and filed several algorithm patents.",
     "projects.toolsHeading": "Tool Development",
     "projects.patentsHeading": "Patents",
+    "projects.mechanicalPatentHeading": "Mechanical Design Patent",
+    "projects.algorithmPatentHeading": "Algorithm Patents",
     "projects.chyilabEpi":
       "A MOCVD epitaxial-growth recipe designer for building, managing, and optimizing wafer growth sequences.",
     "projects.chyilabLayout":

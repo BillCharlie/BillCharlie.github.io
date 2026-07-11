@@ -692,6 +692,12 @@ li {
   font-size: 26px;
 }
 
+.gan-subsection-title {
+  margin-top: 18px;
+  padding-top: 0;
+  border-top: 0;
+}
+
 .sic-research-card {
   margin-top: 0;
 }
@@ -1070,6 +1076,25 @@ figcaption {
   margin-top: 26px;
   padding-top: 24px;
   border-top: 1px solid var(--line);
+}
+
+.project-subcategory {
+  grid-column: 1 / -1;
+  margin: 6px 0 -4px;
+}
+
+.project-subcategory h4 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--green-dark);
+}
+
+.algorithm-subcategory {
+  margin-top: 10px;
+}
+
+.patent-feature-card {
+  grid-column: 1 / -1;
 }
 
 .project-card:nth-child(2) {

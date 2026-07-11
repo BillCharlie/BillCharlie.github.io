@@ -11,7 +11,7 @@
     <title data-i18n="meta.title">陳秉佑 | Ping Yu-Chen</title>
     <link rel="preload" href="assets/profile-photo.jpg" as="image" />
     <link rel="preload" href="assets/life-cat-hero.jpg" as="image" />
-    <link rel="stylesheet" href="styles.css?v=20260711-tools-patents-nav" />
+    <link rel="stylesheet" href="styles.css?v=20260711-device-patent-groups" />
   </head>
   <body>
     <canvas id="water-canvas" aria-hidden="true"></canvas>
@@ -88,7 +88,10 @@
       <section class="section research-section" id="research">
         <div class="section-title">
           <p class="eyebrow" data-i18n="research.eyebrow">元件研究</p>
-          <h2 data-i18n="research.title">GaN Power 元件的 TCAD 模擬、設計、製程、量測</h2>
+          <h2 data-i18n="research.title">元件研究</h2>
+        </div>
+        <div class="device-subsection-title gan-subsection-title">
+          <h3 data-i18n="research.ganHeading">GaN Power 元件的 TCAD 模擬、設計、製程、量測</h3>
         </div>
         <div class="research-grid research-focus-grid">
           <article class="research-focus-card research-question">
@@ -403,12 +406,18 @@
           <div class="project-subsection patent-subsection">
             <h3 data-i18n="projects.patentsHeading">專利</h3>
           </div>
-          <article class="project-card">
+          <div class="project-subcategory">
+            <h4 data-i18n="projects.mechanicalPatentHeading">機械設計專利</h4>
+          </div>
+          <article class="project-card patent-feature-card">
             <p class="tag">Patent · Mechanical design</p>
             <h3 data-i18n="projects.mechPatentTitle">具防護功能的自動化設備機架</h3>
             <p data-i18n="projects.mechPatent">實用新型 CN217890168U：以滑槽、傳動絲桿與限位板固定並翻轉金屬工件，可依加工需求調整面向，送入自動化設備進行多面加工。</p>
             <a href="https://patents.google.com/patent/CN217890168U/zh" data-i18n="projects.viewPatent">查看專利</a>
           </article>
+          <div class="project-subcategory algorithm-subcategory">
+            <h4 data-i18n="projects.algorithmPatentHeading">演算法專利</h4>
+          </div>
           <article class="project-card">
             <p class="tag">Patent · Blockchain</p>
             <h3 data-i18n="projects.patent2">眾包區塊鏈平台上的創業項目徵信方法</h3>
@@ -512,7 +521,7 @@
 
     <button class="back-to-top" type="button" aria-label="返回最頂部" title="返回最頂部">↑</button>
 
-    <script src="script.js?v=20260711-experience-title"></script>
+    <script src="script.js?v=20260711-device-patent-groups"></script>
     <script type="module" src="background3d.js?v=20260703-koi"></script>
   </body>
 </html>
