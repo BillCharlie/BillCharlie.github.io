@@ -11,7 +11,7 @@
     <title data-i18n="meta.title">陳秉佑 | Ping Yu-Chen</title>
     <link rel="preload" href="assets/profile-photo.jpg" as="image" />
     <link rel="preload" href="assets/life-cat-hero.jpg" as="image" />
-    <link rel="stylesheet" href="styles.css?v=20260711-patent-card-size" />
+    <link rel="stylesheet" href="styles.css?v=20260711-finfet-research" />
   </head>
   <body>
     <canvas id="water-canvas" aria-hidden="true"></canvas>
@@ -50,7 +50,7 @@
             </p>
           </div>
           <div class="keyword-cloud" aria-label="Research keywords">
-            <button type="button" data-i18n="keyword.power" data-targets="ai-tcad,process-overview">GaN Power FET</button>
+            <button type="button" data-i18n="keyword.power" data-targets="ai-tcad,process-overview">GaN Power FinFET</button>
             <button type="button" data-i18n="keyword.trigate" data-targets="ai-tcad,process-overview">Trigate / Narrow-fin</button>
             <button type="button" data-i18n="keyword.tcad" data-targets="ai-tcad">3D TCAD Simulation</button>
             <button type="button" data-i18n="keyword.mask" data-targets="chylab-tools">Mask & Layout Automation</button>
@@ -91,14 +91,14 @@
           <h2 data-i18n="research.title">元件研究</h2>
         </div>
         <div class="device-subsection-title gan-subsection-title">
-          <h3 data-i18n="research.ganHeading">GaN Power 元件的 TCAD 模擬、設計、製程、量測</h3>
+          <h3 data-i18n="research.ganHeading">GaN Power FinFET 元件的 TCAD 模擬、設計、製程、量測</h3>
         </div>
         <div class="research-grid research-focus-grid">
           <article class="research-focus-card research-question">
             <p class="tag" data-i18n="research.cardQuestionTag">Core question</p>
-            <h3 data-i18n="research.cardQuestionTitle">GaN Power FET 的關鍵 tradeoff</h3>
+            <h3 data-i18n="research.cardQuestionTitle">GaN Power FinFET 的關鍵 tradeoff</h3>
             <p data-i18n="research.body">
-              我目前關注的是 GaN Power FET 在臨界電壓、導通電阻、崩潰電壓與開關損耗之間的取捨。研究主線圍繞 Vth-Ronsp tradeoff、RonspQg / RonspQgd FOM tradeoff、BV 與 Epeak 限制，以及結構可製造性如何一起收斂。
+              我目前關注的是 GaN Power FinFET 在臨界電壓、導通電阻、崩潰電壓與開關損耗之間的取捨。研究主線圍繞 Vth-Ronsp tradeoff、RonspQg / RonspQgd FOM tradeoff、BV 與 Epeak 限制，以及結構可製造性如何一起收斂。
             </p>
           </article>
           <article class="research-focus-card">
@@ -108,7 +108,7 @@
           </article>
           <article class="research-focus-card">
             <p class="tag">Process</p>
-            <h3 data-i18n="research.cardProcessTitle">從模擬走向光罩與製程</h3>
+            <h3 data-i18n="research.cardProcessTitle">D-mode / E-mode GaN FinFET 製程設計</h3>
             <p data-i18n="research.li3">把 TCAD 結果轉成光罩佈局、測試結構與每道製程的 Runcard，並拆解 E-beam dose、PEC、development、hardmask transfer、ICP-RIE etch profile 與 process window。</p>
           </article>
           <article class="research-focus-card">
@@ -126,7 +126,7 @@
             </figure>
             <figure data-highlight-id="process-overview">
               <img src="assets/process-slides/process-overview.jpg" alt="D-mode and E-mode GaN process flow overview" loading="lazy" decoding="async" />
-              <figcaption data-i18n="notes.capProcess">D-mode / E-mode GaN 製程流程</figcaption>
+              <figcaption data-i18n="notes.capProcess">D-mode / E-mode GaN FinFET 製程設計</figcaption>
             </figure>
             <figure data-highlight-id="ebeam-principle">
               <img src="assets/process-slides/ebeam-principle.jpg" alt="E-beam lithography process issues from writing to pattern transfer" loading="lazy" decoding="async" />
@@ -521,7 +521,7 @@
 
     <button class="back-to-top" type="button" aria-label="返回最頂部" title="返回最頂部">↑</button>
 
-    <script src="script.js?v=20260711-patent-card-size"></script>
+    <script src="script.js?v=20260711-finfet-research"></script>
     <script type="module" src="background3d.js?v=20260703-koi"></script>
   </body>
 </html>

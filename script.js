@@ -43,7 +43,7 @@ const translations = {
       "我對 GaN Power 元件的興趣，來自於我對未來人形機器人、AI 算力集群與高密度能源轉換系統的想像。隨著 AI 應用與智慧機器系統快速發展，電力電子元件不再只是支撐系統運作的基礎零件，而是決定效率、體積、散熱與整體系統能力的重要核心。",
     "hero.bio3":
       "我希望建立一套從元件構想到模擬、製作、量測與資料回饋的完整開發流程，也把 AI 與自動化導入元件級 DRC、光罩與佈局自動化、MOCVD GaN recipe 參數管理，以及 GaN 製程 run card 生成，讓 AI 實際參與元件設計、製程規劃與實驗迭代。",
-    "keyword.power": "GaN Power FET",
+    "keyword.power": "GaN Power FinFET",
     "keyword.trigate": "Trigate / Narrow-fin",
     "keyword.tcad": "3D TCAD Simulation",
     "keyword.mask": "光罩與佈局自動化",
@@ -55,15 +55,15 @@ const translations = {
     "hero.ctaProjects": "工具開發與專利",
     "research.eyebrow": "元件研究",
     "research.title": "元件研究",
-    "research.ganHeading": "GaN Power 元件的 TCAD 模擬、設計、製程、量測",
+    "research.ganHeading": "GaN Power FinFET 元件的 TCAD 模擬、設計、製程、量測",
     "research.cardQuestionTag": "Core question",
-    "research.cardQuestionTitle": "GaN Power FET 的關鍵 tradeoff",
+    "research.cardQuestionTitle": "GaN Power FinFET 的關鍵 tradeoff",
     "research.body":
-      "我目前關注的是 GaN Power FET 在臨界電壓、導通電阻、崩潰電壓與開關損耗之間的取捨。研究主線圍繞 Vth-Ronsp tradeoff、RonspQg / RonspQgd FOM tradeoff、BV 與 Epeak 限制，以及結構可製造性如何一起收斂。",
+      "我目前關注的是 GaN Power FinFET 在臨界電壓、導通電阻、崩潰電壓與開關損耗之間的取捨。研究主線圍繞 Vth-Ronsp tradeoff、RonspQg / RonspQgd FOM tradeoff、BV 與 Epeak 限制，以及結構可製造性如何一起收斂。",
     "research.cardSimTitle": "GaN Trigate TCAD 3D simulation",
     "research.li1":
       "建立 GaN Trigate 三維元件模型，掃描 fin geometry、Al composition、tox、Lg 與 field profile，觀察 Vth、Ron、BV、Epeak 與電荷相關 FOM 的變化。",
-    "research.cardProcessTitle": "從模擬走向光罩與製程",
+    "research.cardProcessTitle": "D-mode / E-mode GaN FinFET 製程設計",
     "research.li3":
       "把 TCAD 結果轉成光罩佈局、測試結構與每道製程的 Runcard，並拆解 E-beam dose、PEC、development、hardmask transfer、ICP-RIE etch profile 與 process window。",
     "research.li4": "ICP-RIE pressure、gas chemistry、bias power 與 etch selectivity 的 window 設計。",
@@ -71,7 +71,7 @@ const translations = {
     "research.li5":
       "規劃 TLM、HBD/VBD、Id-Vg、Id-Vd、Ig-Vg、breakdown、高頻 C-V 與雙脈衝動態特性量測，將實驗結果回饋到下一輪元件設計與製程條件。",
     "research.sicHeading": "SiC Power 元件的 TCAD 模擬、設計、量測",
-    "notes.capProcess": "D-mode / E-mode GaN 製程流程",
+    "notes.capProcess": "D-mode / E-mode GaN FinFET 製程設計",
     "notes.capEbeam1": "E-beam lithography：dose、density、resist 與 transfer 共同決定 CD",
     "notes.capEbeam2": "E-beam checklist：先分辨問題來源，再改變 recipe",
     "notes.capEtch1": "Etch / SEM signature：區分 exposure、development 與 transfer 問題",
@@ -94,7 +94,7 @@ const translations = {
       "除了目前的元件研究，我也實戰過工業工程生產管理基本方法、認識SMT封測技術、區塊鏈工作室創建，以及學生創業社團的活動規劃。這些經歷讓我更習慣把技術放在實用產業可行性的角度思考。",
     "experience.sicTitle": "大學畢業論文：大功率元件 SiC MOSFET 高溫特性研究",
     "experience.sicBody":
-      "獨立完成以 TCAD Sentaurus 進行 SiC VDMOSFET 元件模擬，調整結構參數並完成 VDMOS 光罩與製程設計；以及 CV、IV、double pulse 等特性量測整理。",
+      "獨立完成以 TCAD Sentaurus 進行 SiC VDMOSFET 元件模擬，調整結構參數並完成 VDMOS 光罩設計；以及 CV、IV、double pulse 等特性量測整理。",
     "experience.sicCap1": "VDMOS 製程與結構模擬整理",
     "experience.sicCap2": "高溫加熱與電學測試平台",
     "experience.usiTitle": "日月光集團 USI 環旭電子暑期實習",
@@ -193,7 +193,7 @@ const translations = {
       "My interest in GaN power devices comes from imagining future humanoid robots, AI compute clusters, and high-density power-conversion systems. As AI and intelligent machines grow, power devices are no longer just supporting components; they shape efficiency, size, thermal design, and system capability.",
     "hero.bio3":
       "I want to build a complete development flow from device concept to simulation, fabrication, measurement, and data feedback. I also bring AI and automation into device-level DRC, mask/layout automation, MOCVD GaN recipe management, and GaN process Runcard generation so AI can participate in design, process planning, and experimental iteration.",
-    "keyword.power": "GaN Power FET",
+    "keyword.power": "GaN Power FinFET",
     "keyword.trigate": "Trigate / Narrow-fin",
     "keyword.tcad": "3D TCAD Simulation",
     "keyword.mask": "Mask & Layout Automation",
@@ -205,15 +205,15 @@ const translations = {
     "hero.ctaProjects": "Tool Development & Patents",
     "research.eyebrow": "Device Research",
     "research.title": "Device Research",
-    "research.ganHeading": "TCAD Simulation, Design, Process, And Measurement For GaN Power Devices",
+    "research.ganHeading": "TCAD Simulation, Design, Process, And Measurement For GaN Power FinFET Devices",
     "research.cardQuestionTag": "Core question",
-    "research.cardQuestionTitle": "Key Tradeoffs In GaN Power FETs",
+    "research.cardQuestionTitle": "Key Tradeoffs In GaN Power FinFETs",
     "research.body":
-      "My current focus is the tradeoff space of GaN Power FETs: threshold voltage, on-resistance, breakdown voltage, and switching loss. The main questions are Vth-Ronsp, RonspQg / RonspQgd FOMs, BV and Epeak limits, and whether the structure can converge with a realistic process flow.",
+      "My current focus is the tradeoff space of GaN Power FinFETs: threshold voltage, on-resistance, breakdown voltage, and switching loss. The main questions are Vth-Ronsp, RonspQg / RonspQgd FOMs, BV and Epeak limits, and whether the structure can converge with a realistic process flow.",
     "research.cardSimTitle": "GaN Trigate TCAD 3D Simulation",
     "research.li1":
       "I build 3D GaN Trigate TCAD models and sweep fin geometry, Al composition, tox, Lg, and field profiles to study Vth, Ron, BV, Epeak, and charge-related FOMs.",
-    "research.cardProcessTitle": "From Simulation To Mask And Process",
+    "research.cardProcessTitle": "D-mode / E-mode GaN FinFET Process Design",
     "research.li3":
       "I translate TCAD results into photomask layouts, test structures, and Runcards for each process step while breaking down E-beam dose, PEC, development, hardmask transfer, ICP-RIE etch profiles, and process windows.",
     "research.li4": "ICP-RIE pressure, gas chemistry, bias power, and etch-selectivity window design.",
@@ -221,7 +221,7 @@ const translations = {
     "research.li5":
       "I plan TLM, HBD/VBD, Id-Vg, Id-Vd, Ig-Vg, breakdown, high-frequency C-V, and double-pulse dynamic characterization, then feed the results into the next device and process iteration.",
     "research.sicHeading": "TCAD Simulation, Design, And Measurement For SiC Power Devices",
-    "notes.capProcess": "D-mode / E-mode GaN process flow",
+    "notes.capProcess": "D-mode / E-mode GaN FinFET process design",
     "notes.capEbeam1": "E-beam lithography: dose, density, resist, and transfer jointly determine CD",
     "notes.capEbeam2": "E-beam checklist: identify the source before changing the recipe",
     "notes.capEtch1": "Etch / SEM signature: separating exposure, development, and transfer issues",
@@ -244,7 +244,7 @@ const translations = {
       "Beyond my current device research, I have worked on industrial-engineering production management, SMT packaging and testing workflows, founding a blockchain studio, and planning student entrepreneurship events. These experiences taught me to think about technology from the angle of practical industry feasibility.",
     "experience.sicTitle": "Undergraduate Thesis: High-Power SiC MOSFET High-Temperature Characterization",
     "experience.sicBody":
-      "Independently carried out SiC VDMOSFET device simulation with TCAD Sentaurus, tuning structural parameters and designing the VDMOS mask and process flow, along with organizing CV, IV, and double-pulse measurement work.",
+      "Independently carried out SiC VDMOSFET device simulation with TCAD Sentaurus, tuning structural parameters and designing the VDMOS mask, along with organizing CV, IV, and double-pulse measurement work.",
     "experience.sicCap1": "VDMOS process and structure simulation notes",
     "experience.sicCap2": "High-temperature and electrical test platforms",
     "experience.usiTitle": "USI / ASE Group Summer Management Trainee Internship",
