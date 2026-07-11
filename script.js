@@ -36,13 +36,13 @@ const translations = {
     "nav.life": "生活",
     "nav.contact": "聯絡",
     "hero.eyebrow": "GaN Trigate · Process DOE · Measurement · TCAD Simulation · LTSPICE · Cadence · EDA × AI",
-    "hero.title": "讓 GaN Power 元件從想法走向模擬、製作、驗證與應用。",
+    "hero.title": "讓 GaN Power 元件走向實作與應用。",
     "hero.bio1":
       "Hey，我是陳秉佑（Ping Yu-Chen / Bill Chen）。我的研究從 GaN Trigate 功率元件設計出發，逐步延伸到 TCAD 模擬、光罩與佈局設計、E-beam 微影、蝕刻製程開發，以及量測資料回饋。",
     "hero.bio2":
       "我對 GaN Power 元件的興趣，來自於我對未來人形機器人、AI 算力集群與高密度能源轉換系統的想像。隨著 AI 應用與智慧機器系統快速發展，電力電子元件不再只是支撐系統運作的基礎零件，而是決定效率、體積、散熱與整體系統能力的重要核心。",
     "hero.bio3":
-      "我希望建立一套從元件構想到模擬、製作、量測與資料回饋的完整開發流程，也把 AI 與自動化導入元件級 DRC、光罩與佈局自動化、MOCVD GaN recipe 參數管理，以及 GaN 製程 run card 生成，讓 AI 實際參與元件設計、製程規劃與實驗迭代。",
+      "我希望建立一套從元件構想到 TCAD 模擬、製作、量測與資料回饋的完整開發流程；同時把 AI 作為工程助理導入設計檢查、流程追蹤與專案管理，例如元件級 DRC、光罩與佈局流程管理、MOCVD GaN recipe 參數整理，以及 GaN 製程 run card 版本追蹤，讓設計決策、實驗紀錄與製程迭代更有效率也更可追溯。",
     "keyword.power": "GaN Power FinFET",
     "keyword.trigate": "Trigate / Narrow-fin",
     "keyword.tcad": "3D TCAD Simulation",
@@ -186,13 +186,13 @@ const translations = {
     "nav.life": "Life",
     "nav.contact": "Contact",
     "hero.eyebrow": "GaN Trigate · Process DOE · Measurement · TCAD Simulation · LTSPICE · Cadence · EDA × AI",
-    "hero.title": "Taking GaN Power Devices from Ideas to Simulation, Fabrication, Verification, and Application.",
+    "hero.title": "Turning GaN Power Device Ideas into Practical Applications.",
     "hero.bio1":
       "I am Ping Yu-Chen, also known as Bill Chen. My research starts from GaN Trigate power-device design and extends into TCAD simulation, photomask and layout design, E-beam lithography, etch process development, and measurement-data feedback.",
     "hero.bio2":
       "My interest in GaN power devices comes from imagining future humanoid robots, AI compute clusters, and high-density power-conversion systems. As AI and intelligent machines grow, power devices are no longer just supporting components; they shape efficiency, size, thermal design, and system capability.",
     "hero.bio3":
-      "I aim to build a complete development flow from device concept to simulation, fabrication, measurement, and data feedback. I also bring AI and automation into device-level DRC, photomask/layout automation, MOCVD GaN recipe parameter management, and GaN process run-card generation so AI can participate in device design, process planning, and experimental iteration.",
+      "I aim to build a complete development flow from device concept to TCAD simulation, fabrication, measurement, and data feedback. I use AI as an engineering assistant for design checks, workflow tracking, and project management, including device-level DRC, photomask and layout workflow management, MOCVD GaN recipe parameter organization, and GaN process run-card version tracking, so design decisions, experimental records, and process iterations become more efficient and traceable.",
     "keyword.power": "GaN Power FinFET",
     "keyword.trigate": "Trigate / Narrow-fin",
     "keyword.tcad": "3D TCAD Simulation",
