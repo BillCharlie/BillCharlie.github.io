@@ -11,7 +11,7 @@
     <title data-i18n="meta.title">陳秉佑 | Ping Yu-Chen</title>
     <link rel="preload" href="assets/profile-photo.jpg" as="image" />
     <link rel="preload" href="assets/life-cat-hero.jpg" as="image" />
-    <link rel="stylesheet" href="styles.css?v=20261010-profile" />
+    <link rel="stylesheet" href="styles.css?v=20261010-layout2" />
   </head>
   <body>
     <canvas id="water-canvas" aria-hidden="true"></canvas>
@@ -58,6 +58,32 @@
               <span data-i18n="highlight.iedms">第一作者 Poster · 台北</span>
             </a>
           </div>
+          <div class="hero-actions">
+            <a class="button primary" href="#research" data-i18n="hero.ctaResearch">研究內容</a>
+            <a class="button" href="#projects" data-i18n="hero.ctaProjects">工具開發與專利</a>
+            <a class="button ghost" href="https://github.com/BillCharlie">GitHub</a>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="hero-visual photo-stack"
+          aria-label="查看可愛貓貓（coba&小秋）"
+          data-i18n-attr="aria-label:photoStack.toggle"
+        >
+          <img class="portrait" src="assets/profile-photo.jpg" alt="陳秉佑個人照片" data-i18n-attr="alt:alt.profile" decoding="async" fetchpriority="high" />
+          <img
+            class="slide-peek"
+            src="assets/life-cat-hero.jpg"
+            alt="陳秉佑養的兩隻貓咪"
+            data-i18n-attr="alt:alt.cats"
+            decoding="async"
+            fetchpriority="high"
+          />
+          <span class="stack-hint" aria-hidden="true" data-i18n="photoStack.hint">查看可愛貓貓（coba&小秋）</span>
+        </button>
+        <div class="hero-lower">
+          <p class="eyebrow hero-subhead" data-i18n="interest.label">研究興趣</p>
           <div class="interest-list" aria-label="Research interests" data-i18n-attr="aria-label:interest.label">
             <a class="interest-item interest-tcad" href="#research">
               <span class="interest-tag">TCAD</span>
@@ -96,6 +122,7 @@
               </span>
             </a>
           </div>
+          <p class="eyebrow hero-subhead" data-i18n="keyword.label">研究關鍵字 · 點擊直接跳到對應投影片</p>
           <div class="keyword-cloud" aria-label="Research keywords">
             <button type="button" data-i18n="keyword.tcad" data-targets="deck-aitcad-method">3D TCAD Simulation</button>
             <button type="button" data-i18n="keyword.ai" data-targets="deck-aitcad-method">AI-assisted Device Development</button>
@@ -109,30 +136,7 @@
             <button type="button" data-i18n="keyword.etch" data-targets="deck-etch">Etch Process</button>
             <button type="button" data-i18n="keyword.mask" data-targets="runcard-tool">製程 Runcard 自動化</button>
           </div>
-          <div class="hero-actions">
-            <a class="button primary" href="#research" data-i18n="hero.ctaResearch">研究內容</a>
-            <a class="button" href="#projects" data-i18n="hero.ctaProjects">工具開發與專利</a>
-            <a class="button ghost" href="https://github.com/BillCharlie">GitHub</a>
-          </div>
         </div>
-
-        <button
-          type="button"
-          class="hero-visual photo-stack"
-          aria-label="查看可愛貓貓（coba&小秋）"
-          data-i18n-attr="aria-label:photoStack.toggle"
-        >
-          <img class="portrait" src="assets/profile-photo.jpg" alt="陳秉佑個人照片" data-i18n-attr="alt:alt.profile" decoding="async" fetchpriority="high" />
-          <img
-            class="slide-peek"
-            src="assets/life-cat-hero.jpg"
-            alt="陳秉佑養的兩隻貓咪"
-            data-i18n-attr="alt:alt.cats"
-            decoding="async"
-            fetchpriority="high"
-          />
-          <span class="stack-hint" aria-hidden="true" data-i18n="photoStack.hint">查看可愛貓貓（coba&小秋）</span>
-        </button>
         <nav class="page-pager" aria-label="Page navigation" data-i18n-attr="aria-label:pager.label">
           <span class="pager-spacer"></span>
           <a class="pager-next" href="#publications">
@@ -238,6 +242,10 @@
           <p class="eyebrow" data-i18n="research.eyebrow">元件研究</p>
           <h2 data-i18n="research.title">第三代功率元件研究</h2>
         </div>
+        <div class="block-toolbar">
+          <button type="button" data-blocks="open" data-i18n="research.expandAll">全部展開</button>
+          <button type="button" data-blocks="close" data-i18n="research.collapseAll">全部收合</button>
+        </div>
         <div class="device-subsection-title gan-subsection-title">
           <h3 data-i18n="research.ganHeading">24/48 V E-mode GaN FinFET：磊晶、元件、製程與量測</h3>
         </div>
@@ -249,8 +257,8 @@
           </p>
         </article>
 
-        <div class="research-block">
-          <h4 class="research-block-title"><span>01</span><span data-i18n="research.block1">TCAD 模擬研究</span></h4>
+        <details class="research-block collapsible" open>
+          <summary class="research-block-title"><span>01</span><span data-i18n="research.block1">TCAD 模擬研究</span><span class="block-count">4 <span data-i18n="block.slides">頁</span></span></summary>
           <div class="deck" data-deck aria-label="TCAD simulation slides" data-i18n-attr="aria-label:research.block1">
             <div class="deck-tabs" role="tablist">
               <button type="button" role="tab" data-deck-topic="epi"><span>01</span><span data-i18n="deck.tabEpi">多通道 FinFET 厚度分配</span></button>
@@ -311,10 +319,10 @@
             <button type="button" class="deck-next" aria-label="下一頁" data-i18n-attr="aria-label:deck.next">→</button>
           </div>
           </div>
-        </div>
+        </details>
 
-        <div class="research-block">
-          <h4 class="research-block-title"><span>02</span><span data-i18n="research.block2">FinFET 元件製程開發與 PFA</span></h4>
+        <details class="research-block collapsible">
+          <summary class="research-block-title"><span>02</span><span data-i18n="research.block2">FinFET 元件製程開發與 PFA</span><span class="block-count">2 <span data-i18n="block.slides">頁</span></span></summary>
           <div class="deck" data-deck aria-label="FinFET process development slides" data-i18n-attr="aria-label:research.block2">
             <div class="deck-tabs" role="tablist">
               <button type="button" role="tab" data-deck-topic="ebl"><span>01</span><span data-i18n="deck.tabEbl">EBL PFA</span></button>
@@ -351,10 +359,10 @@
             <button type="button" class="deck-next" aria-label="下一頁" data-i18n-attr="aria-label:deck.next">→</button>
           </div>
           </div>
-        </div>
+        </details>
 
-        <div class="research-block">
-          <h4 class="research-block-title"><span>03</span><span data-i18n="research.block3">多通道 SBD C-V 特性研究</span></h4>
+        <details class="research-block collapsible">
+          <summary class="research-block-title"><span>03</span><span data-i18n="research.block3">多通道 SBD C-V 特性研究</span><span class="block-count">1 <span data-i18n="block.slides">頁</span></span></summary>
           <div class="deck" data-deck aria-label="Multi-channel SBD C-V slides" data-i18n-attr="aria-label:research.block3">
           <article class="deck-step" data-topic="cv" data-highlight-id="deck-cv">
             <a class="deck-slide" href="assets/slides/deck/gan-cv-efa.jpg" target="_blank" rel="noopener">
@@ -369,10 +377,10 @@
           </article>
 
           </div>
-        </div>
+        </details>
 
-        <div class="research-block">
-          <h4 class="research-block-title"><span>04</span><span data-i18n="research.block4">p-GaN Back-barrier 研究</span></h4>
+        <details class="research-block collapsible">
+          <summary class="research-block-title"><span>04</span><span data-i18n="research.block4">p-GaN Back-barrier 研究</span><span class="block-count">3 <span data-i18n="block.slides">頁</span></span></summary>
           <div class="deck" data-deck aria-label="p-GaN back-barrier slides" data-i18n-attr="aria-label:research.block4">
             <div class="deck-tabs" role="tablist">
               <button type="button" role="tab" data-deck-topic="pg1"><span>01</span><span data-i18n="deck.tabPg1">樣品設計與 Vth</span></button>
@@ -422,12 +430,13 @@
             <button type="button" class="deck-next" aria-label="下一頁" data-i18n-attr="aria-label:deck.next">→</button>
           </div>
           </div>
-        </div>
-        </div>
+        </details>
 
         <div class="device-subsection-title">
           <h3 data-i18n="research.sicHeading">SiC MOSFET：工藝仿真、變溫特性與高溫量測</h3>
         </div>
+        <details class="research-block collapsible">
+          <summary class="research-block-title"><span>01</span><span data-i18n="research.block5">SiC MOSFET 高溫特性研究</span><span class="block-count">6 <span data-i18n="block.slides">頁</span></span></summary>
         <article class="research-focus-card research-question sic-question">
           <p class="tag">Undergraduate thesis · A+</p>
           <h3 data-i18n="sic.title">大學畢業論文：極端環境下 SiC 功率器件的高溫特性研究</h3>
@@ -522,6 +531,7 @@
             <button type="button" class="deck-next" aria-label="下一頁" data-i18n-attr="aria-label:deck.next">→</button>
           </div>
         </div>
+        </details>
         <nav class="page-pager" aria-label="Page navigation" data-i18n-attr="aria-label:pager.label">
           <a class="pager-prev" href="#publications">
             <small data-i18n="pager.prev">上一頁</small>
@@ -621,7 +631,6 @@
             <button type="button" class="deck-next" aria-label="下一頁" data-i18n-attr="aria-label:deck.next">→</button>
           </div>
           </div>
-        </div>
         </div>
         <nav class="page-pager" aria-label="Page navigation" data-i18n-attr="aria-label:pager.label">
           <a class="pager-prev" href="#research">
@@ -896,7 +905,7 @@
 
     <button class="back-to-top" type="button" aria-label="返回最頂部" title="返回最頂部">↑</button>
 
-    <script src="script.js?v=20261010-profile"></script>
-    <script type="module" src="background3d.js?v=20261010-profile"></script>
+    <script src="script.js?v=20261010-layout2"></script>
+    <script type="module" src="background3d.js?v=20261010-layout2"></script>
   </body>
 </html>

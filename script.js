@@ -85,6 +85,7 @@ const translations = {
     "keyword.trigate": "Trigate / Narrow-fin",
     "keyword.tcad": "3D TCAD Simulation",
     "keyword.mask": "製程 Runcard 自動化",
+    "keyword.label": "研究關鍵字 · 點擊直接跳到對應投影片",
     "keyword.ebeam": "E-beam 微影製程",
     "keyword.etch": "蝕刻製程",
     "keyword.sic": "SiC MOSFET 高溫特性",
@@ -105,6 +106,10 @@ const translations = {
     "research.block2": "FinFET 元件製程開發與 PFA",
     "research.block3": "多通道 SBD C-V 特性研究",
     "research.block4": "p-GaN Back-barrier 研究",
+    "research.block5": "SiC MOSFET 高溫特性研究",
+    "research.expandAll": "全部展開",
+    "research.collapseAll": "全部收合",
+    "block.slides": "頁",
     "deck.tabEbl": "EBL PFA",
     "deck.tabEtch": "Etch PFA",
     "deck.tabPg1": "樣品設計與 Vth",
@@ -352,6 +357,7 @@ const translations = {
     "keyword.trigate": "Trigate / Narrow-fin",
     "keyword.tcad": "3D TCAD Simulation",
     "keyword.mask": "Process Run-card Automation",
+    "keyword.label": "Keywords · click to jump to the matching slide",
     "keyword.ebeam": "E-beam Lithography Process",
     "keyword.etch": "Etch Process",
     "keyword.sic": "SiC MOSFET at High Temperature",
@@ -372,6 +378,10 @@ const translations = {
     "research.block2": "FinFET Process Development & PFA",
     "research.block3": "Multi-channel SBD C-V Characterization",
     "research.block4": "p-GaN Back-barrier Study",
+    "research.block5": "SiC MOSFET High-Temperature Study",
+    "research.expandAll": "Expand all",
+    "research.collapseAll": "Collapse all",
+    "block.slides": "slides",
     "deck.tabEbl": "EBL PFA",
     "deck.tabEtch": "Etch PFA",
     "deck.tabPg1": "Samples & Vth",
@@ -721,6 +731,14 @@ function showPage(page) {
   page.classList.add("page-enter");
 }
 
+function openCollapsedAncestors(element) {
+  let details = element.closest("details");
+  while (details) {
+    details.open = true;
+    details = details.parentElement.closest("details");
+  }
+}
+
 function route() {
   const id = decodeURIComponent(window.location.hash.slice(1));
   const target = id ? document.getElementById(id) : null;
@@ -729,9 +747,19 @@ function route() {
 
   // The browser cannot jump to an anchor that was hidden when the hash changed.
   if (target && target !== page) {
+    openCollapsedAncestors(target);
     target.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 }
+
+document.querySelectorAll(".block-toolbar [data-blocks]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const shouldOpen = button.dataset.blocks === "open";
+    pageOf(button).querySelectorAll("details.collapsible").forEach((details) => {
+      details.open = shouldOpen;
+    });
+  });
+});
 
 window.addEventListener("hashchange", route);
 document.addEventListener("click", (event) => {
@@ -791,6 +819,7 @@ function highlightKeywordTargets(trigger, targetIds) {
   });
 
   targets.forEach((target) => {
+    openCollapsedAncestors(target);
     const deck = target.closest("[data-deck]");
     if (deck?.showStep) {
       deck.showStep(target);
