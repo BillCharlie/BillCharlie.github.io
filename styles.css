@@ -471,11 +471,11 @@ li {
   --interest-accent: var(--blue);
 }
 
-.interest-ic {
+.interest-device {
   --interest-accent: var(--gold);
 }
 
-.interest-ai {
+.interest-data {
   --interest-accent: var(--violet);
 }
 

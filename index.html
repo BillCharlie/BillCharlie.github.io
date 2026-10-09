@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="陳秉佑 / Ping Yu-Chen / Bill Chen 的個人首頁：TCAD 模擬、GaN / SiC 功率元件、類比與數位 IC 設計、IWN 2026 與 IEDMS 2026 論文、製程 DOE 與生活紀錄。"
+      content="陳秉佑 / Ping Yu-Chen / Bill Chen 的個人首頁：製程整合與 TCAD、無塵室實作、PFA / EFA 數據分析、GaN / SiC 功率元件、IC 設計、IWN 2026 與 IEDMS 2026 論文與生活紀錄。"
       data-i18n-attr="content:meta.description"
     />
     <title data-i18n="meta.title">陳秉佑 | Ping Yu-Chen</title>
     <link rel="preload" href="assets/profile-photo.jpg" as="image" />
     <link rel="preload" href="assets/life-cat-hero.jpg" as="image" />
-    <link rel="stylesheet" href="styles.css?v=20261010-nav" />
+    <link rel="stylesheet" href="styles.css?v=20261010-process" />
   </head>
   <body>
     <canvas id="water-canvas" aria-hidden="true"></canvas>
@@ -38,14 +38,14 @@
     <main>
       <section class="hero" id="home" data-page>
         <div class="hero-copy">
-          <p class="eyebrow" data-i18n="hero.eyebrow">TCAD · GaN / SiC Power Devices · Analog &amp; Digital IC · Process DOE · Measurement</p>
-          <h1 data-i18n="hero.title">用 TCAD 串起元件、製程與電路。</h1>
+          <p class="eyebrow" data-i18n="hero.eyebrow">Process Integration · TCAD · Cleanroom · PFA / EFA · Python</p>
+          <h1 data-i18n="hero.title">用製程與 TCAD，把數據變成設計規則。</h1>
           <div class="hero-bio">
             <p data-i18n="hero.bio1">
-              Hey，我是陳秉佑（Ping Yu-Chen / Bill Chen），中央大學電機所固態組碩士生，指導教授為綦振瀛教授；大學畢業於西安交通大學微電子科學與工程。我的主軸是 TCAD：用 Sentaurus 搭配 Python，把元件物理轉成可收斂的設計規則與製程窗口，再用量測回頭校準模型。
+              Hey，我是陳秉佑（Ping Yu-Chen / Bill Chen），中央大學電機所固態組碩士生，指導教授為綦振瀛教授；大學畢業於西安交通大學微電子科學與工程。我的主軸是製程與 TCAD：在無塵室親手完成 EBL 微影、ICP-RIE 蝕刻、PECVD、E-gun 鍍膜與 lift-off，用 FIB、FE-SEM 與 B1500A 做形貌與電性分析，並以 Sentaurus TCAD 先在模擬裡把元件想清楚。
             </p>
             <p data-i18n="hero.bio2">
-              研究對象涵蓋 GaN 與 SiC 功率元件，從磊晶、Trigate 結構一路做到製程與量測；大學時也完成類比與數位 IC 的電路設計、PVT corner 分析與全客製化版圖，並以雙脈衝測試量測功率元件的開關與反向恢復。因此我習慣同時從元件與電路兩端思考，能把元件特性連結到 PMIC 與功率系統的需求。
+              我希望用 Python 把製程 recipe 和 PFA（形貌）、EFA（電性）數據串在一起，從 DOE 結果整理出可執行的 design rule 與製程窗口，例如把 EBL 的 +20.5 nm 常數偏差轉成 GDS 端統一 bias −20 nm。研究對象涵蓋 GaN 與 SiC 功率元件；大學也完成類比與數位 IC 的電路與版圖設計，能把元件特性連結到電路端的需求。
             </p>
           </div>
           <div class="hero-highlights" aria-label="Research highlights" data-i18n-attr="aria-label:highlight.label">
@@ -85,6 +85,15 @@
         <div class="hero-lower">
           <p class="eyebrow hero-subhead" data-i18n="interest.label">研究興趣</p>
           <div class="interest-list" aria-label="Research interests" data-i18n-attr="aria-label:interest.label">
+            <a class="interest-item interest-process" href="#research">
+              <span class="interest-tag" data-i18n="interest.processTag">製程</span>
+              <span class="interest-copy">
+                <strong data-i18n="interest.processTitle">在無塵室把元件做出來</strong>
+                <span data-i18n="interest.processBody">
+                  在無塵室執行 EBL 微影、ICP-RIE 蝕刻、PECVD、E-gun 鍍膜與 lift-off；以 dose matrix、hardmask 厚度與蝕刻參數 DOE 找出 Fin 製程窗口，並用 FIB / FE-SEM 截面從形貌回推 root cause。
+                </span>
+              </span>
+            </a>
             <a class="interest-item interest-tcad" href="#research">
               <span class="interest-tag">TCAD</span>
               <span class="interest-copy">
@@ -94,36 +103,31 @@
                 </span>
               </span>
             </a>
-            <a class="interest-item interest-gan" href="#research">
-              <span class="interest-tag" data-i18n="interest.powerTag">功率元件</span>
+            <a class="interest-item interest-data" href="#research">
+              <span class="interest-tag" data-i18n="interest.dataTag">Python × 數據</span>
               <span class="interest-copy">
-                <strong data-i18n="interest.ganTitle">為高密度能源轉換做元件</strong>
-                <span data-i18n="interest.ganBody">
-                  碩士研究 24/48 V E-mode GaN FinFET 與 p-GaN HFET back-barrier，從磊晶、Trigate 結構到 EBL / ICP-RIE 製程與 C-V 量測；大學論文自建高溫平台，量測 SiC MOSFET 在 300 °C 下的靜態與動態特性。
+                <strong data-i18n="interest.dataTitle">把 recipe、PFA 與 EFA 串成 design rule</strong>
+                <span data-i18n="interest.dataBody">
+                  用 Python 整理製程 recipe、截面形貌與 I-V / C-V 電性數據，做 DOE 統計、參數萃取與 process-window 分析，把經驗調參變成可重現、可追溯的設計規則；也開發 Runcard Builder 管理製程步驟與版本。
                 </span>
               </span>
             </a>
-            <a class="interest-item interest-ic" href="#analog">
-              <span class="interest-tag" data-i18n="interest.icTag">電路與系統</span>
+            <a class="interest-item interest-device" href="#analog">
+              <span class="interest-tag" data-i18n="interest.deviceTag">元件與電路</span>
               <span class="interest-copy">
-                <strong data-i18n="interest.icTitle">從電路端看元件</strong>
-                <span data-i18n="interest.icBody">
-                  完成類比 IC（運放 / 遲滯比較器複用電路、能隙基準）與全客製化數位 IC（SN74LVC112A J-K 正反器）的設計、PVT corner 分析與版圖驗證；並以雙脈衝測試量測開關與反向恢復，理解元件特性如何影響 PMIC 與功率系統。
-                </span>
-              </span>
-            </a>
-            <a class="interest-item interest-ai" href="#projects">
-              <span class="interest-tag" data-i18n="interest.aiTag">AI 工具</span>
-              <span class="interest-copy">
-                <strong data-i18n="interest.aiTitle">把 AI 變成工程助理</strong>
-                <span data-i18n="interest.aiBody">
-                  把 AI 導入設計檢查、流程追蹤與文獻整理，開發 Runcard Builder、Literature Manager 與 GaN 產業情報系統，讓研究迭代更快、也更可追溯。
+                <strong data-i18n="interest.deviceTitle">從元件一路看到電路</strong>
+                <span data-i18n="interest.deviceBody">
+                  研究 24/48 V E-mode GaN FinFET、p-GaN HFET 與 SiC MOSFET 高溫特性；大學完成類比 IC（運放 / 遲滯比較器、能隙基準）與全客製化數位 IC 的設計、PVT corner 分析與版圖，並以雙脈衝測試量測開關特性。
                 </span>
               </span>
             </a>
           </div>
           <p class="eyebrow hero-subhead" data-i18n="keyword.label">研究關鍵字 · 點擊直接跳到對應投影片</p>
           <div class="keyword-cloud" aria-label="Research keywords">
+            <button type="button" data-i18n="keyword.ebeam" data-targets="deck-ebl">E-beam Process</button>
+            <button type="button" data-i18n="keyword.etch" data-targets="deck-etch">Etch Process</button>
+            <button type="button" data-i18n="keyword.efa" data-targets="deck-cv">C-V 電性分析</button>
+            <button type="button" data-i18n="keyword.mask" data-targets="runcard-tool">製程 Runcard 自動化</button>
             <button type="button" data-i18n="keyword.tcad" data-targets="deck-aitcad-method">3D TCAD Simulation</button>
             <button type="button" data-i18n="keyword.ai" data-targets="deck-aitcad-method">AI-assisted Device Development</button>
             <button type="button" data-i18n="keyword.power" data-targets="deck-epi-mechanism">GaN Power FinFET</button>
@@ -132,9 +136,6 @@
             <button type="button" data-i18n="keyword.dpt" data-targets="deck-sic-dynamic">Double Pulse Test</button>
             <button type="button" data-i18n="keyword.analog" data-targets="deck-ana-corner">類比 IC · PVT Corner</button>
             <button type="button" data-i18n="keyword.digital" data-targets="deck-jk-spec">全客製化數位 IC</button>
-            <button type="button" data-i18n="keyword.ebeam" data-targets="deck-ebl">E-beam Process</button>
-            <button type="button" data-i18n="keyword.etch" data-targets="deck-etch">Etch Process</button>
-            <button type="button" data-i18n="keyword.mask" data-targets="runcard-tool">製程 Runcard 自動化</button>
           </div>
         </div>
         <nav class="page-pager" aria-label="Page navigation" data-i18n-attr="aria-label:pager.label">
@@ -878,7 +879,7 @@
         <p class="eyebrow" data-i18n="contact.eyebrow">聯絡方式</p>
         <h2 data-i18n="contact.title">歡迎交流</h2>
         <p data-i18n="contact.body">
-          如果你也在做 TCAD、GaN / SiC 功率元件、PMIC 或功率系統，歡迎聯絡我。
+          如果你也在做製程整合、TCAD、GaN / SiC 功率元件或 PMIC，歡迎聯絡我。
         </p>
         <div class="contact-links">
           <a href="mailto:chenbill718@gmail.com">chenbill718@gmail.com</a>
@@ -901,7 +902,7 @@
 
     <button class="back-to-top" type="button" aria-label="返回最頂部" title="返回最頂部">↑</button>
 
-    <script src="script.js?v=20261010-nav"></script>
-    <script type="module" src="background3d.js?v=20261010-nav"></script>
+    <script src="script.js?v=20261010-process"></script>
+    <script type="module" src="background3d.js?v=20261010-process"></script>
   </body>
 </html>
