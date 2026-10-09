@@ -11,7 +11,7 @@
     <title data-i18n="meta.title">陳秉佑 | Ping Yu-Chen</title>
     <link rel="preload" href="assets/profile-photo.jpg" as="image" />
     <link rel="preload" href="assets/life-cat-hero.jpg" as="image" />
-    <link rel="stylesheet" href="styles.css?v=20261010-tools2" />
+    <link rel="stylesheet" href="styles.css?v=20261010-nav" />
   </head>
   <body>
     <canvas id="water-canvas" aria-hidden="true"></canvas>
@@ -19,14 +19,14 @@
       <a class="brand" href="#home" data-i18n="brand">陳秉佑 · Ping Yu-Chen</a>
       <div class="header-right">
         <nav aria-label="Primary navigation">
-          <a href="#home" data-i18n="nav.home">簡介</a>
-          <a href="#publications" data-i18n="nav.publications">論文發表</a>
+          <a href="#home" data-i18n="nav.home">個人簡介</a>
           <a href="#research" data-i18n="nav.research">元件研究</a>
-          <a href="#analog" data-i18n="nav.analog">IC 設計</a>
-          <a href="#experience" data-i18n="nav.experience">經歷</a>
-          <a href="#projects" data-i18n="nav.projects">工具開發與專利</a>
-          <a href="#life" data-i18n="nav.life">生活</a>
-          <a href="#contact" data-i18n="nav.contact">聯絡</a>
+          <a href="#publications" data-i18n="nav.publications">論文發表</a>
+          <a href="#analog" data-i18n="nav.analog">電路設計</a>
+          <a href="#projects" data-i18n="nav.projects">工具專利</a>
+          <a href="#experience" data-i18n="nav.experience">經歷獎項</a>
+          <a href="#life" data-i18n="nav.life">生活紀錄</a>
+          <a href="#contact" data-i18n="nav.contact">聯絡方式</a>
         </nav>
         <div class="language-toggle" aria-label="Language switcher">
           <button type="button" data-lang="zh" class="active">中文</button>
@@ -59,8 +59,8 @@
             </a>
           </div>
           <div class="hero-actions">
-            <a class="button primary" href="#research" data-i18n="hero.ctaResearch">研究內容</a>
-            <a class="button" href="#projects" data-i18n="hero.ctaProjects">工具開發與專利</a>
+            <a class="button primary" href="#research" data-i18n="hero.ctaResearch">元件研究</a>
+            <a class="button" href="#projects" data-i18n="hero.ctaProjects">工具專利</a>
             <a class="button ghost" href="https://github.com/BillCharlie">GitHub</a>
           </div>
         </div>
@@ -139,97 +139,6 @@
         </div>
         <nav class="page-pager" aria-label="Page navigation" data-i18n-attr="aria-label:pager.label">
           <span class="pager-spacer"></span>
-          <a class="pager-next" href="#publications">
-            <small data-i18n="pager.next">下一頁</small>
-            <span data-i18n="nav.publications">論文發表</span>
-          </a>
-        </nav>
-      </section>
-
-      <section class="section publication-section" id="publications" data-page>
-        <div class="section-title">
-          <p class="eyebrow" data-i18n="pub.eyebrow">論文發表</p>
-          <h2 data-i18n="pub.title">研究成果與論文發表</h2>
-          <p data-i18n="pub.body">
-            碩士研究的兩條主線已整理成第一作者國際會議論文：元件端用 physics-guided AI-TCAD 收斂 E-mode GaN FinFET 的 Vth–Ron 取捨，磊晶端為多通道 AlGaN/GaN Trigate 建立 barrier 厚度設計規則。
-          </p>
-        </div>
-
-        <div class="publication-list">
-          <article class="publication-card" id="pub-iwn">
-            <a class="publication-poster" href="assets/publications/iwn2026-poster.jpg" target="_blank" rel="noopener">
-              <img src="assets/publications/iwn2026-poster.jpg" alt="IWN 2026 poster: Fast Regression in the Vth-Ron Tradeoff of Enhancement-Mode GaN FinFETs Using AI-Driven TCAD" loading="lazy" decoding="async" />
-              <span data-i18n="pub.viewPoster">查看海報</span>
-            </a>
-            <div class="publication-body">
-              <p class="tag" data-i18n="pub.iwnVenue">IWN 2026 · 日本熊本 · Poster · 第一作者</p>
-              <h3>Fast Regression in the V<sub>th</sub>–R<sub>on</sub> Tradeoff of Enhancement-Mode GaN FinFETs Using Artificial-Intelligence-Driven TCAD</h3>
-              <p class="publication-authors"><strong>Ping-Yu Chen</strong>, Wei-Yu Lung, Bo-Sheng Lin, Jen-Inn Chyi*</p>
-              <p data-i18n="pub.iwnSummary">
-                E-mode GaN FinFET 必須同時取得正 Vth 與低 Ron。我用 Python 建立 physics-guided 專家系統：以 Vth 安全分與 Ron 導通分評分、依離散度調整權重，並把每個建議點對齊可製造的 Al / Wfin / tox 步長；每輪 27 組，每一點都能追溯是哪條規則選出來的。
-              </p>
-              <dl class="publication-stats">
-                <div>
-                  <dt>91.6%</dt>
-                  <dd data-i18n="pub.iwnStat1">更少設計組數（960 → 81）</dd>
-                </div>
-                <div>
-                  <dt>92.0%</dt>
-                  <dd data-i18n="pub.iwnStat2">更少模擬時間（29,171 → 2,342 h）</dd>
-                </div>
-                <div>
-                  <dt>11% → 67%</dt>
-                  <dd data-i18n="pub.iwnStat3">安全 E-mode 比例（第 1 → 3 輪）</dd>
-                </div>
-              </dl>
-              <p class="publication-finding" data-i18n="pub.iwnFinding">
-                關鍵發現：Al 組分主導全域 tradeoff；收斂後主導因子轉為 Trigate 靜電控制，Wfin = 25 nm 決定能否同時得到低 Ron 與正 Vth（Ron 0.834–1.008 Ω·mm，Vth 中位數 0.390 V）。
-              </p>
-            </div>
-          </article>
-
-          <article class="publication-card" id="pub-iedms">
-            <a class="publication-poster" href="assets/publications/iedms2026-poster.jpg" target="_blank" rel="noopener">
-              <img src="assets/publications/iedms2026-poster.jpg" alt="IEDMS 2026 poster: Barrier-Thickness Design Guidelines for Multi-Channel AlGaN/GaN Trigate Power Transistors" loading="lazy" decoding="async" />
-              <span data-i18n="pub.viewPoster">查看海報</span>
-            </a>
-            <div class="publication-body">
-              <p class="tag" data-i18n="pub.iedmsVenue">IEDMS 2026 · 台北 · Poster · 第一作者 · Paper ID 1260</p>
-              <h3>Barrier-Thickness Design Guidelines for Multi-Channel AlGaN/GaN Trigate Power Transistors</h3>
-              <p class="publication-authors"><strong>Ping-Yu Chen</strong>, Ting-Yu Lin, Jen-Inn Chyi*</p>
-              <p data-i18n="pub.iedmsSummary">
-                多通道結構讓每個 AlGaN/GaN 介面都形成 2DEG 以降低 Ron,sp，但深層通道的閘控較弱。我固定上層 barrier 為 11 nm，掃描中層 Y 與底層 X（7–15 nm）共 25 組設計，萃取 Vth、Ron,sp、Id,max、電容與 Qg。
-              </p>
-              <dl class="publication-stats">
-                <div>
-                  <dt>−15.8 mV/nm</dt>
-                  <dd data-i18n="pub.iedmsStat1">Vth 隨底層 X 的變化</dd>
-                </div>
-                <div>
-                  <dt>+205 mV</dt>
-                  <dd data-i18n="pub.iedmsStat2">同總厚度下 8 nm 由 X 移到 Y</dd>
-                </div>
-                <div>
-                  <dt>Y &gt; X</dt>
-                  <dd data-i18n="pub.iedmsStat3">barrier 厚度設計規則</dd>
-                </div>
-              </dl>
-              <p class="publication-finding" data-i18n="pub.iedmsFinding">
-                關鍵發現：X 決定最深通道的閘控與 Vth；Y 以較小的深度代價增加並聯電荷，主導 Ron,sp 與 Id,max；Qg 只隨總厚度變化。設計規則是 Y 盡量大、X 盡量小，再依 gate-drive 損耗預算決定總厚度。
-              </p>
-            </div>
-          </article>
-        </div>
-
-        <p class="publication-other">
-          <span class="tag" data-i18n="pub.otherTag">其他研究產出</span>
-          <span>“Blockchain-based Decentralized Co-governance for Sustainable Crowdfunding.” · arXiv Preprint · <span data-i18n="pub.firstAuthor">第一作者</span></span>
-        </p>
-        <nav class="page-pager" aria-label="Page navigation" data-i18n-attr="aria-label:pager.label">
-          <a class="pager-prev" href="#home">
-            <small data-i18n="pager.prev">上一頁</small>
-            <span data-i18n="nav.home">簡介</span>
-          </a>
           <a class="pager-next" href="#research">
             <small data-i18n="pager.next">下一頁</small>
             <span data-i18n="nav.research">元件研究</span>
@@ -533,20 +442,111 @@
         </div>
         </details>
         <nav class="page-pager" aria-label="Page navigation" data-i18n-attr="aria-label:pager.label">
-          <a class="pager-prev" href="#publications">
+          <a class="pager-prev" href="#home">
             <small data-i18n="pager.prev">上一頁</small>
+            <span data-i18n="nav.home">個人簡介</span>
+          </a>
+          <a class="pager-next" href="#publications">
+            <small data-i18n="pager.next">下一頁</small>
             <span data-i18n="nav.publications">論文發表</span>
+          </a>
+        </nav>
+      </section>
+
+      <section class="section publication-section" id="publications" data-page>
+        <div class="section-title">
+          <p class="eyebrow" data-i18n="pub.eyebrow">論文發表</p>
+          <h2 data-i18n="pub.title">研究成果與論文發表</h2>
+          <p data-i18n="pub.body">
+            兩篇都是碩士研究整理成的第一作者會議論文：IWN 2026 用 AI 輔助 TCAD，加快 E-mode GaN FinFET 的參數設計；IEDMS 2026 則從 25 組模擬整理出多通道 AlGaN/GaN 結構的 barrier 厚度設計規則。
+          </p>
+        </div>
+
+        <div class="publication-list">
+          <article class="publication-card" id="pub-iwn">
+            <a class="publication-poster" href="assets/publications/iwn2026-poster.jpg" target="_blank" rel="noopener">
+              <img src="assets/publications/iwn2026-poster.jpg" alt="IWN 2026 poster: Fast Regression in the Vth-Ron Tradeoff of Enhancement-Mode GaN FinFETs Using AI-Driven TCAD" loading="lazy" decoding="async" />
+              <span data-i18n="pub.viewPoster">查看海報</span>
+            </a>
+            <div class="publication-body">
+              <p class="tag" data-i18n="pub.iwnVenue">IWN 2026 · 日本熊本 · Poster · 第一作者</p>
+              <h3>Fast Regression in the V<sub>th</sub>–R<sub>on</sub> Tradeoff of Enhancement-Mode GaN FinFETs Using Artificial-Intelligence-Driven TCAD</h3>
+              <p class="publication-authors"><strong>Ping-Yu Chen</strong>, Wei-Yu Lung, Bo-Sheng Lin, Jen-Inn Chyi*</p>
+              <p data-i18n="pub.iwnSummary">
+                E-mode GaN FinFET 必須同時取得正 Vth 與低 Ron。我用 Python 建立 physics-guided 專家系統：以 Vth 安全分與 Ron 導通分評分、依離散度調整權重，並把每個建議點對齊可製造的 Al / Wfin / tox 步長；每輪 27 組，每一點都能追溯是哪條規則選出來的。
+              </p>
+              <dl class="publication-stats">
+                <div>
+                  <dt>91.6%</dt>
+                  <dd data-i18n="pub.iwnStat1">更少設計組數（960 → 81）</dd>
+                </div>
+                <div>
+                  <dt>92.0%</dt>
+                  <dd data-i18n="pub.iwnStat2">更少模擬時間（29,171 → 2,342 h）</dd>
+                </div>
+                <div>
+                  <dt>11% → 67%</dt>
+                  <dd data-i18n="pub.iwnStat3">安全 E-mode 比例（第 1 → 3 輪）</dd>
+                </div>
+              </dl>
+              <p class="publication-finding" data-i18n="pub.iwnFinding">
+                關鍵發現：Al 組分主導全域 tradeoff；收斂後主導因子轉為 Trigate 靜電控制，Wfin = 25 nm 決定能否同時得到低 Ron 與正 Vth（Ron 0.834–1.008 Ω·mm，Vth 中位數 0.390 V）。
+              </p>
+            </div>
+          </article>
+
+          <article class="publication-card" id="pub-iedms">
+            <a class="publication-poster" href="assets/publications/iedms2026-poster.jpg" target="_blank" rel="noopener">
+              <img src="assets/publications/iedms2026-poster.jpg" alt="IEDMS 2026 poster: Barrier-Thickness Design Guidelines for Multi-Channel AlGaN/GaN Trigate Power Transistors" loading="lazy" decoding="async" />
+              <span data-i18n="pub.viewPoster">查看海報</span>
+            </a>
+            <div class="publication-body">
+              <p class="tag" data-i18n="pub.iedmsVenue">IEDMS 2026 · 台北 · Poster · 第一作者 · Paper ID 1260</p>
+              <h3>Barrier-Thickness Design Guidelines for Multi-Channel AlGaN/GaN Trigate Power Transistors</h3>
+              <p class="publication-authors"><strong>Ping-Yu Chen</strong>, Ting-Yu Lin, Jen-Inn Chyi*</p>
+              <p data-i18n="pub.iedmsSummary">
+                多通道結構讓每個 AlGaN/GaN 介面都形成 2DEG 以降低 Ron,sp，但深層通道的閘控較弱。我固定上層 barrier 為 11 nm，掃描中層 Y 與底層 X（7–15 nm）共 25 組設計，萃取 Vth、Ron,sp、Id,max、電容與 Qg。
+              </p>
+              <dl class="publication-stats">
+                <div>
+                  <dt>−15.8 mV/nm</dt>
+                  <dd data-i18n="pub.iedmsStat1">Vth 隨底層 X 的變化</dd>
+                </div>
+                <div>
+                  <dt>+205 mV</dt>
+                  <dd data-i18n="pub.iedmsStat2">同總厚度下 8 nm 由 X 移到 Y</dd>
+                </div>
+                <div>
+                  <dt>Y &gt; X</dt>
+                  <dd data-i18n="pub.iedmsStat3">barrier 厚度設計規則</dd>
+                </div>
+              </dl>
+              <p class="publication-finding" data-i18n="pub.iedmsFinding">
+                關鍵發現：X 決定最深通道的閘控與 Vth；Y 以較小的深度代價增加並聯電荷，主導 Ron,sp 與 Id,max；Qg 只隨總厚度變化。設計規則是 Y 盡量大、X 盡量小，再依 gate-drive 損耗預算決定總厚度。
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <p class="publication-other">
+          <span class="tag" data-i18n="pub.otherTag">其他研究產出</span>
+          <span>“Blockchain-based Decentralized Co-governance for Sustainable Crowdfunding.” · arXiv Preprint · <span data-i18n="pub.firstAuthor">第一作者</span></span>
+        </p>
+        <nav class="page-pager" aria-label="Page navigation" data-i18n-attr="aria-label:pager.label">
+          <a class="pager-prev" href="#research">
+            <small data-i18n="pager.prev">上一頁</small>
+            <span data-i18n="nav.research">元件研究</span>
           </a>
           <a class="pager-next" href="#analog">
             <small data-i18n="pager.next">下一頁</small>
-            <span data-i18n="nav.analog">IC 設計</span>
+            <span data-i18n="nav.analog">電路設計</span>
           </a>
         </nav>
       </section>
 
       <section class="section analog-section" id="analog" data-page>
         <div class="section-title">
-          <p class="eyebrow" data-i18n="analog.eyebrow">IC 設計</p>
+          <p class="eyebrow" data-i18n="analog.eyebrow">電路設計</p>
           <h2 data-i18n="analog.title">IC 設計專題：J-K 正反器全客製化與類比放大／比較器</h2>
           <p data-i18n="analog.body">
             大學 VLSI 專題中，我完成了兩個積體電路的全流程設計，一個數位、一個類比，皆以 Cadence 從規格走到版圖與驗證。
@@ -633,107 +633,20 @@
           </div>
         </div>
         <nav class="page-pager" aria-label="Page navigation" data-i18n-attr="aria-label:pager.label">
-          <a class="pager-prev" href="#research">
+          <a class="pager-prev" href="#publications">
             <small data-i18n="pager.prev">上一頁</small>
-            <span data-i18n="nav.research">元件研究</span>
-          </a>
-          <a class="pager-next" href="#experience">
-            <small data-i18n="pager.next">下一頁</small>
-            <span data-i18n="nav.experience">經歷</span>
-          </a>
-        </nav>
-      </section>
-
-      <section class="section experience-section" id="experience" data-page>
-        <div class="section-title">
-          <p class="eyebrow" data-i18n="experience.eyebrow">經歷</p>
-          <h2 data-i18n="experience.title">實習、專案與社團</h2>
-          <p data-i18n="experience.body">
-            除了目前的元件研究，我也實戰過工業工程生產管理基本方法、認識SMT封測技術、區塊鏈工作室創建，以及學生創業社團的活動規劃。這些經歷讓我更習慣把技術放在實用產業可行性的角度思考。
-          </p>
-        </div>
-
-        <div class="experience-grid">
-          <article class="experience-card wide">
-            <div class="experience-copy">
-              <p class="tag">Summer Management Trainee Internship</p>
-              <h3 data-i18n="experience.usiTitle">日月光集團 USI 環旭電子暑期實習</h3>
-              <p data-i18n="experience.usiBody">
-                參與 Summer Management Trainee Internship，學習 SMT 封測生產流程與關鍵站點功能，整理價值流與標準工時資料，並以精益生產方法製作專案管理報表。
-              </p>
-            </div>
-            <div class="experience-media double">
-              <figure>
-                <img
-                  src="assets/Plan-preview.jpg"
-                  alt="Summer Management Trainee Internship program plan at USI"
-                  data-i18n-attr="alt:experience.usiAltPlan"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <figcaption data-i18n="experience.usiCap1">價值流與標準工時表整理</figcaption>
-              </figure>
-              <figure>
-                <img src="assets/SMT.png" alt="SMT process workflow" data-i18n-attr="alt:experience.usiAltSmt" loading="lazy" decoding="async" />
-                <figcaption data-i18n="experience.usiCap2">SMT 製程工藝與站點流程</figcaption>
-              </figure>
-            </div>
-          </article>
-
-          <article class="experience-card">
-            <figure class="experience-photo">
-              <img src="assets/experience/blockchain-presentation.jpg" alt="Blockchain studio project presentation" loading="lazy" decoding="async" />
-            </figure>
-            <div class="experience-copy">
-              <p class="tag">Blockchain · Founder · Frontend</p>
-              <h3 data-i18n="experience.blockchainTitle">仕集區塊鏈工作室</h3>
-              <p data-i18n="experience.blockchainBody">
-                作為工作室創辦人，我負責區塊鏈底層系統架構、共識演算法開發，以及 UI 設計與前端 JavaScript 框架搭建。這段經歷讓我很早就開始把技術實作、產品呈現和團隊溝通放在一起做。
-              </p>
-            </div>
-          </article>
-
-          <article class="experience-card">
-            <figure class="experience-photo">
-              <img src="assets/experience/club-group.jpg" alt="Student entrepreneurship association group photo" loading="lazy" decoding="async" />
-            </figure>
-            <div class="experience-copy">
-              <p class="tag">Student Association · Events</p>
-              <h3 data-i18n="experience.clubTitle">創業者協會與學生創業中心社團</h3>
-              <p data-i18n="experience.clubBody">
-                擔任協會會長兼社團副主席期間，我參與創新創業講座與論壇規劃，邀請創業校友交流，也協助行政執行與學生創新創業計畫活動。
-              </p>
-            </div>
-          </article>
-
-          <article class="experience-card awards-card">
-            <div class="experience-copy">
-              <p class="tag">Awards</p>
-              <h3 data-i18n="awards.title">競賽與獎項</h3>
-              <ul class="awards-list">
-                <li data-i18n="awards.item1">第八屆中國國際「互聯網+」大學生創新創業大賽｜銀獎</li>
-                <li data-i18n="awards.item2">國家級大學生創新訓練項目＋創業訓練計畫｜優秀結題</li>
-                <li data-i18n="awards.item3">全國大學生數學建模競賽｜陝西省三等獎</li>
-                <li data-i18n="awards.item4">香港中文大學（深圳）國際大學生 FinTech 創新大賽｜積極參與獎</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-        <nav class="page-pager" aria-label="Page navigation" data-i18n-attr="aria-label:pager.label">
-          <a class="pager-prev" href="#analog">
-            <small data-i18n="pager.prev">上一頁</small>
-            <span data-i18n="nav.analog">IC 設計</span>
+            <span data-i18n="nav.publications">論文發表</span>
           </a>
           <a class="pager-next" href="#projects">
             <small data-i18n="pager.next">下一頁</small>
-            <span data-i18n="nav.projects">工具開發與專利</span>
+            <span data-i18n="nav.projects">工具專利</span>
           </a>
         </nav>
       </section>
 
       <section class="section tool-section" id="projects" data-page>
         <div class="section-title">
-          <p class="eyebrow" data-i18n="projects.eyebrow">工具開發與專利</p>
+          <p class="eyebrow" data-i18n="projects.eyebrow">工具專利</p>
           <h2 data-i18n="projects.title">工具開發與專利</h2>
           <p data-i18n="projects.body">
             我喜歡把能提升研究效率的想法實作成工具：Runcard Builder 把製程步驟整理成結構化的 run card，Real-time GaN Industry Intelligence 追蹤 GaN 產業動態，Literature Manager 系統化整理 GaN 近 5 年頂刊頂會的文獻與閱讀筆記。另一方面，大學時結合創業社團的經歷，我深入了解創業團隊在募資與協作上的挑戰，因此開發了仕集區塊鏈眾籌系統，並申請了演算法專利。
@@ -812,20 +725,107 @@
           </article>
         </div>
         <nav class="page-pager" aria-label="Page navigation" data-i18n-attr="aria-label:pager.label">
-          <a class="pager-prev" href="#experience">
+          <a class="pager-prev" href="#analog">
             <small data-i18n="pager.prev">上一頁</small>
-            <span data-i18n="nav.experience">經歷</span>
+            <span data-i18n="nav.analog">電路設計</span>
+          </a>
+          <a class="pager-next" href="#experience">
+            <small data-i18n="pager.next">下一頁</small>
+            <span data-i18n="nav.experience">經歷獎項</span>
+          </a>
+        </nav>
+      </section>
+
+      <section class="section experience-section" id="experience" data-page>
+        <div class="section-title">
+          <p class="eyebrow" data-i18n="experience.eyebrow">經歷獎項</p>
+          <h2 data-i18n="experience.title">實習、專案與社團</h2>
+          <p data-i18n="experience.body">
+            除了目前的元件研究，我也實戰過工業工程生產管理基本方法、認識SMT封測技術、區塊鏈工作室創建，以及學生創業社團的活動規劃。這些經歷讓我更習慣把技術放在實用產業可行性的角度思考。
+          </p>
+        </div>
+
+        <div class="experience-grid">
+          <article class="experience-card wide">
+            <div class="experience-copy">
+              <p class="tag">Summer Management Trainee Internship</p>
+              <h3 data-i18n="experience.usiTitle">日月光集團 USI 環旭電子暑期實習</h3>
+              <p data-i18n="experience.usiBody">
+                參與 Summer Management Trainee Internship，學習 SMT 封測生產流程與關鍵站點功能，整理價值流與標準工時資料，並以精益生產方法製作專案管理報表。
+              </p>
+            </div>
+            <div class="experience-media double">
+              <figure>
+                <img
+                  src="assets/Plan-preview.jpg"
+                  alt="Summer Management Trainee Internship program plan at USI"
+                  data-i18n-attr="alt:experience.usiAltPlan"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption data-i18n="experience.usiCap1">價值流與標準工時表整理</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/SMT.png" alt="SMT process workflow" data-i18n-attr="alt:experience.usiAltSmt" loading="lazy" decoding="async" />
+                <figcaption data-i18n="experience.usiCap2">SMT 製程工藝與站點流程</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="experience-card">
+            <figure class="experience-photo">
+              <img src="assets/experience/blockchain-presentation.jpg" alt="Blockchain studio project presentation" loading="lazy" decoding="async" />
+            </figure>
+            <div class="experience-copy">
+              <p class="tag">Blockchain · Founder · Frontend</p>
+              <h3 data-i18n="experience.blockchainTitle">仕集區塊鏈工作室</h3>
+              <p data-i18n="experience.blockchainBody">
+                作為工作室創辦人，我負責區塊鏈底層系統架構、共識演算法開發，以及 UI 設計與前端 JavaScript 框架搭建。這段經歷讓我很早就開始把技術實作、產品呈現和團隊溝通放在一起做。
+              </p>
+            </div>
+          </article>
+
+          <article class="experience-card">
+            <figure class="experience-photo">
+              <img src="assets/experience/club-group.jpg" alt="Student entrepreneurship association group photo" loading="lazy" decoding="async" />
+            </figure>
+            <div class="experience-copy">
+              <p class="tag">Student Association · Events</p>
+              <h3 data-i18n="experience.clubTitle">創業者協會與學生創業中心社團</h3>
+              <p data-i18n="experience.clubBody">
+                擔任協會會長兼社團副主席期間，我參與創新創業講座與論壇規劃，邀請創業校友交流，也協助行政執行與學生創新創業計畫活動。
+              </p>
+            </div>
+          </article>
+
+          <article class="experience-card awards-card">
+            <div class="experience-copy">
+              <p class="tag">Awards</p>
+              <h3 data-i18n="awards.title">競賽與獎項</h3>
+              <ul class="awards-list">
+                <li data-i18n="awards.item1">第八屆中國國際「互聯網+」大學生創新創業大賽｜銀獎</li>
+                <li data-i18n="awards.item2">國家級大學生創新訓練項目＋創業訓練計畫｜優秀結題</li>
+                <li data-i18n="awards.item3">全國大學生數學建模競賽｜陝西省三等獎</li>
+                <li data-i18n="awards.item4">香港中文大學（深圳）國際大學生 FinTech 創新大賽｜積極參與獎</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+        <nav class="page-pager" aria-label="Page navigation" data-i18n-attr="aria-label:pager.label">
+          <a class="pager-prev" href="#projects">
+            <small data-i18n="pager.prev">上一頁</small>
+            <span data-i18n="nav.projects">工具專利</span>
           </a>
           <a class="pager-next" href="#life">
             <small data-i18n="pager.next">下一頁</small>
-            <span data-i18n="nav.life">生活</span>
+            <span data-i18n="nav.life">生活紀錄</span>
           </a>
         </nav>
       </section>
 
       <section class="section life-section" id="life" data-page>
         <div class="section-title narrow">
-          <p class="eyebrow" data-i18n="life.eyebrow">生活</p>
+          <p class="eyebrow" data-i18n="life.eyebrow">生活紀錄</p>
           <h2 data-i18n="life.title">生活片段</h2>
           <p data-i18n="life.body">
             旅行、朋友、城市、山路和拼模型，都是我認識世界的方式。
@@ -863,19 +863,19 @@
           </figure>
         </div>
         <nav class="page-pager" aria-label="Page navigation" data-i18n-attr="aria-label:pager.label">
-          <a class="pager-prev" href="#projects">
+          <a class="pager-prev" href="#experience">
             <small data-i18n="pager.prev">上一頁</small>
-            <span data-i18n="nav.projects">工具開發與專利</span>
+            <span data-i18n="nav.experience">經歷獎項</span>
           </a>
           <a class="pager-next" href="#contact">
             <small data-i18n="pager.next">下一頁</small>
-            <span data-i18n="nav.contact">聯絡</span>
+            <span data-i18n="nav.contact">聯絡方式</span>
           </a>
         </nav>
       </section>
 
       <section class="section contact-section" id="contact" data-page>
-        <p class="eyebrow" data-i18n="contact.eyebrow">聯絡</p>
+        <p class="eyebrow" data-i18n="contact.eyebrow">聯絡方式</p>
         <h2 data-i18n="contact.title">歡迎交流</h2>
         <p data-i18n="contact.body">
           如果你也在做 TCAD、GaN / SiC 功率元件、PMIC 或功率系統，歡迎聯絡我。
@@ -888,7 +888,7 @@
         <nav class="page-pager" aria-label="Page navigation" data-i18n-attr="aria-label:pager.label">
           <a class="pager-prev" href="#life">
             <small data-i18n="pager.prev">上一頁</small>
-            <span data-i18n="nav.life">生活</span>
+            <span data-i18n="nav.life">生活紀錄</span>
           </a>
           <span class="pager-spacer"></span>
         </nav>
@@ -901,7 +901,7 @@
 
     <button class="back-to-top" type="button" aria-label="返回最頂部" title="返回最頂部">↑</button>
 
-    <script src="script.js?v=20261010-tools2"></script>
-    <script type="module" src="background3d.js?v=20261010-tools2"></script>
+    <script src="script.js?v=20261010-nav"></script>
+    <script type="module" src="background3d.js?v=20261010-nav"></script>
   </body>
 </html>
