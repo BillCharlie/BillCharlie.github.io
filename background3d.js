@@ -28,6 +28,7 @@ function clickedInteractiveSurface(target) {
         ".site-header",
         ".project-card",
         ".research-focus-card",
+        ".publication-card",
         ".experience-card",
         ".ic-card",
         ".report-grid figure",

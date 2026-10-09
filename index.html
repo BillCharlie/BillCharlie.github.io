@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="陳秉佑 / Ping Yu-Chen / Bill Chen 的個人首頁：GaN Trigate 元件、光罩設計、製程開發、類比 IC、EDA 工具、AI 研究工具與生活紀錄。"
+      content="陳秉佑 / Ping Yu-Chen / Bill Chen 的個人首頁：GaN Power FinFET、TCAD、AI 輔助元件開發、IWN 2026 與 IEDMS 2026 論文、製程 DOE、類比 IC 與生活紀錄。"
       data-i18n-attr="content:meta.description"
     />
     <title data-i18n="meta.title">陳秉佑 | Ping Yu-Chen</title>
     <link rel="preload" href="assets/profile-photo.jpg" as="image" />
     <link rel="preload" href="assets/life-cat-hero.jpg" as="image" />
-    <link rel="stylesheet" href="styles.css?v=20260711-hero-title-size" />
+    <link rel="stylesheet" href="styles.css?v=20261009-publications" />
   </head>
   <body>
     <canvas id="water-canvas" aria-hidden="true"></canvas>
@@ -19,6 +19,7 @@
       <a class="brand" href="#top" data-i18n="brand">陳秉佑 · Ping Yu-Chen</a>
       <div class="header-right">
         <nav aria-label="Primary navigation">
+          <a href="#publications" data-i18n="nav.publications">論文發表</a>
           <a href="#research" data-i18n="nav.research">元件研究</a>
           <a href="#analog" data-i18n="nav.analog">IC 設計</a>
           <a href="#experience" data-i18n="nav.experience">經歷</a>
@@ -36,18 +37,55 @@
     <main id="top">
       <section class="hero">
         <div class="hero-copy">
-          <p class="eyebrow" data-i18n="hero.eyebrow">GaN Trigate · Process DOE · Measurement · TCAD Simulation · LTSPICE · Cadence · EDA × AI</p>
+          <p class="eyebrow" data-i18n="hero.eyebrow">GaN Power · TCAD · AI Tools · Process DOE · Measurement</p>
           <h1 data-i18n="hero.title">讓 GaN Power 元件走向實作與應用。</h1>
           <div class="hero-bio">
             <p data-i18n="hero.bio1">
-              Hey，我是陳秉佑（Ping Yu-Chen / Bill Chen）。我的研究從 GaN Trigate 功率元件設計出發，逐步延伸到 TCAD 模擬、光罩與佈局設計、E-beam 微影、蝕刻製程開發，以及量測資料回饋。
+              Hey，我是陳秉佑（Ping Yu-Chen / Bill Chen），中央大學電機所固態組碩士生，指導教授為綦振瀛教授；大學畢業於西安交通大學微電子科學與工程。我習慣用「物理機制 → TCAD 模擬 → 版圖 → 製程 DOE → 量測 → 回饋校準」的閉環推進研究，把結果轉成設計規則、製程窗口與可重現的驗證紀錄。
             </p>
-            <p data-i18n="hero.bio2">
-              我對 GaN Power 元件的興趣，來自於我對未來人形機器人、AI 算力集群與高密度能源轉換系統的想像。隨著 AI 應用與智慧機器系統快速發展，電力電子元件不再只是支撐系統運作的基礎零件，而是決定效率、體積、散熱與整體系統能力的重要核心。
-            </p>
-            <p data-i18n="hero.bio3">
-              我希望建立一套從元件構想到 TCAD 模擬、製作、量測與資料回饋的完整開發流程；同時把 AI 作為工程助理導入設計檢查、流程追蹤與專案管理，例如元件級 DRC、光罩與佈局流程管理、MOCVD GaN recipe 參數整理，以及 GaN 製程 run card 版本追蹤，讓設計決策、實驗紀錄與製程迭代更有效率也更可追溯。
-            </p>
+          </div>
+          <div class="hero-highlights" aria-label="Research highlights" data-i18n-attr="aria-label:highlight.label">
+            <a href="#pub-iwn">
+              <strong>IWN 2026</strong>
+              <span data-i18n="highlight.iwn">第一作者 Poster · 日本熊本</span>
+            </a>
+            <a href="#pub-iedms">
+              <strong>IEDMS 2026</strong>
+              <span data-i18n="highlight.iedms">第一作者 Poster · 台北</span>
+            </a>
+            <a href="#pub-iwn">
+              <strong>−92%</strong>
+              <span data-i18n="highlight.aiTcad">AI-TCAD 模擬時間（81 vs 960 組）</span>
+            </a>
+          </div>
+          <div class="interest-list" aria-label="Research interests" data-i18n-attr="aria-label:interest.label">
+            <a class="interest-item interest-gan" href="#research">
+              <span class="interest-tag">GaN Power</span>
+              <span class="interest-copy">
+                <strong data-i18n="interest.ganTitle">為 AI 時代的能源轉換做元件</strong>
+                <span data-i18n="interest.ganBody">
+                  我對 GaN Power 的興趣，來自對人形機器人、AI 算力集群與高密度電源系統的想像。碩士研究聚焦 24/48 V E-mode GaN FinFET：從多通道磊晶、Trigate 結構到 EBL / ICP-RIE 製程與量測，親手把元件做出來。
+                </span>
+              </span>
+            </a>
+            <a class="interest-item interest-tcad" href="#reports">
+              <span class="interest-tag">TCAD</span>
+              <span class="interest-copy">
+                <strong data-i18n="interest.tcadTitle">先在模擬裡把元件想清楚</strong>
+                <span data-i18n="interest.tcadBody">
+                  以 Sentaurus 先把元件想清楚：IEDMS 2026 用 25 組多通道磊晶設計，把 barrier 厚度分配收斂成 Y &gt; X 的設計規則；也用 SiC VDMOS 模型分析 25–300 °C 高溫特性，再以量測回頭校準。
+                </span>
+              </span>
+            </a>
+            <a class="interest-item interest-ai" href="#pub-iwn">
+              <span class="interest-tag" data-i18n="interest.aiTag">AI 工具</span>
+              <span class="interest-copy">
+                <strong data-i18n="interest.aiTitle">把 AI 變成工程助理</strong>
+                <span data-i18n="interest.aiBody">
+                  IWN 2026 的 physics-guided AI-TCAD 把工程判斷寫成可追溯的規則：3 輪 81 組取代 960 組全因子掃描，模擬時間減少 92%。另開發 ChyiLab EDA 工具、KLayout DRC 助手、文獻管理與 GaN 產業情報系統。
+                </span>
+              </span>
+            </a>
           </div>
           <div class="keyword-cloud" aria-label="Research keywords">
             <button type="button" data-i18n="keyword.power" data-targets="ai-tcad,process-overview">GaN Power FinFET</button>
@@ -85,36 +123,122 @@
         </button>
       </section>
 
+      <section class="section publication-section" id="publications">
+        <div class="section-title">
+          <p class="eyebrow" data-i18n="pub.eyebrow">論文發表</p>
+          <h2 data-i18n="pub.title">研究成果與論文發表</h2>
+          <p data-i18n="pub.body">
+            碩士研究的兩條主線已整理成第一作者國際會議論文：元件端用 physics-guided AI-TCAD 收斂 E-mode GaN FinFET 的 Vth–Ron 取捨，磊晶端為多通道 AlGaN/GaN Trigate 建立 barrier 厚度設計規則。
+          </p>
+        </div>
+
+        <div class="publication-list">
+          <article class="publication-card" id="pub-iwn">
+            <a class="publication-poster" href="assets/publications/iwn2026-poster.jpg" target="_blank" rel="noopener">
+              <img src="assets/publications/iwn2026-poster.jpg" alt="IWN 2026 poster: Fast Regression in the Vth-Ron Tradeoff of Enhancement-Mode GaN FinFETs Using AI-Driven TCAD" loading="lazy" decoding="async" />
+              <span data-i18n="pub.viewPoster">查看海報</span>
+            </a>
+            <div class="publication-body">
+              <p class="tag" data-i18n="pub.iwnVenue">IWN 2026 · 日本熊本 · Poster · 第一作者</p>
+              <h3>Fast Regression in the V<sub>th</sub>–R<sub>on</sub> Tradeoff of Enhancement-Mode GaN FinFETs Using Artificial-Intelligence-Driven TCAD</h3>
+              <p class="publication-authors"><strong>Ping-Yu Chen</strong>, Wei-Yu Lung, Bo-Sheng Lin, Jen-Inn Chyi*</p>
+              <p data-i18n="pub.iwnSummary">
+                E-mode GaN FinFET 必須同時取得正 Vth 與低 Ron。我用 Python 建立 physics-guided 專家系統：以 Vth 安全分與 Ron 導通分評分、依離散度調整權重，並把每個建議點對齊可製造的 Al / Wfin / tox 步長；每輪 27 組，每一點都能追溯是哪條規則選出來的。
+              </p>
+              <dl class="publication-stats">
+                <div>
+                  <dt>91.6%</dt>
+                  <dd data-i18n="pub.iwnStat1">更少設計組數（960 → 81）</dd>
+                </div>
+                <div>
+                  <dt>92.0%</dt>
+                  <dd data-i18n="pub.iwnStat2">更少模擬時間（29,171 → 2,342 h）</dd>
+                </div>
+                <div>
+                  <dt>11% → 67%</dt>
+                  <dd data-i18n="pub.iwnStat3">安全 E-mode 比例（第 1 → 3 輪）</dd>
+                </div>
+              </dl>
+              <p class="publication-finding" data-i18n="pub.iwnFinding">
+                關鍵發現：Al 組分主導全域 tradeoff；收斂後主導因子轉為 Trigate 靜電控制，Wfin = 25 nm 決定能否同時得到低 Ron 與正 Vth（Ron 0.834–1.008 Ω·mm，Vth 中位數 0.390 V）。
+              </p>
+            </div>
+          </article>
+
+          <article class="publication-card" id="pub-iedms">
+            <a class="publication-poster" href="assets/publications/iedms2026-poster.jpg" target="_blank" rel="noopener">
+              <img src="assets/publications/iedms2026-poster.jpg" alt="IEDMS 2026 poster: Barrier-Thickness Design Guidelines for Multi-Channel AlGaN/GaN Trigate Power Transistors" loading="lazy" decoding="async" />
+              <span data-i18n="pub.viewPoster">查看海報</span>
+            </a>
+            <div class="publication-body">
+              <p class="tag" data-i18n="pub.iedmsVenue">IEDMS 2026 · 台北 · Poster · 第一作者 · Paper ID 1260</p>
+              <h3>Barrier-Thickness Design Guidelines for Multi-Channel AlGaN/GaN Trigate Power Transistors</h3>
+              <p class="publication-authors"><strong>Ping-Yu Chen</strong>, Ting-Yu Lin, Jen-Inn Chyi*</p>
+              <p data-i18n="pub.iedmsSummary">
+                多通道結構讓每個 AlGaN/GaN 介面都形成 2DEG 以降低 Ron,sp，但深層通道的閘控較弱。我固定上層 barrier 為 11 nm，掃描中層 Y 與底層 X（7–15 nm）共 25 組設計，萃取 Vth、Ron,sp、Id,max、電容與 Qg。
+              </p>
+              <dl class="publication-stats">
+                <div>
+                  <dt>−15.8 mV/nm</dt>
+                  <dd data-i18n="pub.iedmsStat1">Vth 隨底層 X 的變化</dd>
+                </div>
+                <div>
+                  <dt>+205 mV</dt>
+                  <dd data-i18n="pub.iedmsStat2">同總厚度下 8 nm 由 X 移到 Y</dd>
+                </div>
+                <div>
+                  <dt>Y &gt; X</dt>
+                  <dd data-i18n="pub.iedmsStat3">barrier 厚度設計規則</dd>
+                </div>
+              </dl>
+              <p class="publication-finding" data-i18n="pub.iedmsFinding">
+                關鍵發現：X 決定最深通道的閘控與 Vth；Y 以較小的深度代價增加並聯電荷，主導 Ron,sp 與 Id,max；Qg 只隨總厚度變化。設計規則是 Y 盡量大、X 盡量小，再依 gate-drive 損耗預算決定總厚度。
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <p class="publication-other">
+          <span class="tag" data-i18n="pub.otherTag">其他研究產出</span>
+          <span>“Blockchain-based Decentralized Co-governance for Sustainable Crowdfunding.” · arXiv Preprint · <span data-i18n="pub.firstAuthor">第一作者</span></span>
+        </p>
+      </section>
+
       <section class="section research-section" id="research">
         <div class="section-title">
           <p class="eyebrow" data-i18n="research.eyebrow">元件研究</p>
           <h2 data-i18n="research.title">第三代功率元件研究</h2>
         </div>
         <div class="device-subsection-title gan-subsection-title">
-          <h3 data-i18n="research.ganHeading">GaN Power FinFET 元件的 TCAD 模擬、設計、製程、量測</h3>
+          <h3 data-i18n="research.ganHeading">24/48 V E-mode GaN FinFET：磊晶、元件、製程與量測</h3>
         </div>
         <div class="research-grid research-focus-grid">
           <article class="research-focus-card research-question">
             <p class="tag" data-i18n="research.cardQuestionTag">Core question</p>
-            <h3 data-i18n="research.cardQuestionTitle">GaN Power FinFET 的關鍵 tradeoff</h3>
+            <h3 data-i18n="research.cardQuestionTitle">低 Ron 與 E-mode 如何同時成立</h3>
             <p data-i18n="research.body">
-              我目前關注的是 GaN Power FinFET 在臨界電壓、導通電阻、崩潰電壓與開關損耗之間的取捨。研究主線圍繞 Vth-Ronsp tradeoff、RonspQg / RonspQgd FOM tradeoff、BV 與 Epeak 限制，以及結構可製造性如何一起收斂。
+              碩士專案的目標是用 GaN FinFET 結構做到低導通電阻，同時維持 E-mode。我把它拆成材料、元件與製程三條線：材料端處理多通道磊晶的 2DEG 與 Qg，元件端處理 Wfin、tox 與 Al 組分造成的 Vth–Ron 取捨，製程端拆成 Fin 關鍵測試與 p-GaN 元件開發，每條線都有可量測的輸出與決策節點。
             </p>
           </article>
           <article class="research-focus-card">
-            <p class="tag">TCAD</p>
-            <h3 data-i18n="research.cardSimTitle">GaN Trigate TCAD 3D simulation</h3>
-            <p data-i18n="research.li1">建立 GaN Trigate 三維元件模型，掃描 fin geometry、Al composition、tox、Lg 與 field profile，觀察 Vth、Ron、BV、Epeak 與電荷相關 FOM 的變化。</p>
+            <p class="tag">Epitaxy · IEDMS 2026</p>
+            <h3 data-i18n="research.cardEpiTitle">多通道磊晶 barrier 設計</h3>
+            <p data-i18n="research.liEpi">以 25 組 TCAD 設計拆解中層與底層 AlGaN barrier 的角色：底層 X 每增加 1 nm，Vth 負移約 15.8 mV；中層 Y 主導 Ron,sp 與電流；Qg 只隨總厚度走。最後把複雜的厚度分配收斂成 Y &gt; X 這一個設計旋鈕。</p>
           </article>
           <article class="research-focus-card">
-            <p class="tag">Process</p>
-            <h3 data-i18n="research.cardProcessTitle">D-mode / E-mode GaN FinFET 製程設計</h3>
-            <p data-i18n="research.li3">把 TCAD 結果轉成光罩佈局、測試結構與每道製程的 Runcard，並拆解 E-beam dose、PEC、development、hardmask transfer、ICP-RIE etch profile 與 process window。</p>
+            <p class="tag">TCAD × AI · IWN 2026</p>
+            <h3 data-i18n="research.cardSimTitle">Physics-guided AI-TCAD</h3>
+            <p data-i18n="research.li1">對 Wfin、tox、Al 組分做三輪、每輪 27 組的規則式搜尋，萃取 Vth、Ron、Epeak 與 ns；81 組取代 960 組全因子掃描，收斂到 Wfin 25 nm、Al 20.2–22.4%、tox 10–14 nm 的設計窗口。</p>
           </article>
           <article class="research-focus-card">
-            <p class="tag">Measurement</p>
-            <h3 data-i18n="research.cardMeasureTitle">靜態與動態特性量測</h3>
-            <p data-i18n="research.li5">規劃 TLM、HBD/VBD、Id-Vg、Id-Vd、Ig-Vg、breakdown、高頻 C-V 與雙脈衝動態特性量測，將實驗結果回饋到下一輪元件設計與製程條件。</p>
+            <p class="tag">Process DOE</p>
+            <h3 data-i18n="research.cardProcessTitle">EBL / ICP-RIE 製程 DOE</h3>
+            <p data-i18n="research.li3">以 EBL dose matrix 找出 Fin 可用窗口（dose 106–110 最穩定），發現 Fin 實測寬度有約 +20.5 nm 的常數偏差，改在 GDS 端統一 bias −20 nm；hardmask 由 300 nm 降到 50 nm 後，轉印偏差縮到 −4～+6 nm，確認偏差主要來自微影而非蝕刻。</p>
+          </article>
+          <article class="research-focus-card">
+            <p class="tag">Measurement · FA</p>
+            <h3 data-i18n="research.cardMeasureTitle">量測驗證與失效判讀</h3>
+            <p data-i18n="research.li5">以 B1500A 做 I-V、C-V、BV 與 TLM；多通道 SBD 在 1 kHz C-V 分出三個通道並萃取各層 ns。搭配 FIB 與 FE-SEM 截面建立「形貌 → root cause」判讀：先分辨設備、材料或製程異常，再每次只改一個旋鈕鎖定 recipe。</p>
           </article>
         </div>
 
@@ -155,7 +279,7 @@
             <p class="tag">SiC MOSFET · TCAD · Measurement</p>
             <h3 data-i18n="experience.sicTitle">大學畢業論文：大功率元件 SiC MOSFET 高溫特性研究</h3>
             <p data-i18n="experience.sicBody">
-              獨立完成以 TCAD Sentaurus 進行 SiC VDMOSFET 元件模擬，調整結構參數並完成 VDMOS 光罩設計；以及 CV、IV、double pulse 等特性量測整理。
+              以 TCAD Sentaurus 建立 SiC VDMOS 製程與結構模型，分析 25–300 °C 下 Vth、Ron、崩潰電壓與 body-diode 反向恢復，並完成 VDMOS 光罩設計；高溫 I-V、C-V 與雙脈衝量測顯示，接近 300 °C 時 Vth 較室溫下降約 38%、Qrr 約為 1.6 倍。論文成績 A+。
             </p>
           </div>
           <div class="experience-media double">
@@ -200,7 +324,7 @@
           <article class="ic-card">
             <p class="tag">Analog · Differential / Comparator</p>
             <h3 data-i18n="analog.anaTitle">差動放大、遲滯比較器與能隙基準</h3>
-            <p data-i18n="analog.anaBody">主導差動放大電路、遲滯比較器與能隙基準設計，涵蓋原理分析、尺寸設計、Cadence 前模擬 testbench、PSRR / CMRR、製程角（ff / ss）模擬、版圖、寄生參數萃取與後模擬驗證。</p>
+            <p data-i18n="analog.anaBody">主導可在運放與遲滯比較器之間切換的複用電路，以及能隙基準設計，涵蓋原理分析、尺寸設計、Cadence 前模擬、PSRR / CMRR 與 ff / ss 製程角模擬；版圖採共質心輸入對管、叉指尾管與 dummy，完成 DRC/LVS、寄生萃取與後模擬。判讀原則：全 corner 失效先修設計，單一 corner 失效再拆製程敏感度。</p>
             <p class="pdf-mobile-note" data-i18n="analog.mobilePdfNote">請登錄電腦端查看此 PDF。</p>
             <details class="pdf-demo">
               <summary data-i18n="analog.previewToggle">預覽專題報告（PDF）</summary>
@@ -275,6 +399,19 @@
               <p data-i18n="experience.clubBody">
                 擔任協會會長兼社團副主席期間，我參與創新創業講座與論壇規劃，邀請創業校友交流，也協助行政執行與學生創新創業計畫活動。
               </p>
+            </div>
+          </article>
+
+          <article class="experience-card awards-card">
+            <div class="experience-copy">
+              <p class="tag">Awards</p>
+              <h3 data-i18n="awards.title">競賽與獎項</h3>
+              <ul class="awards-list">
+                <li data-i18n="awards.item1">第八屆中國國際「互聯網+」大學生創新創業大賽｜銀獎</li>
+                <li data-i18n="awards.item2">國家級大學生創新訓練項目＋創業訓練計畫｜優秀結題</li>
+                <li data-i18n="awards.item3">全國大學生數學建模競賽｜陝西省三等獎</li>
+                <li data-i18n="awards.item4">香港中文大學（深圳）國際大學生 FinTech 創新大賽｜積極參與獎</li>
+              </ul>
             </div>
           </article>
         </div>
@@ -472,6 +609,9 @@
           </p>
           <div class="life-tags" aria-label="Interests">
             <span data-i18n="life.tagTravel">旅行</span>
+            <span data-i18n="life.tagHiking">徒步露營</span>
+            <span data-i18n="life.tagSwim">游泳</span>
+            <span data-i18n="life.tagKendo">劍道</span>
             <span data-i18n="life.tagModel">拼模型</span>
             <span data-i18n="life.tagPhoto">攝影整理</span>
             <span data-i18n="life.tagPiano">鋼琴</span>
@@ -505,7 +645,7 @@
         <p class="eyebrow" data-i18n="contact.eyebrow">聯絡</p>
         <h2 data-i18n="contact.title">歡迎交流</h2>
         <p data-i18n="contact.body">
-          如果你也在做 GaN、TCAD、EDA automation、類比 IC 或研究工具，歡迎聯絡我。
+          如果你也在做 GaN Power、TCAD、AI 輔助元件開發、製程整合或研究工具，歡迎聯絡我。
         </p>
         <div class="contact-links">
           <a href="mailto:chenbill718@gmail.com">chenbill718@gmail.com</a>
@@ -521,7 +661,7 @@
 
     <button class="back-to-top" type="button" aria-label="返回最頂部" title="返回最頂部">↑</button>
 
-    <script src="script.js?v=20260711-ai-project-management"></script>
-    <script type="module" src="background3d.js?v=20260703-koi"></script>
+    <script src="script.js?v=20261009-publications"></script>
+    <script type="module" src="background3d.js?v=20261009-publications"></script>
   </body>
 </html>
