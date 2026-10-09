@@ -136,6 +136,61 @@ const translations = {
       "多通道 SBD 中每個 2DEG 像一個電容加橫向電阻支路，深層通道需要較低頻率才跟得上。N2097 在 1 kHz 成功分出三個通道，萃取 ns 分別為 24.05、23.49 與 3.83 × 10¹¹ cm⁻²。",
     "deck.cv1Point":
       "N1546 / N1557 在 1 kHz 仍是單一包絡，但 B1500A CMU 的頻率下限就是 1 kHz，因此先判定為量測解析度不足；下一步用厚度 split 樣品驗證，而不是直接要求重長磊晶。",
+    "deck.tabPgan": "p-GaN 元件",
+    "deck.pg1Title": "p-GaN Gate HFET：唯一變量是 2DEG 下方的 back-barrier",
+    "deck.pg1Body":
+      "四片樣品共用 p-GaN gate、AlN etch stop 與 Al0.2Ga0.8N barrier，只改變 GaN channel 下方的 back-barrier：N1831 無 back-barrier 作對照，N1830 為 12 nm BGaN，N2027 為 100 nm 漸變 AlGaN，N2028 為 100 nm 突變 AlGaN。以 B1500A 量測 ID-VG / ID-VD，Python 流程用恆流法（1 mA/mm）萃取 Vth，並取多次量測的中位數。",
+    "deck.pg1Point":
+      "Vth 中位數：N2028 最高 2.72 V，但均勻性最差（σ 0.265 V）；N1830 為 1.44 V、σ 僅 0.033 V，BGaN 對溝道的調控最穩定；N2027 為 1.06 V，已接近 E-mode 的 1 V 邊界。",
+    "deck.pg2Title": "Ron 與驅動電流：BGaN 最平衡，Graded AlGaN 電流最強",
+    "deck.pg2Body":
+      "在 VG = 6 V 的低場窗口萃取 Ron：N1830 最低 12.0 Ω·mm；N2027 電流最強 252 mA/mm（比 Ref 高約 20%），Ron σ 僅 0.47 Ω·mm；N2028 的 Ron 高達 85.6 Ω·mm，電流只有 19.4 mA/mm。",
+    "deck.pg2Point":
+      "鈍化前 TLM 把 Ron 拆成接觸與通道兩部分：N2028 的方塊電阻異常、TLM 擬合不符物理，確認問題來自突變界面破壞 2DEG 的磊晶設計，而不是表面或製程。",
+    "deck.pg3Title": "可靠性判讀：閘極漏電、開關比與遲滯",
+    "deck.pg3Body":
+      "以 |IG|/|ID| 的 10% / 100% 門檻檢查轉移曲線品質：漏電只集中在深關斷區，正常偏置下 Ig/Id < 0.3%。N1830、N1831、N2027 的 Ion/Ioff 都達 10⁸；N2028 的比值雖超過 10⁶，但 Ion 只有 21.3 mA/mm，屬於「關得住、開不強」。所有樣品都是負向遲滯，N1830 最大（−0.93 V）。",
+    "deck.pg3Point":
+      "路線建議：N1830（BGaN）最平衡、最適合功率開關，但要追蹤遲滯；N2027 驅動最強，但 Vth 接近 E-mode 下限；N2028 不建議沿用於功率元件。",
+    "sic.title": "大學畢業論文：極端環境下 SiC 功率器件的高溫特性研究",
+    "sic.body":
+      "以 Sentaurus 從工藝與結構仿真出發，分析 300–1000 K 下 VDMOS 的 Vth、Ron、擊穿電壓與反向恢復；再自建高溫測試平台，量測商用 1200 V SiC MOSFET 在 24–300 °C 的靜態與動態特性，用量測回頭驗證仿真趨勢。",
+    "deck.sicLabel": "SiC 功率元件研究投影片",
+    "deck.tabSicProcess": "工藝結構仿真",
+    "deck.tabSicSim": "變溫特性仿真",
+    "deck.tabSicPlatform": "高溫測試平台",
+    "deck.tabSicMeas": "高溫量測",
+    "deck.sic1Title": "VDMOS 工藝仿真 → 結構模型：三次光刻與網格優化",
+    "deck.sic1Body":
+      "以 Sentaurus 走過 VDMOS 的製造流程：外延、P 阱與柵源極需要三次光刻與反覆的離子注入，關鍵工藝節點的仿真輸出用來檢驗整個流程；再把工藝結果帶入結構仿真，以泊松、連續性與輸運方程建模。",
+    "deck.sic1Point":
+      "結構仿真時把柵極區等勢化、忽略 Al 淀積區：這兩區不影響基本特性，卻會大幅增加網格密度與算力，簡化後讓後續 300–1000 K 的特性仿真更快、更容易收斂。",
+    "deck.sic2Title": "變溫仿真：Vth 隨費米勢下降，Ron 由溝道電阻主導",
+    "deck.sic2Body":
+      "柵氧約 50 nm、摻雜可調範圍有限，因此 Vth 隨溫度的變化主要由費米勢決定：溫度升高、費米勢下降，Vth 隨之降低。導通電阻拆分後，溝道電阻占 41.0%、積累區 29.5%、漂移區 15.2%、JFET 區 8.5%。",
+    "deck.sic2Point": "溫度升高使載流子遷移率下降、溝道電阻上升，完全導通時總 Ron 呈正溫度係數，與導通電阻的熱依賴特性相符。",
+    "deck.sic3Title": "崩潰電壓仿真：雪崩擊穿具有正溫度係數",
+    "deck.sic3Body":
+      "在 300、500、800、1000 K 下仿真擊穿特性與空間電荷分布：溫度上升，擊穿電壓跟著上升。依雪崩擊穿公式 VBR ≈ ε·Ec(T)² / 2qN，搭配空間電荷分布觀察電荷累積的變化。",
+    "deck.sic3Point": "晶格振動增強使載流子與晶格碰撞損失的能量增加、電場累積能量變慢，因此需要更高的電壓才會發生雪崩擊穿。",
+    "deck.sic4Title": "自建高溫測試平台：加熱爐 + 靜態與雙脈衝電學平台",
+    "deck.sic4Body":
+      "用加熱爐提供 24–300 °C 的環境，以玻璃纖維耐熱線與夾具把元件引腳引出爐外，分別接到靜態特性量測平台，以及由信號發生器、示波器、直流電源與 400 µH 負載電感組成的雙脈衝動態測試平台（800 V）。",
+    "deck.sic4Point": "在不破壞商用 1200 V SiC MOSFET 封裝的前提下，同一顆元件就能完成高溫靜態與動態特性量測。",
+    "deck.sic5Title": "高溫靜態量測：Vth 下降約 38%，擊穿前接近 1200 V",
+    "deck.sic5Body":
+      "從室溫到約 550 K，Vth 下降約 38%，受封裝方式影響，量測上仍呈近似線性的趨勢。溫度越高，飽和區受溝道長度調製影響而上彎；低柵壓下溝道未完全開啟，Ron 由漂移區主導、隨溫度下降。550 K 下擊穿前電壓接近 1200 V。",
+    "deck.sic5Point":
+      "擊穿前曲線的抖動來自高溫下載流子熱激發造成的漏電流隨機漲落、封裝局部溫度不均，以及量測極低電流時的雜訊，而不是元件失效。",
+    "deck.sic6Title": "高溫動態量測：300 °C 時反向恢復電荷約為常溫 1.6 倍",
+    "deck.sic6Body":
+      "在 24–300 °C 七個溫度點做雙脈衝測試，由二次開通時的反向恢復電流積分得到 Qrr。150 °C 的常規工作溫度內，Qrr 近似線性上升；進入極端高溫後快速上升，到 300 °C 時約為常溫的 1.6 倍。",
+    "deck.sic6Point": "體二極體的反向恢復與寄生電容、開關變化率有關；高溫應用需要重新評估開關損耗與驅動設計。",
+    "deck.jkSpecTitle": "數位 IC 指標分析：前後模擬 vs datasheet",
+    "deck.jkSpecBody":
+      "以最壞工藝角（VOH / VOL、VIH / VIL、tpd 取 ss，II / ICC 取 ff）逐項對照 SN74LVC112A datasheet（VCC 3.3 V）：10 項指標全部符合，後模擬 tpd(CLK→Q) 3.48 ns（規格 ≤ 5.9 ns）、VOL 0.481 V（規格 ≤ 0.55 V）。唯一壓線的是 VOH：後模擬剛好 2.2 V，等於規格下限。",
+    "deck.jkSpecPoint":
+      "前後模擬的差異可以追溯到版圖寄生：連線電容電阻偏大、通孔偏少，使 VOH / VOL 與 tpd 退化最多；改進方向是電源線改用頂層金屬並增加通孔，把 VOH 拉回裕量。",
     "deck.tabDigital": "數位 IC · J-K 正反器",
     "deck.tabAnalog": "類比 IC · 運放 / 比較器",
     "deck.jkTitle": "SN74LVC112A 雙負緣觸發 J-K 正反器",
@@ -152,7 +207,7 @@ const translations = {
       "tt / ff / ss 結果可分出三種失效：UGBW 與 PM 只在 ss 同時下降，先懷疑 gm 與補償網路對 slow device 過度敏感；ss 下靜態電流升到 25.5 µA 但頻寬反而下降，不能單純加電流，要回查能隙基準與 bias mirror ratio；輸入共模下限在三個 corner 都超標，屬於結構性 headroom 不足，應先修設計。",
     "deck.ana2Point":
       "判讀原則：全 corner 都失效先修設計；單一 corner 失效再拆 process sensitivity，最後用 silicon data 做 model-to-silicon correlation，再決定 test spec 與 guard-band。",
-    "research.sicHeading": "SiC Power 元件的 TCAD 模擬、設計、量測",
+    "research.sicHeading": "SiC MOSFET：工藝仿真、變溫特性與高溫量測",
     "analog.eyebrow": "IC 設計",
     "analog.title": "IC 設計專題：J-K 正反器全客製化與類比放大／比較器",
     "analog.body":
@@ -161,16 +216,11 @@ const translations = {
     "experience.title": "實習、專案與社團",
     "experience.body":
       "除了目前的元件研究，我也實戰過工業工程生產管理基本方法、認識SMT封測技術、區塊鏈工作室創建，以及學生創業社團的活動規劃。這些經歷讓我更習慣把技術放在實用產業可行性的角度思考。",
-    "experience.sicTitle": "大學畢業論文：大功率元件 SiC MOSFET 高溫特性研究",
-    "experience.sicBody":
-      "以 TCAD Sentaurus 建立 SiC VDMOS 製程與結構模型，分析 25–300 °C 下 Vth、Ron、崩潰電壓與 body-diode 反向恢復，並完成 VDMOS 光罩設計；高溫 I-V、C-V 與雙脈衝量測顯示，接近 300 °C 時 Vth 較室溫下降約 38%、Qrr 約為 1.6 倍。論文成績 A+。",
     "awards.title": "競賽與獎項",
     "awards.item1": "第八屆中國國際「互聯網+」大學生創新創業大賽｜銀獎",
     "awards.item2": "國家級大學生創新訓練項目＋創業訓練計畫｜優秀結題",
     "awards.item3": "全國大學生數學建模競賽｜陝西省三等獎",
     "awards.item4": "香港中文大學（深圳）國際大學生 FinTech 創新大賽｜積極參與獎",
-    "experience.sicCap1": "VDMOS 製程與結構模擬整理",
-    "experience.sicCap2": "高溫加熱與電學測試平台",
     "experience.usiTitle": "日月光集團 USI 環旭電子暑期實習",
     "experience.usiBody":
       "參與 Summer Management Trainee Internship，學習 SMT 封測生產流程與關鍵站點功能，整理價值流與標準工時資料，並以精益生產方法製作製造專案管理報表。",
@@ -363,6 +413,61 @@ const translations = {
       "In a multi-channel SBD each 2DEG behaves like a capacitor with a lateral resistive branch, so deeper channels need lower frequencies to respond. Sample N2097 resolved three channels at 1 kHz, with extracted ns of 24.05, 23.49, and 3.83 × 10¹¹ cm⁻².",
     "deck.cv1Point":
       "N1546 / N1557 still show a single envelope at 1 kHz, but 1 kHz is the lower frequency limit of the B1500A CMU, so I first attributed it to measurement resolution; the next step is to verify with thickness-split samples rather than ask for regrowth.",
+    "deck.tabPgan": "p-GaN HFET",
+    "deck.pg1Title": "p-GaN gate HFET: the only variable is the back-barrier under the 2DEG",
+    "deck.pg1Body":
+      "All four samples share the p-GaN gate, AlN etch stop, and Al0.2Ga0.8N barrier; only the back-barrier under the GaN channel changes: N1831 has none and serves as the reference, N1830 uses 12 nm BGaN, N2027 a 100 nm graded AlGaN, and N2028 a 100 nm abrupt AlGaN. ID-VG / ID-VD were measured on a B1500A, and a Python flow extracts Vth by the constant-current method (1 mA/mm) and takes the median of repeated sweeps.",
+    "deck.pg1Point":
+      "Median Vth: N2028 is highest at 2.72 V but least uniform (σ 0.265 V); N1830 sits at 1.44 V with σ of only 0.033 V, so BGaN controls the channel most consistently; N2027 at 1.06 V is close to the 1 V E-mode boundary.",
+    "deck.pg2Title": "Ron and drive current: BGaN is the most balanced, graded AlGaN drives the most current",
+    "deck.pg2Body":
+      "Ron is extracted from the low-field window at VG = 6 V: N1830 is lowest at 12.0 Ω·mm; N2027 drives the most current at 252 mA/mm (about 20% above the reference) with a Ron σ of only 0.47 Ω·mm; N2028 reaches 85.6 Ω·mm with just 19.4 mA/mm.",
+    "deck.pg2Point":
+      "Pre-passivation TLM splits Ron into contact and channel parts: N2028's sheet resistance is abnormal and its TLM fit is unphysical, confirming the problem is an epitaxy design where the abrupt interface damages the 2DEG, not the surface or the process.",
+    "deck.pg3Title": "Reliability check: gate leakage, on/off ratio, and hysteresis",
+    "deck.pg3Body":
+      "Transfer-curve quality is screened with 10% / 100% |IG|/|ID| thresholds: leakage is confined to deep off-state, and Ig/Id stays below 0.3% under normal bias. N1830, N1831, and N2027 all reach Ion/Ioff of 10⁸; N2028 exceeds 10⁶ but has only 21.3 mA/mm Ion, so it turns off well but does not turn on strongly. All samples show negative hysteresis, largest for N1830 (−0.93 V).",
+    "deck.pg3Point":
+      "Recommendation: N1830 (BGaN) is the most balanced and best suited to power switching, though its hysteresis needs tracking; N2027 drives the most current but its Vth is near the E-mode limit; N2028 should not be carried forward for power devices.",
+    "sic.title": "Undergraduate thesis: high-temperature behavior of SiC power devices in extreme environments",
+    "sic.body":
+      "Starting from Sentaurus process and structure simulation, I analyzed VDMOS Vth, Ron, breakdown voltage, and reverse recovery from 300 to 1000 K, then built a high-temperature test platform to measure the static and dynamic behavior of a commercial 1200 V SiC MOSFET from 24 to 300 °C and checked the simulated trends against measurement.",
+    "deck.sicLabel": "SiC power device research slides",
+    "deck.tabSicProcess": "Process & structure",
+    "deck.tabSicSim": "Thermal simulation",
+    "deck.tabSicPlatform": "Test platform",
+    "deck.tabSicMeas": "High-temp measurement",
+    "deck.sic1Title": "VDMOS process simulation → structure model: three lithography steps and mesh optimization",
+    "deck.sic1Body":
+      "I walked through the VDMOS fabrication flow in Sentaurus: the epitaxy, P-well, and gate/source stages need three lithography steps and repeated ion implantation, and simulated outputs at key process nodes verify the flow. The process result then feeds a structure simulation built on the Poisson, continuity, and transport equations.",
+    "deck.sic1Point":
+      "For structure simulation the gate region is made equipotential and the Al deposition region is ignored: neither affects basic characteristics, but both inflate mesh density and compute cost, so the simplification makes the later 300–1000 K simulations faster and more stable.",
+    "deck.sic2Title": "Thermal simulation: Vth falls with the Fermi potential, Ron is dominated by channel resistance",
+    "deck.sic2Body":
+      "With a ~50 nm gate oxide and little room to tune doping, Vth versus temperature is governed mainly by the Fermi potential: as temperature rises the Fermi potential drops and Vth follows. Breaking down Ron gives 41.0% channel, 29.5% accumulation region, 15.2% drift region, and 8.5% JFET region.",
+    "deck.sic2Point": "Higher temperature lowers carrier mobility and raises channel resistance, so the fully-on Ron has a positive temperature coefficient, consistent with its known thermal dependence.",
+    "deck.sic3Title": "Breakdown simulation: avalanche breakdown has a positive temperature coefficient",
+    "deck.sic3Body":
+      "Breakdown characteristics and space-charge distributions were simulated at 300, 500, 800, and 1000 K: breakdown voltage rises with temperature. The avalanche formula VBR ≈ ε·Ec(T)² / 2qN is read together with the space-charge maps to follow charge build-up.",
+    "deck.sic3Point": "Stronger lattice vibration makes carriers lose more energy in collisions, so the field accumulates energy more slowly and a higher voltage is needed to trigger avalanche.",
+    "deck.sic4Title": "Self-built high-temperature platform: furnace plus static and double-pulse benches",
+    "deck.sic4Body":
+      "A furnace provides 24–300 °C, and glass-fiber heat-resistant leads and clamps bring the device pins out to a static measurement bench and to a double-pulse bench (800 V) built from a signal generator, oscilloscope, DC supply, and a 400 µH load inductor.",
+    "deck.sic4Point": "Without breaking the package of the commercial 1200 V SiC MOSFET, the same device can be characterized both statically and dynamically at high temperature.",
+    "deck.sic5Title": "High-temperature static measurement: Vth drops about 38%, pre-breakdown voltage near 1200 V",
+    "deck.sic5Body":
+      "From room temperature to about 550 K, Vth drops by about 38% and, influenced by the package, still trends roughly linearly. At higher temperature the saturation region bends upward from channel-length modulation; at low gate voltage the channel is not fully on, so Ron is set by the drift region and falls with temperature. At 550 K the pre-breakdown voltage approaches 1200 V.",
+    "deck.sic5Point":
+      "The jitter before breakdown comes from random leakage fluctuation due to thermally excited carriers, local temperature non-uniformity in the package, and noise when measuring very low currents, not from device failure.",
+    "deck.sic6Title": "High-temperature dynamic measurement: reverse-recovery charge at 300 °C is about 1.6× room temperature",
+    "deck.sic6Body":
+      "Double-pulse tests at seven temperatures from 24 to 300 °C give Qrr by integrating the reverse-recovery current at the second turn-on. Within the normal range up to 150 °C, Qrr rises roughly linearly; in the extreme range it climbs quickly, reaching about 1.6× the room-temperature value at 300 °C.",
+    "deck.sic6Point": "Body-diode reverse recovery is tied to parasitic capacitance and switching slew rate, so high-temperature applications need switching loss and gate-drive design re-evaluated.",
+    "deck.jkSpecTitle": "Digital IC spec analysis: pre- and post-layout versus the datasheet",
+    "deck.jkSpecBody":
+      "Each metric is checked at its worst corner (ss for VOH / VOL, VIH / VIL, and tpd; ff for II / ICC) against the SN74LVC112A datasheet at VCC 3.3 V: all 10 metrics comply, with post-layout tpd(CLK→Q) of 3.48 ns (spec ≤ 5.9 ns) and VOL of 0.481 V (spec ≤ 0.55 V). The only marginal item is VOH, which lands exactly on the 2.2 V lower limit after layout.",
+    "deck.jkSpecPoint":
+      "The pre- to post-layout shift traces back to layout parasitics: high interconnect RC and too few vias degrade VOH / VOL and tpd the most. The fix is to route power on the top metal and add vias to restore VOH margin.",
     "deck.tabDigital": "Digital IC · J-K flip-flop",
     "deck.tabAnalog": "Analog IC · Op-amp / comparator",
     "deck.jkTitle": "SN74LVC112A Dual Negative-Edge-Triggered J-K Flip-Flop",
@@ -379,7 +484,7 @@ const translations = {
       "The tt / ff / ss results separate three failure types: UGBW and PM dropping together only at ss points to gm and compensation being too sensitive to slow devices; quiescent current rising to 25.5 µA at ss while bandwidth falls means simply adding current will not help, so the bandgap and bias mirror ratio need checking; the input common-mode lower limit failing at all three corners is a structural headroom gap that must be fixed in the design.",
     "deck.ana2Point":
       "My rule: if every corner fails, fix the design; if a single corner fails, break down process sensitivity, then use silicon data for model-to-silicon correlation before setting test specs and guard-bands.",
-    "research.sicHeading": "TCAD Simulation, Design, and Measurement for SiC Power Devices",
+    "research.sicHeading": "SiC MOSFET: Process Simulation, Thermal Characteristics, and High-Temperature Measurement",
     "analog.eyebrow": "IC Design",
     "analog.title": "IC Design Projects: Full-Custom J-K Flip-Flop and Analog Amplifier / Comparator",
     "analog.body":
@@ -388,16 +493,11 @@ const translations = {
     "experience.title": "Internship, Projects & Clubs",
     "experience.body":
       "Beyond my current device research, I have worked on industrial-engineering production management, SMT assembly-and-test workflows, founding a blockchain studio, and planning student entrepreneurship events. These experiences taught me to think about technology from the perspective of practical industrial feasibility.",
-    "experience.sicTitle": "Undergraduate Thesis: High-Power SiC MOSFET High-Temperature Characterization",
-    "experience.sicBody":
-      "Built SiC VDMOS process and structure models in TCAD Sentaurus to analyze Vth, Ron, breakdown, and body-diode reverse recovery from 25–300 °C, and designed the VDMOS photomask. High-temperature I-V, C-V, and double-pulse measurements showed about a 38% Vth drop near 300 °C versus room temperature and roughly 1.6× Qrr. Thesis grade: A+.",
     "awards.title": "Competitions & Awards",
     "awards.item1": "8th China International \"Internet+\" College Student Innovation and Entrepreneurship Competition | Silver Award",
     "awards.item2": "National College Student Innovation and Entrepreneurship Training Programs | Excellent Completion",
     "awards.item3": "China Undergraduate Mathematical Contest in Modeling | Third Prize, Shaanxi Province",
     "awards.item4": "CUHK-Shenzhen International FinTech Innovation Competition | Active Participation Award",
-    "experience.sicCap1": "VDMOS process and structure simulation summary",
-    "experience.sicCap2": "High-temperature and electrical test platforms",
     "experience.usiTitle": "USI / ASE Group Summer Management Trainee Internship",
     "experience.usiBody":
       "Joined the Summer Management Trainee Internship at USI, ASE Group, learning SMT assembly-and-test production flows, key station functions, lean production methods, value-stream mapping, standard work-hour tracking, and manufacturing project-management reporting.",
