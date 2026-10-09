@@ -95,37 +95,68 @@ const translations = {
     "research.cardQuestionTitle": "低 Ron 與 E-mode 如何同時成立",
     "research.body":
       "碩士專案的目標是用 GaN FinFET 結構做到低導通電阻，同時維持 E-mode。我把它拆成材料、元件與製程三條線：材料端處理多通道磊晶的 2DEG 與 Qg，元件端處理 Wfin、tox 與 Al 組分造成的 Vth–Ron 取捨，製程端拆成 Fin 關鍵測試與 p-GaN 元件開發，每條線都有可量測的輸出與決策節點。",
-    "research.cardEpiTitle": "多通道磊晶 barrier 設計",
-    "research.liEpi":
-      "以 25 組 TCAD 設計拆解中層與底層 AlGaN barrier 的角色：底層 X 每增加 1 nm，Vth 負移約 15.8 mV；中層 Y 主導 Ron,sp 與電流；Qg 只隨總厚度走。最後把複雜的厚度分配收斂成 Y > X 這一個設計旋鈕。",
-    "research.cardSimTitle": "Physics-guided AI-TCAD",
-    "research.li1":
-      "對 Wfin、tox、Al 組分做三輪、每輪 27 組的規則式搜尋，萃取 Vth、Ron、Epeak 與 ns；81 組取代 960 組全因子掃描，收斂到 Wfin 25 nm、Al 20.2–22.4%、tox 10–14 nm 的設計窗口。",
-    "research.cardProcessTitle": "EBL / ICP-RIE 製程 DOE",
-    "research.li3":
-      "以 EBL dose matrix 找出 Fin 可用窗口（dose 106–110 最穩定），發現 Fin 實測寬度有約 +20.5 nm 的常數偏差，改在 GDS 端統一 bias −20 nm；hardmask 由 300 nm 降到 50 nm 後，轉印偏差縮到 −4～+6 nm，確認偏差主要來自微影而非蝕刻。",
-    "research.li4": "ICP-RIE pressure、gas chemistry、bias power 與 etch selectivity 的 window 設計。",
-    "research.cardMeasureTitle": "量測驗證與失效判讀",
-    "research.li5":
-      "以 B1500A 做 I-V、C-V、BV 與 TLM；多通道 SBD 在 1 kHz C-V 分出三個通道並萃取各層 ns。搭配 FIB 與 FE-SEM 截面建立「形貌 → root cause」判讀：先分辨設備、材料或製程異常，再每次只改一個旋鈕鎖定 recipe。",
+    "deck.ganLabel": "GaN FinFET 研究投影片",
+    "deck.icLabel": "IC 設計專題投影片",
+    "deck.prev": "上一頁",
+    "deck.next": "下一頁",
+    "deck.tabEpi": "磊晶設計",
+    "deck.tabAi": "AI-TCAD",
+    "deck.tabProcess": "製程 PFA",
+    "deck.tabMeasure": "量測 EFA",
+    "deck.epi1Title": "多通道磊晶：同樣的 barrier，放在哪一層決定 Vth 還是 Ron",
+    "deck.epi1Body":
+      "多通道結構在每個 AlGaN/GaN 介面形成 2DEG，並聯後降低 Ron，但深層通道閘控較弱、Vth 容易負移。我固定上層 barrier 為 11 nm，中層 Y 與底層 X 從 7 到 15 nm、每 2 nm 一步，共 25 組設計；能帶確認三個介面都低於費米能階，三個 2DEG 都能成立。",
+    "deck.epi1Point":
+      "機制：每增加 1 nm AlGaN 會同時增加極化電荷、也讓通道變深。加在底層 X 時深度代價主導，主要影響 Vth；加在中層 Y 時電荷增益主導，主要改善 Ron 與電流。",
+    "deck.epi2Title": "從模擬到 design rule：Y > X，Qg 代價無法靠磊晶消除",
+    "deck.epi2Body":
+      "底層 X 每增加 1 nm，Vth 約負移 15.8 mV；中層 Y 增加時 Ron,sp 下降、Id,max 上升；Qg 只隨總厚度線性上升。同樣 33 nm 總厚度下，把 8 nm 從 X 移到 Y，Vth 正移約 205 mV，Ron,sp 與 Id,max 同時改善。",
+    "deck.epi2Point":
+      "交付給材料端的規則：Y 盡量大、X 盡量小，再依 gate-drive 預算決定總厚度；Qg 的驅動代價則需要由電路端承擔。",
+    "deck.ai1Title": "Physics-guided AI-TCAD：用物理規則規劃每一輪模擬",
+    "deck.ai1Body":
+      "元件端的三個參數是 Wfin、tox 與 Al 組分。全因子掃描需要 960 組、約 2.9 萬小時，實際上不可行。我用 Python 建立 physics-guided 專家系統：以 Vth 安全分與 Ron 導通分評分、依離散程度調整權重、以 Vth ≥ 0.2 V 且 Ron 最低的點作為工程錨點，再把建議點對齊可製造的 Al / Wfin / tox 步長。",
+    "deck.ai1Point": "每輪只跑 27 組，每個點都能追溯是哪一條規則選出來的，模擬因此可以被稽核與重現。",
+    "deck.ai2Title": "81 組收斂、模擬時間 −92%，並找出主導因子的轉移",
+    "deck.ai2Body":
+      "三輪共 81 組，比全因子少 91.6%；依模擬 log，總時間由 29,171 小時降到 2,342 小時。安全 E-mode 比例從第一輪的 11% 提升到第三輪的 67%，收斂到 Wfin 25 nm、Al 20.2–22.4%、tox 10–14 nm，Ron 0.83–1.01 Ω·mm。",
+    "deck.ai2Point":
+      "一開始是 Al 極化主導全域 tradeoff；Al 收斂後，低 Ron 分支全部集中在 Wfin 25 nm，主導因子轉為 Trigate 靜電控制。",
+    "deck.ebl1Title": "EBL PFA：Top-view SEM 拆解 dose 與電流的影響",
+    "deck.ebl1Body":
+      "用 EBL dose matrix 找窗口：90–94 欠曝，106–113 是 Fin 可用窗口、其中 106–110 最穩定，114 以上開始橋連與線塌。在 dose 112 下，Fin 實測寬度比設計值多約 20.5 nm，而且與 Wfin、Wtrench 沒有顯著斜率。",
+    "deck.ebl1Point": "這是近似常數的偏差，最有效的處理不是逐一補償每種圖形，而是在 GDS 端統一 bias 約 −20 nm。",
+    "deck.etch1Title": "Etch PFA：FIB 截面 × 蝕刻參數，從形貌反推 root cause",
+    "deck.etch1Body":
+      "使用 300 nm SiO2 hardmask 時，截面底部出現明顯 footing，偏差約 +61 nm；降到 50 nm 後轉印偏差只剩 −4～+6 nm，接近 1:1，代表主要偏差來自微影而非 GaN 蝕刻。壓力與 RF bias 的截面對照則用來判斷 bowing、teeth、undercut 等形貌的成因。",
+    "deck.etch1Point":
+      "判讀原則：顯影後就變形先修 EBL；蝕刻後才變形查 hardmask 與 etch；俯視正常但截面異常，優先檢查 pressure 與 bias，每次只改一個旋鈕。",
+    "deck.cv1Title": "EFA：C-V 量測驗證磊晶，先分清異常來自設備還是樣品",
+    "deck.cv1Body":
+      "多通道 SBD 中每個 2DEG 像一個電容加橫向電阻支路，深層通道需要較低頻率才跟得上。N2097 在 1 kHz 成功分出三個通道，萃取 ns 分別為 24.05、23.49 與 3.83 × 10¹¹ cm⁻²。",
+    "deck.cv1Point":
+      "N1546 / N1557 在 1 kHz 仍是單一包絡，但 B1500A CMU 的頻率下限就是 1 kHz，因此先判定為量測解析度不足；下一步用厚度 split 樣品驗證，而不是直接要求重長磊晶。",
+    "deck.tabDigital": "數位 IC · J-K 正反器",
+    "deck.tabAnalog": "類比 IC · 運放 / 比較器",
+    "deck.jkTitle": "SN74LVC112A 雙負緣觸發 J-K 正反器",
+    "deck.jkBody":
+      "依 datasheet 規格設計帶預置與清除的雙負緣觸發 J-K 正反器。我負責電路原理圖、大部分電晶體尺寸設計、部分模擬測試與參數量測，以及整體版圖設計（工作量約 65%）。版圖按封裝排成兩排 16 個 PAD，ESD 保護與 IO buffer 緊鄰 PAD 放置。",
+    "deck.jkPoint":
+      "前後模擬都跑 tt / ff / ss 三種工藝角：後模擬 tpd(CLK→Q) 為 3.09 / 2.71 / 3.48 ns，並以最差工藝角驗證 VOH / VOL、VIH / VIL 與漏電流。",
+    "deck.ana1Title": "類比 IC：運放 / 遲滯比較器複用電路",
+    "deck.ana1Body":
+      "兩人一組的類比 IC 專題，我負責可在運放與遲滯比較器之間切換的複用電路：差動輸入 + 共源二級 + Miller 補償，以 Vcontrol 選通運放或遲滯比較器，另含能隙基準。工作包含電路分析、前模擬，以及 DRC、LVS 與 post-layout 驗證。",
+    "deck.ana1Point": "版圖上輸入對管採交叉耦合共質心、尾管叉指並聯加 dummy，最後完成 DRC / LVS clean、寄生參數萃取與後模擬。",
+    "deck.ana2Title": "用 corner 與 layout matching 判斷 spec margin",
+    "deck.ana2Body":
+      "tt / ff / ss 結果可分出三種失效：UGBW 與 PM 只在 ss 同時下降，先懷疑 gm 與補償網路對 slow device 過度敏感；ss 下靜態電流升到 25.5 µA 但頻寬反而下降，不能單純加電流，要回查能隙基準與 bias mirror ratio；輸入共模下限在三個 corner 都超標，屬於結構性 headroom 不足，應先修設計。",
+    "deck.ana2Point":
+      "判讀原則：全 corner 都失效先修設計；單一 corner 失效再拆 process sensitivity，最後用 silicon data 做 model-to-silicon correlation，再決定 test spec 與 guard-band。",
     "research.sicHeading": "SiC Power 元件的 TCAD 模擬、設計、量測",
-    "notes.capProcess": "D-mode / E-mode GaN FinFET 製程設計",
-    "notes.capEbeam1": "E-beam lithography：dose、density、resist 與 transfer 共同決定 CD",
-    "notes.capEbeam2": "E-beam checklist：先分辨問題來源，再改變 recipe",
-    "notes.capEtch1": "Etch / SEM signature：區分 exposure、development 與 transfer 問題",
-    "notes.capEtch2": "Etch DOE：固定 CD / mask baseline 後再拆 pressure、gas、bias",
     "analog.eyebrow": "IC 設計",
     "analog.title": "IC 設計專題：J-K 正反器全客製化與類比放大／比較器",
     "analog.body":
       "大學 VLSI 專題中，我完成了兩個積體電路的全流程設計，一個數位、一個類比，皆以 Cadence 從規格走到版圖與驗證。",
-    "analog.digiTitle": "SN74LVC112A 雙負緣觸發 J-K 正反器",
-    "analog.digiBody":
-      "依 datasheet 規格，以 Cadence 全客製化設計帶預置與清除的雙負緣觸發 J-K 正反器，負責電路原理圖、內部邏輯與 IO 電路、版圖繪製與 DRC/LVS 檢查。",
-    "analog.anaTitle": "差動放大、遲滯比較器與能隙基準",
-    "analog.anaBody":
-      "主導可在運放與遲滯比較器之間切換的複用電路，以及能隙基準設計，涵蓋原理分析、尺寸設計、Cadence 前模擬、PSRR / CMRR 與 ff / ss 製程角模擬；版圖採共質心輸入對管、叉指尾管與 dummy，完成 DRC/LVS、寄生萃取與後模擬。判讀原則：全 corner 失效先修設計，單一 corner 失效再拆製程敏感度。",
-    "analog.previewToggle": "預覽專題報告（PDF）",
-    "analog.mobilePdfNote": "請登錄電腦端查看此 PDF。",
     "experience.eyebrow": "經歷",
     "experience.title": "實習、專案與社團",
     "experience.body":
@@ -291,37 +322,68 @@ const translations = {
     "research.cardQuestionTitle": "Low Ron while staying E-mode",
     "research.body":
       "The goal of my M.S. project is a GaN FinFET with low on-resistance that stays enhancement-mode. I split it into three lines: epitaxy (2DEG and Qg in multi-channel stacks), device (the Vth–Ron tradeoff set by Wfin, tox, and Al composition), and process (critical fin tests and p-GaN device development). Each line has measurable outputs and decision points.",
-    "research.cardEpiTitle": "Multi-Channel Epitaxy Barrier Design",
-    "research.liEpi":
-      "25 TCAD designs separate the roles of the middle and bottom AlGaN barriers: each extra nm of bottom barrier X shifts Vth by about −15.8 mV, the middle barrier Y governs Ron,sp and current, and Qg follows only the total thickness. The thickness allocation condenses into a single Y > X design knob.",
-    "research.cardSimTitle": "Physics-Guided AI-TCAD",
-    "research.li1":
-      "A rule-based search over Wfin, tox, and Al composition, three rounds of 27 cases, extracts Vth, Ron, Epeak, and ns. 81 cases replace a 960-case full sweep and converge on a Wfin 25 nm, Al 20.2–22.4%, tox 10–14 nm design window.",
-    "research.cardProcessTitle": "EBL / ICP-RIE Process DOE",
-    "research.li3":
-      "An EBL dose matrix located the usable fin window (most stable at dose 106–110) and revealed a constant ~+20.5 nm fin-width offset, fixed with a uniform −20 nm GDS bias. Thinning the hardmask from 300 nm to 50 nm cut transfer bias to −4 to +6 nm, showing the offset came from lithography rather than etch.",
-    "research.li4": "ICP-RIE pressure, gas chemistry, bias power, and etch-selectivity window design.",
-    "research.cardMeasureTitle": "Measurement and Failure Analysis",
-    "research.li5":
-      "B1500A I-V, C-V, BV, and TLM measurements; 1 kHz C-V resolved three channels in a multi-channel SBD and extracted each layer's ns. With FIB and FE-SEM cross-sections I map morphology to root cause: first tell equipment, material, and process issues apart, then change one knob at a time before locking a recipe.",
+    "deck.ganLabel": "GaN FinFET research slides",
+    "deck.icLabel": "IC design project slides",
+    "deck.prev": "Previous slide",
+    "deck.next": "Next slide",
+    "deck.tabEpi": "Epitaxy",
+    "deck.tabAi": "AI-TCAD",
+    "deck.tabProcess": "Process PFA",
+    "deck.tabMeasure": "Measurement EFA",
+    "deck.epi1Title": "Multi-channel epitaxy: the same barrier decides Vth or Ron depending on where it goes",
+    "deck.epi1Body":
+      "A multi-channel stack forms a 2DEG at every AlGaN/GaN interface and lowers Ron in parallel, but deeper channels are gated less effectively and Vth tends to shift negative. With the top barrier fixed at 11 nm, I swept the middle (Y) and bottom (X) barriers from 7 to 15 nm in 2 nm steps, 25 designs in total; band diagrams confirm all three interfaces sit below the Fermi level, so all three 2DEGs form.",
+    "deck.epi1Point":
+      "Mechanism: each extra nm of AlGaN adds polarization charge but also pushes the channel deeper. In the bottom barrier X the depth penalty dominates and mainly moves Vth; in the middle barrier Y the charge gain dominates and mainly improves Ron and current.",
+    "deck.epi2Title": "From simulation to a design rule: Y > X, and the Qg cost cannot be removed by epitaxy",
+    "deck.epi2Body":
+      "Each extra nm of bottom barrier X shifts Vth by about −15.8 mV; a thicker middle barrier Y lowers Ron,sp and raises Id,max; Qg rises linearly with the total thickness only. At the same 33 nm total, moving 8 nm from X to Y shifts Vth positive by about 205 mV while improving Ron,sp and Id,max.",
+    "deck.epi2Point":
+      "The rule handed to the epitaxy side: maximize Y, minimize X, then size the total within the gate-drive budget. The Qg drive cost has to be absorbed by the circuit side.",
+    "deck.ai1Title": "Physics-guided AI-TCAD: physics rules plan every simulation round",
+    "deck.ai1Body":
+      "The three device parameters are Wfin, tox, and Al composition. A full factorial sweep needs 960 cases and roughly 29,000 hours, which is impractical. I built a physics-guided expert system in Python: it scores Vth safety and Ron conduction, adapts the weights to their spread, anchors on the lowest-Ron point with Vth ≥ 0.2 V, and snaps every proposal onto manufacturable Al / Wfin / tox steps.",
+    "deck.ai1Point": "Each round runs only 27 cases, and every point can be traced to the rule that chose it, so the simulation is auditable and reproducible.",
+    "deck.ai2Title": "Converged in 81 cases with 92% less simulation time, revealing a shift in the dominant factor",
+    "deck.ai2Body":
+      "Three rounds used 81 cases, 91.6% fewer than a full sweep; per the simulation logs, total time fell from 29,171 h to 2,342 h. The safe E-mode ratio rose from 11% in round 1 to 67% in round 3, converging on Wfin 25 nm, Al 20.2–22.4%, tox 10–14 nm, and Ron 0.83–1.01 Ω·mm.",
+    "deck.ai2Point":
+      "At first Al polarization governs the global tradeoff; once Al converges, the whole low-Ron branch sits at Wfin 25 nm and trigate electrostatics take over as the dominant factor.",
+    "deck.ebl1Title": "EBL PFA: top-view SEM separates the effects of dose and beam current",
+    "deck.ebl1Body":
+      "An EBL dose matrix located the window: 90–94 is underexposed, 106–113 is the usable fin window with 106–110 most stable, and above 114 lines start to bridge and collapse. At dose 112, measured fin width is about 20.5 nm wider than drawn, with no significant slope against Wfin or Wtrench.",
+    "deck.ebl1Point": "Because the offset is nearly constant, the most effective fix is not per-pattern compensation but a uniform bias of about −20 nm in the GDS.",
+    "deck.etch1Title": "Etch PFA: FIB cross-sections × etch parameters, tracing morphology back to root cause",
+    "deck.etch1Body":
+      "With a 300 nm SiO2 hardmask the cross-section shows clear footing and a bias of about +61 nm; at 50 nm the transfer bias drops to −4 to +6 nm, close to 1:1, so the main offset comes from lithography rather than GaN etch. Pressure and RF-bias cross-section comparisons explain bowing, teeth, and undercut.",
+    "deck.etch1Point":
+      "Rule of thumb: deformed right after development, fix EBL; deformed only after etch, check hardmask and etch; normal from the top but wrong in cross-section, check pressure and bias first, and change one knob at a time.",
+    "deck.cv1Title": "EFA: C-V measurement verifies the epitaxy and separates equipment limits from sample issues",
+    "deck.cv1Body":
+      "In a multi-channel SBD each 2DEG behaves like a capacitor with a lateral resistive branch, so deeper channels need lower frequencies to respond. Sample N2097 resolved three channels at 1 kHz, with extracted ns of 24.05, 23.49, and 3.83 × 10¹¹ cm⁻².",
+    "deck.cv1Point":
+      "N1546 / N1557 still show a single envelope at 1 kHz, but 1 kHz is the lower frequency limit of the B1500A CMU, so I first attributed it to measurement resolution; the next step is to verify with thickness-split samples rather than ask for regrowth.",
+    "deck.tabDigital": "Digital IC · J-K flip-flop",
+    "deck.tabAnalog": "Analog IC · Op-amp / comparator",
+    "deck.jkTitle": "SN74LVC112A Dual Negative-Edge-Triggered J-K Flip-Flop",
+    "deck.jkBody":
+      "A J-K flip-flop with preset and clear, designed to the datasheet specification. I handled the schematic, most transistor sizing, part of the simulation testbenches and parameter measurement, and the top-level layout (about 65% of the work). The layout follows the package with 16 pads in two rows, placing ESD protection and IO buffers next to the pads.",
+    "deck.jkPoint":
+      "Pre- and post-layout simulations cover tt / ff / ss corners: post-layout tpd(CLK→Q) is 3.09 / 2.71 / 3.48 ns, and VOH / VOL, VIH / VIL, and leakage are verified at the worst corner.",
+    "deck.ana1Title": "Analog IC: reconfigurable op-amp / hysteresis comparator",
+    "deck.ana1Body":
+      "In this two-person analog project I designed a circuit that switches between an op-amp and a hysteresis comparator: a differential input, common-source second stage, and Miller compensation, with Vcontrol selecting the mode, plus a bandgap reference. My work covered circuit analysis, pre-layout simulation, and DRC, LVS, and post-layout verification.",
+    "deck.ana1Point": "The layout uses a cross-coupled common-centroid input pair and an interdigitated tail with dummies, finishing DRC / LVS clean with parasitic extraction and post-layout simulation.",
+    "deck.ana2Title": "Using corners and layout matching to judge spec margin",
+    "deck.ana2Body":
+      "The tt / ff / ss results separate three failure types: UGBW and PM dropping together only at ss points to gm and compensation being too sensitive to slow devices; quiescent current rising to 25.5 µA at ss while bandwidth falls means simply adding current will not help, so the bandgap and bias mirror ratio need checking; the input common-mode lower limit failing at all three corners is a structural headroom gap that must be fixed in the design.",
+    "deck.ana2Point":
+      "My rule: if every corner fails, fix the design; if a single corner fails, break down process sensitivity, then use silicon data for model-to-silicon correlation before setting test specs and guard-bands.",
     "research.sicHeading": "TCAD Simulation, Design, and Measurement for SiC Power Devices",
-    "notes.capProcess": "D-mode / E-mode GaN FinFET process design",
-    "notes.capEbeam1": "E-beam lithography: dose, density, resist, and transfer jointly determine CD",
-    "notes.capEbeam2": "E-beam checklist: identify the source before changing the recipe",
-    "notes.capEtch1": "Etch / SEM signature: separating exposure, development, and transfer issues",
-    "notes.capEtch2": "Etch DOE: fix CD / mask baseline before splitting pressure, gas, and bias",
     "analog.eyebrow": "IC Design",
     "analog.title": "IC Design Projects: Full-Custom J-K Flip-Flop and Analog Amplifier / Comparator",
     "analog.body":
       "In my undergraduate VLSI projects, I completed two full-flow IC designs: one digital and one analog. Both were taken from specification to layout and verification in Cadence.",
-    "analog.digiTitle": "SN74LVC112A Dual Negative-Edge-Triggered J-K Flip-Flop",
-    "analog.digiBody":
-      "A full-custom Cadence design of the SN74LVC112A dual negative-edge-triggered J-K flip-flop with preset and clear, following the datasheet spec: schematic, internal logic and IO circuits, layout, and DRC/LVS checking.",
-    "analog.anaTitle": "Differential Amplifier, Hysteresis Comparator and Bandgap Reference",
-    "analog.anaBody":
-      "Led the design of a reconfigurable circuit that switches between an op-amp and a hysteresis comparator, plus a bandgap reference, covering operating-principle analysis, sizing, Cadence pre-layout simulation, PSRR / CMRR, and ff / ss corners. The layout uses a common-centroid input pair, an interdigitated tail with dummies, and passed DRC/LVS, parasitic extraction, and post-layout simulation. My rule: if every corner fails, fix the design; if one corner fails, break down process sensitivity.",
-    "analog.previewToggle": "Preview report (PDF)",
-    "analog.mobilePdfNote": "Please view this PDF on a desktop computer.",
     "experience.eyebrow": "Experience",
     "experience.title": "Internship, Projects & Clubs",
     "experience.body":
@@ -464,30 +526,76 @@ if (photoStack) {
   });
 }
 
-const pdfPreviewQuery = window.matchMedia("(min-width: 641px)");
-const pdfIframes = document.querySelectorAll(".pdf-frame iframe[data-src]");
+document.querySelectorAll("[data-deck]").forEach((deck) => {
+  const steps = Array.from(deck.querySelectorAll(".deck-step"));
+  const tabs = Array.from(deck.querySelectorAll("[data-deck-topic]"));
+  const prevButton = deck.querySelector(".deck-prev");
+  const nextButton = deck.querySelector(".deck-next");
+  const counter = deck.querySelector(".deck-count");
+  let current = 0;
 
-function updatePdfPreviews() {
-  pdfIframes.forEach((iframe) => {
-    const details = iframe.closest(".pdf-demo");
-    if (pdfPreviewQuery.matches && details?.open) {
-      if (!iframe.src) {
-        iframe.src = iframe.dataset.src;
+  function show(index) {
+    current = (index + steps.length) % steps.length;
+    steps.forEach((step, stepIndex) => step.classList.toggle("is-active", stepIndex === current));
+
+    const topic = steps[current].dataset.topic;
+    tabs.forEach((tab) => {
+      const isActive = tab.dataset.deckTopic === topic;
+      tab.classList.toggle("is-active", isActive);
+      tab.setAttribute("aria-selected", String(isActive));
+    });
+
+    if (counter) {
+      counter.textContent = `${current + 1} / ${steps.length}`;
+    }
+
+    // Warm the neighbouring slides so flipping does not flash an empty frame.
+    [current - 1, current + 1].forEach((neighbour) => {
+      const image = steps[(neighbour + steps.length) % steps.length].querySelector("img");
+      if (image) {
+        image.loading = "eager";
       }
-    } else {
-      iframe.removeAttribute("src");
+    });
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      show(steps.findIndex((step) => step.dataset.topic === tab.dataset.deckTopic));
+    });
+  });
+  prevButton?.addEventListener("click", () => show(current - 1));
+  nextButton?.addEventListener("click", () => show(current + 1));
+  deck.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") {
+      show(current - 1);
+    } else if (event.key === "ArrowRight") {
+      show(current + 1);
     }
   });
-}
 
-updatePdfPreviews();
-if (typeof pdfPreviewQuery.addEventListener === "function") {
-  pdfPreviewQuery.addEventListener("change", updatePdfPreviews);
-} else {
-  pdfPreviewQuery.addListener(updatePdfPreviews);
-}
-document.querySelectorAll(".pdf-demo").forEach((details) => {
-  details.addEventListener("toggle", updatePdfPreviews);
+  let touchStartX = null;
+  deck.addEventListener("touchstart", (event) => {
+    touchStartX = event.touches[0].clientX;
+  }, { passive: true });
+  deck.addEventListener("touchend", (event) => {
+    if (touchStartX === null) {
+      return;
+    }
+    const deltaX = event.changedTouches[0].clientX - touchStartX;
+    touchStartX = null;
+    if (Math.abs(deltaX) > 50) {
+      show(current + (deltaX < 0 ? 1 : -1));
+    }
+  });
+
+  deck.showStep = (step) => {
+    const index = steps.indexOf(step);
+    if (index >= 0) {
+      show(index);
+    }
+  };
+
+  show(0);
 });
 
 const siteHeader = document.querySelector(".site-header");
@@ -532,7 +640,7 @@ if ("IntersectionObserver" in window && navLinks.length && pageSections.length) 
 }
 
 const revealItems = document.querySelectorAll(
-  ".section-title, .research-focus-card, .report-grid figure, .ic-card, .experience-card, .project-card, .life-grid figure, .contact-section",
+  ".section-title, .research-focus-card, .deck, .experience-card, .project-card, .life-grid figure, .contact-section",
 );
 
 if ("IntersectionObserver" in window) {
@@ -579,6 +687,11 @@ function highlightKeywordTargets(trigger, targetIds) {
   });
 
   targets.forEach((target) => {
+    const deck = target.closest("[data-deck]");
+    if (deck?.showStep) {
+      deck.showStep(target);
+      deck.classList.add("is-visible");
+    }
     target.classList.add("is-visible");
     target.classList.add("is-keyword-highlight");
   });

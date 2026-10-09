@@ -11,7 +11,7 @@
     <title data-i18n="meta.title">陳秉佑 | Ping Yu-Chen</title>
     <link rel="preload" href="assets/profile-photo.jpg" as="image" />
     <link rel="preload" href="assets/life-cat-hero.jpg" as="image" />
-    <link rel="stylesheet" href="styles.css?v=20261009-publications" />
+    <link rel="stylesheet" href="styles.css?v=20261010-slide-deck" />
   </head>
   <body>
     <canvas id="water-canvas" aria-hidden="true"></canvas>
@@ -88,14 +88,14 @@
             </a>
           </div>
           <div class="keyword-cloud" aria-label="Research keywords">
-            <button type="button" data-i18n="keyword.power" data-targets="ai-tcad,process-overview">GaN Power FinFET</button>
-            <button type="button" data-i18n="keyword.trigate" data-targets="ai-tcad,process-overview">Trigate / Narrow-fin</button>
-            <button type="button" data-i18n="keyword.tcad" data-targets="ai-tcad">3D TCAD Simulation</button>
+            <button type="button" data-i18n="keyword.power" data-targets="deck-epi-mechanism">GaN Power FinFET</button>
+            <button type="button" data-i18n="keyword.trigate" data-targets="deck-aitcad-results">Trigate / Narrow-fin</button>
+            <button type="button" data-i18n="keyword.tcad" data-targets="deck-aitcad-method">3D TCAD Simulation</button>
             <button type="button" data-i18n="keyword.mask" data-targets="chylab-tools">Mask & Layout Automation</button>
             <button type="button" data-i18n="keyword.mocvd" data-targets="chylab-tools">MOCVD GaN recipe 參數設計管理</button>
-            <button type="button" data-i18n="keyword.ebeam" data-targets="ebeam-principle,ebeam-checklist">E-beam Process</button>
-            <button type="button" data-i18n="keyword.etch" data-targets="etch-sem,etch-doe">Etch Process</button>
-            <button type="button" data-i18n="keyword.ai" data-targets="ai-tcad">AI-assisted Device Development</button>
+            <button type="button" data-i18n="keyword.ebeam" data-targets="deck-ebl">E-beam Process</button>
+            <button type="button" data-i18n="keyword.etch" data-targets="deck-etch">Etch Process</button>
+            <button type="button" data-i18n="keyword.ai" data-targets="deck-aitcad-method">AI-assisted Device Development</button>
           </div>
           <div class="hero-actions">
             <a class="button primary" href="#research" data-i18n="hero.ctaResearch">研究內容</a>
@@ -212,62 +212,110 @@
         <div class="device-subsection-title gan-subsection-title">
           <h3 data-i18n="research.ganHeading">24/48 V E-mode GaN FinFET：磊晶、元件、製程與量測</h3>
         </div>
-        <div class="research-grid research-focus-grid">
-          <article class="research-focus-card research-question">
-            <p class="tag" data-i18n="research.cardQuestionTag">Core question</p>
-            <h3 data-i18n="research.cardQuestionTitle">低 Ron 與 E-mode 如何同時成立</h3>
-            <p data-i18n="research.body">
-              碩士專案的目標是用 GaN FinFET 結構做到低導通電阻，同時維持 E-mode。我把它拆成材料、元件與製程三條線：材料端處理多通道磊晶的 2DEG 與 Qg，元件端處理 Wfin、tox 與 Al 組分造成的 Vth–Ron 取捨，製程端拆成 Fin 關鍵測試與 p-GaN 元件開發，每條線都有可量測的輸出與決策節點。
-            </p>
-          </article>
-          <article class="research-focus-card">
-            <p class="tag">Epitaxy · IEDMS 2026</p>
-            <h3 data-i18n="research.cardEpiTitle">多通道磊晶 barrier 設計</h3>
-            <p data-i18n="research.liEpi">以 25 組 TCAD 設計拆解中層與底層 AlGaN barrier 的角色：底層 X 每增加 1 nm，Vth 負移約 15.8 mV；中層 Y 主導 Ron,sp 與電流；Qg 只隨總厚度走。最後把複雜的厚度分配收斂成 Y &gt; X 這一個設計旋鈕。</p>
-          </article>
-          <article class="research-focus-card">
-            <p class="tag">TCAD × AI · IWN 2026</p>
-            <h3 data-i18n="research.cardSimTitle">Physics-guided AI-TCAD</h3>
-            <p data-i18n="research.li1">對 Wfin、tox、Al 組分做三輪、每輪 27 組的規則式搜尋，萃取 Vth、Ron、Epeak 與 ns；81 組取代 960 組全因子掃描，收斂到 Wfin 25 nm、Al 20.2–22.4%、tox 10–14 nm 的設計窗口。</p>
-          </article>
-          <article class="research-focus-card">
-            <p class="tag">Process DOE</p>
-            <h3 data-i18n="research.cardProcessTitle">EBL / ICP-RIE 製程 DOE</h3>
-            <p data-i18n="research.li3">以 EBL dose matrix 找出 Fin 可用窗口（dose 106–110 最穩定），發現 Fin 實測寬度有約 +20.5 nm 的常數偏差，改在 GDS 端統一 bias −20 nm；hardmask 由 300 nm 降到 50 nm 後，轉印偏差縮到 −4～+6 nm，確認偏差主要來自微影而非蝕刻。</p>
-          </article>
-          <article class="research-focus-card">
-            <p class="tag">Measurement · FA</p>
-            <h3 data-i18n="research.cardMeasureTitle">量測驗證與失效判讀</h3>
-            <p data-i18n="research.li5">以 B1500A 做 I-V、C-V、BV 與 TLM；多通道 SBD 在 1 kHz C-V 分出三個通道並萃取各層 ns。搭配 FIB 與 FE-SEM 截面建立「形貌 → root cause」判讀：先分辨設備、材料或製程異常，再每次只改一個旋鈕鎖定 recipe。</p>
-          </article>
-        </div>
+        <article class="research-focus-card research-question">
+          <p class="tag" data-i18n="research.cardQuestionTag">Core question</p>
+          <h3 data-i18n="research.cardQuestionTitle">低 Ron 與 E-mode 如何同時成立</h3>
+          <p data-i18n="research.body">
+            碩士專案的目標是用 GaN FinFET 結構做到低導通電阻，同時維持 E-mode。我把它拆成材料、元件與製程三條線：材料端處理多通道磊晶的 2DEG 與 Qg，元件端處理 Wfin、tox 與 Al 組分造成的 Vth–Ron 取捨，製程端拆成 Fin 關鍵測試與 p-GaN 元件開發，每條線都有可量測的輸出與決策節點。
+          </p>
+        </article>
 
-        <div class="report-panel" id="reports">
-          <div class="report-grid">
-            <figure data-highlight-id="ai-tcad">
-              <img src="assets/slides/ai-tcad-framework.png" alt="AI-guided TCAD optimization framework for GaN Trigate devices" loading="lazy" decoding="async" />
-              <figcaption>AI-guided TCAD optimization framework</figcaption>
-            </figure>
-            <figure data-highlight-id="process-overview">
-              <img src="assets/process-slides/process-overview.jpg" alt="D-mode and E-mode GaN process flow overview" loading="lazy" decoding="async" />
-              <figcaption data-i18n="notes.capProcess">D-mode / E-mode GaN FinFET 製程設計</figcaption>
-            </figure>
-            <figure data-highlight-id="ebeam-principle">
-              <img src="assets/process-slides/ebeam-principle.jpg" alt="E-beam lithography process issues from writing to pattern transfer" loading="lazy" decoding="async" />
-              <figcaption data-i18n="notes.capEbeam1">E-beam lithography：dose、density、resist 與 transfer 共同決定 CD</figcaption>
-            </figure>
-            <figure data-highlight-id="ebeam-checklist">
-              <img src="assets/process-slides/ebeam-checklist.jpg" alt="Practical E-beam lithography checklist before changing dose development PEC or hardmask" loading="lazy" decoding="async" />
-              <figcaption data-i18n="notes.capEbeam2">E-beam checklist：先分辨問題來源，再改變 recipe</figcaption>
-            </figure>
-            <figure data-highlight-id="etch-sem">
-              <img src="assets/process-slides/etch-sem-diagnosis.jpg" alt="Etch SEM signature diagnosis table for lithography and transfer issues" loading="lazy" decoding="async" />
-              <figcaption data-i18n="notes.capEtch1">Etch / SEM signature：區分 exposure、development 與 transfer 問題</figcaption>
-            </figure>
-            <figure data-highlight-id="etch-doe">
-              <img src="assets/process-slides/etch-doe.jpg" alt="Recommended etch DOE flow for pressure gas chemistry and bias after fixing CD and mask baseline" loading="lazy" decoding="async" />
-              <figcaption data-i18n="notes.capEtch2">Etch DOE：固定 CD / mask baseline 後再拆 pressure、gas、bias</figcaption>
-            </figure>
+        <div class="deck" data-deck aria-label="GaN FinFET research slides" data-i18n-attr="aria-label:deck.ganLabel">
+          <div class="deck-tabs" role="tablist">
+            <button type="button" role="tab" data-deck-topic="epi"><span>01</span><span data-i18n="deck.tabEpi">磊晶設計</span></button>
+            <button type="button" role="tab" data-deck-topic="aitcad"><span>02</span><span data-i18n="deck.tabAi">AI-TCAD</span></button>
+            <button type="button" role="tab" data-deck-topic="process"><span>03</span><span data-i18n="deck.tabProcess">製程 PFA</span></button>
+            <button type="button" role="tab" data-deck-topic="measure"><span>04</span><span data-i18n="deck.tabMeasure">量測 EFA</span></button>
+          </div>
+
+          <article class="deck-step" data-topic="epi" data-highlight-id="deck-epi-mechanism">
+            <a class="deck-slide" href="assets/slides/deck/gan-epi-mechanism.jpg" target="_blank" rel="noopener">
+              <img src="assets/slides/deck/gan-epi-mechanism.jpg" width="1600" height="721" alt="Multi-channel epitaxy: where the barrier thickness goes decides Vth or Ron" loading="lazy" decoding="async" />
+            </a>
+            <div class="deck-copy">
+              <p class="tag">Epitaxy · IEDMS 2026</p>
+              <h3 data-i18n="deck.epi1Title">多通道磊晶：同樣的 barrier，放在哪一層決定 Vth 還是 Ron</h3>
+              <p data-i18n="deck.epi1Body">多通道結構在每個 AlGaN/GaN 介面形成 2DEG，並聯後降低 Ron，但深層通道閘控較弱、Vth 容易負移。我固定上層 barrier 為 11 nm，中層 Y 與底層 X 從 7 到 15 nm、每 2 nm 一步，共 25 組設計；能帶確認三個介面都低於費米能階，三個 2DEG 都能成立。</p>
+              <p class="deck-point" data-i18n="deck.epi1Point">機制：每增加 1 nm AlGaN 會同時增加極化電荷、也讓通道變深。加在底層 X 時深度代價主導，主要影響 Vth；加在中層 Y 時電荷增益主導，主要改善 Ron 與電流。</p>
+            </div>
+          </article>
+
+          <article class="deck-step" data-topic="epi" data-highlight-id="deck-epi-rule">
+            <a class="deck-slide" href="assets/slides/deck/gan-epi-design-rule.jpg" target="_blank" rel="noopener">
+              <img src="assets/slides/deck/gan-epi-design-rule.jpg" width="1600" height="721" alt="Design rule Y greater than X; gate charge cost cannot be removed by epitaxy" loading="lazy" decoding="async" />
+            </a>
+            <div class="deck-copy">
+              <p class="tag">Epitaxy · IEDMS 2026</p>
+              <h3 data-i18n="deck.epi2Title">從模擬到 design rule：Y &gt; X，Qg 代價無法靠磊晶消除</h3>
+              <p data-i18n="deck.epi2Body">底層 X 每增加 1 nm，Vth 約負移 15.8 mV；中層 Y 增加時 Ron,sp 下降、Id,max 上升；Qg 只隨總厚度線性上升。同樣 33 nm 總厚度下，把 8 nm 從 X 移到 Y，Vth 正移約 205 mV，Ron,sp 與 Id,max 同時改善。</p>
+              <p class="deck-point" data-i18n="deck.epi2Point">交付給材料端的規則：Y 盡量大、X 盡量小，再依 gate-drive 預算決定總厚度；Qg 的驅動代價則需要由電路端承擔。</p>
+            </div>
+          </article>
+
+          <article class="deck-step" data-topic="aitcad" data-highlight-id="deck-aitcad-method">
+            <a class="deck-slide" href="assets/slides/deck/gan-aitcad-method.jpg" target="_blank" rel="noopener">
+              <img src="assets/slides/deck/gan-aitcad-method.jpg" width="1600" height="721" alt="AI-TCAD: physics rules plan each simulation round instead of a 960-case full sweep" loading="lazy" decoding="async" />
+            </a>
+            <div class="deck-copy">
+              <p class="tag">TCAD × AI · IWN 2026</p>
+              <h3 data-i18n="deck.ai1Title">Physics-guided AI-TCAD：用物理規則規劃每一輪模擬</h3>
+              <p data-i18n="deck.ai1Body">元件端的三個參數是 Wfin、tox 與 Al 組分。全因子掃描需要 960 組、約 2.9 萬小時，實際上不可行。我用 Python 建立 physics-guided 專家系統：以 Vth 安全分與 Ron 導通分評分、依離散程度調整權重、以 Vth ≥ 0.2 V 且 Ron 最低的點作為工程錨點，再把建議點對齊可製造的 Al / Wfin / tox 步長。</p>
+              <p class="deck-point" data-i18n="deck.ai1Point">每輪只跑 27 組，每個點都能追溯是哪一條規則選出來的，模擬因此可以被稽核與重現。</p>
+            </div>
+          </article>
+
+          <article class="deck-step" data-topic="aitcad" data-highlight-id="deck-aitcad-results">
+            <a class="deck-slide" href="assets/slides/deck/gan-aitcad-results.jpg" target="_blank" rel="noopener">
+              <img src="assets/slides/deck/gan-aitcad-results.jpg" width="1600" height="721" alt="81 cases converge with 92 percent less simulation time" loading="lazy" decoding="async" />
+            </a>
+            <div class="deck-copy">
+              <p class="tag">TCAD × AI · IWN 2026</p>
+              <h3 data-i18n="deck.ai2Title">81 組收斂、模擬時間 −92%，並找出主導因子的轉移</h3>
+              <p data-i18n="deck.ai2Body">三輪共 81 組，比全因子少 91.6%；依模擬 log，總時間由 29,171 小時降到 2,342 小時。安全 E-mode 比例從第一輪的 11% 提升到第三輪的 67%，收斂到 Wfin 25 nm、Al 20.2–22.4%、tox 10–14 nm，Ron 0.83–1.01 Ω·mm。</p>
+              <p class="deck-point" data-i18n="deck.ai2Point">一開始是 Al 極化主導全域 tradeoff；Al 收斂後，低 Ron 分支全部集中在 Wfin 25 nm，主導因子轉為 Trigate 靜電控制。</p>
+            </div>
+          </article>
+
+          <article class="deck-step" data-topic="process" data-highlight-id="deck-ebl">
+            <a class="deck-slide" href="assets/slides/deck/gan-ebl-pfa.jpg" target="_blank" rel="noopener">
+              <img src="assets/slides/deck/gan-ebl-pfa.jpg" width="1600" height="721" alt="EBL PFA: top-view SEM separates the effects of dose and beam current" loading="lazy" decoding="async" />
+            </a>
+            <div class="deck-copy">
+              <p class="tag">Process · EBL PFA</p>
+              <h3 data-i18n="deck.ebl1Title">EBL PFA：Top-view SEM 拆解 dose 與電流的影響</h3>
+              <p data-i18n="deck.ebl1Body">用 EBL dose matrix 找窗口：90–94 欠曝，106–113 是 Fin 可用窗口、其中 106–110 最穩定，114 以上開始橋連與線塌。在 dose 112 下，Fin 實測寬度比設計值多約 20.5 nm，而且與 Wfin、Wtrench 沒有顯著斜率。</p>
+              <p class="deck-point" data-i18n="deck.ebl1Point">這是近似常數的偏差，最有效的處理不是逐一補償每種圖形，而是在 GDS 端統一 bias 約 −20 nm。</p>
+            </div>
+          </article>
+
+          <article class="deck-step" data-topic="process" data-highlight-id="deck-etch">
+            <a class="deck-slide" href="assets/slides/deck/gan-etch-pfa.jpg" target="_blank" rel="noopener">
+              <img src="assets/slides/deck/gan-etch-pfa.jpg" width="1600" height="721" alt="Etch PFA: FIB cross-sections and etch parameters trace morphology back to root cause" loading="lazy" decoding="async" />
+            </a>
+            <div class="deck-copy">
+              <p class="tag">Process · Etch PFA</p>
+              <h3 data-i18n="deck.etch1Title">Etch PFA：FIB 截面 × 蝕刻參數，從形貌反推 root cause</h3>
+              <p data-i18n="deck.etch1Body">使用 300 nm SiO2 hardmask 時，截面底部出現明顯 footing，偏差約 +61 nm；降到 50 nm 後轉印偏差只剩 −4～+6 nm，接近 1:1，代表主要偏差來自微影而非 GaN 蝕刻。壓力與 RF bias 的截面對照則用來判斷 bowing、teeth、undercut 等形貌的成因。</p>
+              <p class="deck-point" data-i18n="deck.etch1Point">判讀原則：顯影後就變形先修 EBL；蝕刻後才變形查 hardmask 與 etch；俯視正常但截面異常，優先檢查 pressure 與 bias，每次只改一個旋鈕。</p>
+            </div>
+          </article>
+
+          <article class="deck-step" data-topic="measure" data-highlight-id="deck-cv">
+            <a class="deck-slide" href="assets/slides/deck/gan-cv-efa.jpg" target="_blank" rel="noopener">
+              <img src="assets/slides/deck/gan-cv-efa.jpg" width="1600" height="721" alt="EFA: C-V measurement verifies epitaxy and separates equipment limits from sample issues" loading="lazy" decoding="async" />
+            </a>
+            <div class="deck-copy">
+              <p class="tag">Measurement · EFA</p>
+              <h3 data-i18n="deck.cv1Title">EFA：C-V 量測驗證磊晶，先分清異常來自設備還是樣品</h3>
+              <p data-i18n="deck.cv1Body">多通道 SBD 中每個 2DEG 像一個電容加橫向電阻支路，深層通道需要較低頻率才跟得上。N2097 在 1 kHz 成功分出三個通道，萃取 ns 分別為 24.05、23.49 與 3.83 × 10¹¹ cm⁻²。</p>
+              <p class="deck-point" data-i18n="deck.cv1Point">N1546 / N1557 在 1 kHz 仍是單一包絡，但 B1500A CMU 的頻率下限就是 1 kHz，因此先判定為量測解析度不足；下一步用厚度 split 樣品驗證，而不是直接要求重長磊晶。</p>
+            </div>
+          </article>
+
+          <div class="deck-nav">
+            <button type="button" class="deck-prev" aria-label="上一頁" data-i18n-attr="aria-label:deck.prev">←</button>
+            <span class="deck-count" aria-live="polite">1 / 7</span>
+            <button type="button" class="deck-next" aria-label="下一頁" data-i18n-attr="aria-label:deck.next">→</button>
           </div>
         </div>
 
@@ -304,39 +352,53 @@
           </p>
         </div>
 
-        <div class="ic-grid">
-          <article class="ic-card">
-            <p class="tag">Digital · Full-custom</p>
-            <h3 data-i18n="analog.digiTitle">SN74LVC112A 雙負緣觸發 J-K 正反器</h3>
-            <p data-i18n="analog.digiBody">依 datasheet 規格，以 Cadence 全客製化設計帶預置與清除的雙負緣觸發 J-K 正反器，負責電路原理圖、內部邏輯與 IO 電路、版圖繪製與 DRC/LVS 檢查。</p>
-            <p class="pdf-mobile-note" data-i18n="analog.mobilePdfNote">請登錄電腦端查看此 PDF。</p>
-            <details class="pdf-demo">
-              <summary data-i18n="analog.previewToggle">預覽專題報告（PDF）</summary>
-              <div class="pdf-frame">
-                <iframe
-                  data-src="assets/ic-design/sn74lvc112a.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
-                  title="SN74LVC112A J-K 正反器專題報告"
-                  loading="lazy"
-                ></iframe>
-              </div>
-            </details>
+        <div class="deck" data-deck aria-label="IC design project slides" data-i18n-attr="aria-label:deck.icLabel">
+          <div class="deck-tabs" role="tablist">
+            <button type="button" role="tab" data-deck-topic="digital"><span>01</span><span data-i18n="deck.tabDigital">數位 IC · J-K 正反器</span></button>
+            <button type="button" role="tab" data-deck-topic="analog"><span>02</span><span data-i18n="deck.tabAnalog">類比 IC · 運放 / 比較器</span></button>
+          </div>
+
+          <article class="deck-step" data-topic="digital">
+            <a class="deck-slide" href="assets/slides/deck/ic-digital-jk.jpg" target="_blank" rel="noopener">
+              <img src="assets/slides/deck/ic-digital-jk.jpg" width="1600" height="721" alt="SN74LVC112A dual negative-edge-triggered J-K flip-flop logic and full-custom layout" loading="lazy" decoding="async" />
+            </a>
+            <div class="deck-copy">
+              <p class="tag">Digital · Full-custom</p>
+              <h3 data-i18n="deck.jkTitle">SN74LVC112A 雙負緣觸發 J-K 正反器</h3>
+              <p data-i18n="deck.jkBody">依 datasheet 規格設計帶預置與清除的雙負緣觸發 J-K 正反器。我負責電路原理圖、大部分電晶體尺寸設計、部分模擬測試與參數量測，以及整體版圖設計（工作量約 65%）。版圖按封裝排成兩排 16 個 PAD，ESD 保護與 IO buffer 緊鄰 PAD 放置。</p>
+              <p class="deck-point" data-i18n="deck.jkPoint">前後模擬都跑 tt / ff / ss 三種工藝角：後模擬 tpd(CLK→Q) 為 3.09 / 2.71 / 3.48 ns，並以最差工藝角驗證 VOH / VOL、VIH / VIL 與漏電流。</p>
+            </div>
           </article>
-          <article class="ic-card">
-            <p class="tag">Analog · Differential / Comparator</p>
-            <h3 data-i18n="analog.anaTitle">差動放大、遲滯比較器與能隙基準</h3>
-            <p data-i18n="analog.anaBody">主導可在運放與遲滯比較器之間切換的複用電路，以及能隙基準設計，涵蓋原理分析、尺寸設計、Cadence 前模擬、PSRR / CMRR 與 ff / ss 製程角模擬；版圖採共質心輸入對管、叉指尾管與 dummy，完成 DRC/LVS、寄生萃取與後模擬。判讀原則：全 corner 失效先修設計，單一 corner 失效再拆製程敏感度。</p>
-            <p class="pdf-mobile-note" data-i18n="analog.mobilePdfNote">請登錄電腦端查看此 PDF。</p>
-            <details class="pdf-demo">
-              <summary data-i18n="analog.previewToggle">預覽專題報告（PDF）</summary>
-              <div class="pdf-frame">
-                <iframe
-                  data-src="assets/ic-design/diff-amp-comparator.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
-                  title="差動放大電路與遲滯比較器專題報告"
-                  loading="lazy"
-                ></iframe>
-              </div>
-            </details>
+
+          <article class="deck-step" data-topic="analog">
+            <a class="deck-slide" href="assets/slides/deck/ic-analog-circuit-layout.jpg" target="_blank" rel="noopener">
+              <img src="assets/slides/deck/ic-analog-circuit-layout.jpg" width="1600" height="721" alt="Analog IC: op-amp and hysteresis comparator reconfigurable circuit schematic and layout" loading="lazy" decoding="async" />
+            </a>
+            <div class="deck-copy">
+              <p class="tag">Analog · Schematic &amp; Layout</p>
+              <h3 data-i18n="deck.ana1Title">類比 IC：運放 / 遲滯比較器複用電路</h3>
+              <p data-i18n="deck.ana1Body">兩人一組的類比 IC 專題，我負責可在運放與遲滯比較器之間切換的複用電路：差動輸入 + 共源二級 + Miller 補償，以 Vcontrol 選通運放或遲滯比較器，另含能隙基準。工作包含電路分析、前模擬，以及 DRC、LVS 與 post-layout 驗證。</p>
+              <p class="deck-point" data-i18n="deck.ana1Point">版圖上輸入對管採交叉耦合共質心、尾管叉指並聯加 dummy，最後完成 DRC / LVS clean、寄生參數萃取與後模擬。</p>
+            </div>
           </article>
+
+          <article class="deck-step" data-topic="analog">
+            <a class="deck-slide" href="assets/slides/deck/ic-analog-corner.jpg" target="_blank" rel="noopener">
+              <img src="assets/slides/deck/ic-analog-corner.jpg" width="1600" height="721" alt="Using corners and layout matching to judge spec margin and yield risk" loading="lazy" decoding="async" />
+            </a>
+            <div class="deck-copy">
+              <p class="tag">Analog · Corner &amp; Spec margin</p>
+              <h3 data-i18n="deck.ana2Title">用 corner 與 layout matching 判斷 spec margin</h3>
+              <p data-i18n="deck.ana2Body">tt / ff / ss 結果可分出三種失效：UGBW 與 PM 只在 ss 同時下降，先懷疑 gm 與補償網路對 slow device 過度敏感；ss 下靜態電流升到 25.5 µA 但頻寬反而下降，不能單純加電流，要回查能隙基準與 bias mirror ratio；輸入共模下限在三個 corner 都超標，屬於結構性 headroom 不足，應先修設計。</p>
+              <p class="deck-point" data-i18n="deck.ana2Point">判讀原則：全 corner 都失效先修設計；單一 corner 失效再拆 process sensitivity，最後用 silicon data 做 model-to-silicon correlation，再決定 test spec 與 guard-band。</p>
+            </div>
+          </article>
+
+          <div class="deck-nav">
+            <button type="button" class="deck-prev" aria-label="上一頁" data-i18n-attr="aria-label:deck.prev">←</button>
+            <span class="deck-count" aria-live="polite">1 / 3</span>
+            <button type="button" class="deck-next" aria-label="下一頁" data-i18n-attr="aria-label:deck.next">→</button>
+          </div>
         </div>
       </section>
 
@@ -661,7 +723,7 @@
 
     <button class="back-to-top" type="button" aria-label="返回最頂部" title="返回最頂部">↑</button>
 
-    <script src="script.js?v=20261009-publications"></script>
-    <script type="module" src="background3d.js?v=20261009-publications"></script>
+    <script src="script.js?v=20261010-slide-deck"></script>
+    <script type="module" src="background3d.js?v=20261010-slide-deck"></script>
   </body>
 </html>
