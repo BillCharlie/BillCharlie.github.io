@@ -29,6 +29,10 @@ const translations = {
     "meta.description":
       "陳秉佑 / Ping Yu-Chen / Bill Chen 的個人首頁：GaN Power FinFET、TCAD、AI 輔助元件開發、IWN 2026 與 IEDMS 2026 論文、製程 DOE、類比 IC 與生活紀錄。",
     brand: "陳秉佑 · Ping Yu-Chen",
+    "nav.home": "簡介",
+    "pager.prev": "上一頁",
+    "pager.next": "下一頁",
+    "pager.label": "頁面導覽",
     "nav.publications": "論文發表",
     "nav.research": "元件研究",
     "nav.analog": "IC 設計",
@@ -43,7 +47,6 @@ const translations = {
     "highlight.label": "研究成果亮點",
     "highlight.iwn": "第一作者 Poster · 日本熊本",
     "highlight.iedms": "第一作者 Poster · 台北",
-    "highlight.aiTcad": "AI-TCAD 模擬時間（81 vs 960 組）",
     "interest.label": "研究興趣",
     "interest.ganTitle": "為 AI 時代的能源轉換做元件",
     "interest.ganBody":
@@ -279,7 +282,6 @@ const translations = {
     "contact.body": "如果你也在做 GaN Power、TCAD、AI 輔助元件開發、製程整合或研究工具，歡迎聯絡我。",
     "footer.name": "陳秉佑 / Ping Yu-Chen / Bill Chen",
     "alt.profile": "陳秉佑個人照片",
-    "alt.tcadSlide": "GaN Trigate AI-TCAD 研究投影片",
     "alt.cats": "陳秉佑養的兩隻貓咪",
     "photoStack.toggle": "查看可愛貓貓（coba&小秋）",
     "photoStack.hint": "查看可愛貓貓（coba&小秋）",
@@ -289,6 +291,10 @@ const translations = {
     "meta.description":
       "Personal homepage of Ping Yu-Chen / Bill Chen: GaN power FinFETs, TCAD, AI-assisted device development, IWN 2026 and IEDMS 2026 papers, process DOE, analog IC design, and life notes.",
     brand: "Ping Yu-Chen · Bill Chen",
+    "nav.home": "About",
+    "pager.prev": "Previous",
+    "pager.next": "Next",
+    "pager.label": "Page navigation",
     "nav.publications": "Publications",
     "nav.research": "Device Research",
     "nav.analog": "IC Design",
@@ -303,7 +309,6 @@ const translations = {
     "highlight.label": "Research highlights",
     "highlight.iwn": "First-author poster · Kumamoto, Japan",
     "highlight.iedms": "First-author poster · Taipei",
-    "highlight.aiTcad": "AI-TCAD simulation time (81 vs 960 cases)",
     "interest.label": "Research interests",
     "interest.ganTitle": "Devices for power conversion in the AI era",
     "interest.ganBody":
@@ -540,7 +545,6 @@ const translations = {
       "If you are working on GaN power, TCAD, AI-assisted device development, process integration, or research tools, I would be happy to connect.",
     "footer.name": "Ping Yu-Chen / Bill Chen",
     "alt.profile": "Portrait of Ping Yu-Chen",
-    "alt.tcadSlide": "GaN Trigate AI-TCAD research slide",
     "alt.cats": "Ping Yu-Chen's two cats",
     "photoStack.toggle": "View the cute cats (coba & Xiao-Qiu)",
     "photoStack.hint": "View the cute cats (coba & Xiao-Qiu)",
@@ -665,10 +669,9 @@ document.querySelectorAll("[data-deck]").forEach((deck) => {
 });
 
 const siteHeader = document.querySelector(".site-header");
-const navLinks = Array.from(document.querySelectorAll('nav a[href^="#"]'));
-const pageSections = navLinks
-  .map((link) => document.querySelector(link.getAttribute("href")))
-  .filter(Boolean);
+const navLinks = Array.from(document.querySelectorAll('.site-header nav a[href^="#"]'));
+const pages = Array.from(document.querySelectorAll("main > [data-page]"));
+let currentPage = null;
 
 function updateHeaderState() {
   if (siteHeader) {
@@ -679,31 +682,57 @@ function updateHeaderState() {
 updateHeaderState();
 window.addEventListener("scroll", updateHeaderState, { passive: true });
 
-if ("IntersectionObserver" in window && navLinks.length && pageSections.length) {
-  const navObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        }
-
-        const activeLink = navLinks.find((link) => link.getAttribute("href") === `#${entry.target.id}`);
-        navLinks.forEach((link) => {
-          const isActive = link === activeLink;
-          link.classList.toggle("is-active", isActive);
-          if (isActive) {
-            link.setAttribute("aria-current", "page");
-          } else {
-            link.removeAttribute("aria-current");
-          }
-        });
-      });
-    },
-    { rootMargin: "-35% 0px -55% 0px", threshold: 0.01 },
-  );
-
-  pageSections.forEach((section) => navObserver.observe(section));
+function pageOf(element) {
+  return element?.closest("[data-page]") || pages[0];
 }
+
+function showPage(page) {
+  if (page === currentPage) {
+    return;
+  }
+
+  pages.forEach((candidate) => {
+    candidate.hidden = candidate !== page;
+  });
+  currentPage = page;
+
+  navLinks.forEach((link) => {
+    const isActive = link.getAttribute("href") === `#${page.id}`;
+    link.classList.toggle("is-active", isActive);
+    if (isActive) {
+      link.setAttribute("aria-current", "page");
+    } else {
+      link.removeAttribute("aria-current");
+    }
+  });
+
+  window.scrollTo({ top: 0, behavior: "instant" });
+  page.classList.remove("page-enter");
+  void page.offsetWidth;
+  page.classList.add("page-enter");
+}
+
+function route() {
+  const id = decodeURIComponent(window.location.hash.slice(1));
+  const target = id ? document.getElementById(id) : null;
+  const page = pageOf(target);
+  showPage(page);
+
+  // The browser cannot jump to an anchor that was hidden when the hash changed.
+  if (target && target !== page) {
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
+window.addEventListener("hashchange", route);
+document.addEventListener("click", (event) => {
+  const link = event.target.closest('a[href^="#"]');
+  if (link && link.getAttribute("href") === window.location.hash) {
+    event.preventDefault();
+    route();
+  }
+});
+route();
 
 const revealItems = document.querySelectorAll(
   ".section-title, .research-focus-card, .deck, .experience-card, .project-card, .life-grid figure, .contact-section",
@@ -762,6 +791,11 @@ function highlightKeywordTargets(trigger, targetIds) {
     target.classList.add("is-keyword-highlight");
   });
 
+  const targetPage = pageOf(targets[0]);
+  if (targetPage !== currentPage) {
+    window.history.pushState(null, "", `#${targetPage.id}`);
+    showPage(targetPage);
+  }
   targets[0].scrollIntoView({ behavior: "smooth", block: "center" });
 
   highlightTimer = window.setTimeout(() => {

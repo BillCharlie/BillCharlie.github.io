@@ -11,14 +11,15 @@
     <title data-i18n="meta.title">陳秉佑 | Ping Yu-Chen</title>
     <link rel="preload" href="assets/profile-photo.jpg" as="image" />
     <link rel="preload" href="assets/life-cat-hero.jpg" as="image" />
-    <link rel="stylesheet" href="styles.css?v=20261010-split-blocks" />
+    <link rel="stylesheet" href="styles.css?v=20261010-pages2" />
   </head>
   <body>
     <canvas id="water-canvas" aria-hidden="true"></canvas>
     <header class="site-header">
-      <a class="brand" href="#top" data-i18n="brand">陳秉佑 · Ping Yu-Chen</a>
+      <a class="brand" href="#home" data-i18n="brand">陳秉佑 · Ping Yu-Chen</a>
       <div class="header-right">
         <nav aria-label="Primary navigation">
+          <a href="#home" data-i18n="nav.home">簡介</a>
           <a href="#publications" data-i18n="nav.publications">論文發表</a>
           <a href="#research" data-i18n="nav.research">元件研究</a>
           <a href="#analog" data-i18n="nav.analog">IC 設計</a>
@@ -34,8 +35,8 @@
       </div>
     </header>
 
-    <main id="top">
-      <section class="hero">
+    <main>
+      <section class="hero" id="home" data-page>
         <div class="hero-copy">
           <p class="eyebrow" data-i18n="hero.eyebrow">GaN Power · TCAD · AI Tools · Process DOE · Measurement</p>
           <h1 data-i18n="hero.title">讓 GaN Power 元件走向實作與應用。</h1>
@@ -53,10 +54,6 @@
               <strong>IEDMS 2026</strong>
               <span data-i18n="highlight.iedms">第一作者 Poster · 台北</span>
             </a>
-            <a href="#pub-iwn">
-              <strong>−92%</strong>
-              <span data-i18n="highlight.aiTcad">AI-TCAD 模擬時間（81 vs 960 組）</span>
-            </a>
           </div>
           <div class="interest-list" aria-label="Research interests" data-i18n-attr="aria-label:interest.label">
             <a class="interest-item interest-gan" href="#research">
@@ -68,7 +65,7 @@
                 </span>
               </span>
             </a>
-            <a class="interest-item interest-tcad" href="#reports">
+            <a class="interest-item interest-tcad" href="#research">
               <span class="interest-tag">TCAD</span>
               <span class="interest-copy">
                 <strong data-i18n="interest.tcadTitle">先在模擬裡把元件想清楚</strong>
@@ -120,9 +117,16 @@
           />
           <span class="stack-hint" aria-hidden="true" data-i18n="photoStack.hint">查看可愛貓貓（coba&小秋）</span>
         </button>
+        <nav class="page-pager" aria-label="Page navigation" data-i18n-attr="aria-label:pager.label">
+          <span class="pager-spacer"></span>
+          <a class="pager-next" href="#publications">
+            <small data-i18n="pager.next">下一頁</small>
+            <span data-i18n="nav.publications">論文發表</span>
+          </a>
+        </nav>
       </section>
 
-      <section class="section publication-section" id="publications">
+      <section class="section publication-section" id="publications" data-page>
         <div class="section-title">
           <p class="eyebrow" data-i18n="pub.eyebrow">論文發表</p>
           <h2 data-i18n="pub.title">研究成果與論文發表</h2>
@@ -201,9 +205,19 @@
           <span class="tag" data-i18n="pub.otherTag">其他研究產出</span>
           <span>“Blockchain-based Decentralized Co-governance for Sustainable Crowdfunding.” · arXiv Preprint · <span data-i18n="pub.firstAuthor">第一作者</span></span>
         </p>
+        <nav class="page-pager" aria-label="Page navigation" data-i18n-attr="aria-label:pager.label">
+          <a class="pager-prev" href="#home">
+            <small data-i18n="pager.prev">上一頁</small>
+            <span data-i18n="nav.home">簡介</span>
+          </a>
+          <a class="pager-next" href="#research">
+            <small data-i18n="pager.next">下一頁</small>
+            <span data-i18n="nav.research">元件研究</span>
+          </a>
+        </nav>
       </section>
 
-      <section class="section research-section" id="research">
+      <section class="section research-section" id="research" data-page>
         <div class="section-title">
           <p class="eyebrow" data-i18n="research.eyebrow">元件研究</p>
           <h2 data-i18n="research.title">第三代功率元件研究</h2>
@@ -492,9 +506,19 @@
             <button type="button" class="deck-next" aria-label="下一頁" data-i18n-attr="aria-label:deck.next">→</button>
           </div>
         </div>
+        <nav class="page-pager" aria-label="Page navigation" data-i18n-attr="aria-label:pager.label">
+          <a class="pager-prev" href="#publications">
+            <small data-i18n="pager.prev">上一頁</small>
+            <span data-i18n="nav.publications">論文發表</span>
+          </a>
+          <a class="pager-next" href="#analog">
+            <small data-i18n="pager.next">下一頁</small>
+            <span data-i18n="nav.analog">IC 設計</span>
+          </a>
+        </nav>
       </section>
 
-      <section class="section analog-section" id="analog">
+      <section class="section analog-section" id="analog" data-page>
         <div class="section-title">
           <p class="eyebrow" data-i18n="analog.eyebrow">IC 設計</p>
           <h2 data-i18n="analog.title">IC 設計專題：J-K 正反器全客製化與類比放大／比較器</h2>
@@ -583,9 +607,19 @@
           </div>
         </div>
         </div>
+        <nav class="page-pager" aria-label="Page navigation" data-i18n-attr="aria-label:pager.label">
+          <a class="pager-prev" href="#research">
+            <small data-i18n="pager.prev">上一頁</small>
+            <span data-i18n="nav.research">元件研究</span>
+          </a>
+          <a class="pager-next" href="#experience">
+            <small data-i18n="pager.next">下一頁</small>
+            <span data-i18n="nav.experience">經歷</span>
+          </a>
+        </nav>
       </section>
 
-      <section class="section experience-section" id="experience">
+      <section class="section experience-section" id="experience" data-page>
         <div class="section-title">
           <p class="eyebrow" data-i18n="experience.eyebrow">經歷</p>
           <h2 data-i18n="experience.title">實習、專案與社團</h2>
@@ -660,9 +694,19 @@
             </div>
           </article>
         </div>
+        <nav class="page-pager" aria-label="Page navigation" data-i18n-attr="aria-label:pager.label">
+          <a class="pager-prev" href="#analog">
+            <small data-i18n="pager.prev">上一頁</small>
+            <span data-i18n="nav.analog">IC 設計</span>
+          </a>
+          <a class="pager-next" href="#projects">
+            <small data-i18n="pager.next">下一頁</small>
+            <span data-i18n="nav.projects">工具開發與專利</span>
+          </a>
+        </nav>
       </section>
 
-      <section class="section tool-section" id="projects">
+      <section class="section tool-section" id="projects" data-page>
         <div class="section-title">
           <p class="eyebrow" data-i18n="projects.eyebrow">工具開發與專利</p>
           <h2 data-i18n="projects.title">工具開發與專利</h2>
@@ -746,9 +790,19 @@
             <a href="https://patents.google.com/patent/CN114048251A/zh" data-i18n="projects.viewPatent">查看專利</a>
           </article>
         </div>
+        <nav class="page-pager" aria-label="Page navigation" data-i18n-attr="aria-label:pager.label">
+          <a class="pager-prev" href="#experience">
+            <small data-i18n="pager.prev">上一頁</small>
+            <span data-i18n="nav.experience">經歷</span>
+          </a>
+          <a class="pager-next" href="#life">
+            <small data-i18n="pager.next">下一頁</small>
+            <span data-i18n="nav.life">生活</span>
+          </a>
+        </nav>
       </section>
 
-      <section class="section life-section" id="life">
+      <section class="section life-section" id="life" data-page>
         <div class="section-title narrow">
           <p class="eyebrow" data-i18n="life.eyebrow">生活</p>
           <h2 data-i18n="life.title">生活片段</h2>
@@ -787,9 +841,19 @@
             <figcaption>Landscape notes</figcaption>
           </figure>
         </div>
+        <nav class="page-pager" aria-label="Page navigation" data-i18n-attr="aria-label:pager.label">
+          <a class="pager-prev" href="#projects">
+            <small data-i18n="pager.prev">上一頁</small>
+            <span data-i18n="nav.projects">工具開發與專利</span>
+          </a>
+          <a class="pager-next" href="#contact">
+            <small data-i18n="pager.next">下一頁</small>
+            <span data-i18n="nav.contact">聯絡</span>
+          </a>
+        </nav>
       </section>
 
-      <section class="section contact-section" id="contact">
+      <section class="section contact-section" id="contact" data-page>
         <p class="eyebrow" data-i18n="contact.eyebrow">聯絡</p>
         <h2 data-i18n="contact.title">歡迎交流</h2>
         <p data-i18n="contact.body">
@@ -800,6 +864,13 @@
           <a href="https://github.com/BillCharlie">github.com/BillCharlie</a>
           <a href="https://billcharlie.github.io/ChyiLab/">ChyiLab</a>
         </div>
+        <nav class="page-pager" aria-label="Page navigation" data-i18n-attr="aria-label:pager.label">
+          <a class="pager-prev" href="#life">
+            <small data-i18n="pager.prev">上一頁</small>
+            <span data-i18n="nav.life">生活</span>
+          </a>
+          <span class="pager-spacer"></span>
+        </nav>
       </section>
     </main>
 
@@ -809,7 +880,7 @@
 
     <button class="back-to-top" type="button" aria-label="返回最頂部" title="返回最頂部">↑</button>
 
-    <script src="script.js?v=20261010-split-blocks"></script>
-    <script type="module" src="background3d.js?v=20261010-split-blocks"></script>
+    <script src="script.js?v=20261010-pages2"></script>
+    <script type="module" src="background3d.js?v=20261010-pages2"></script>
   </body>
 </html>

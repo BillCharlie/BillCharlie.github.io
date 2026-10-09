@@ -34,6 +34,7 @@ function clickedInteractiveSurface(target) {
         ".life-grid figure",
         ".literature-gallery figure",
         ".contact-links",
+        ".page-pager",
         "footer",
       ].join(","),
     ),
