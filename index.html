@@ -11,7 +11,7 @@
     <title data-i18n="meta.title">陳秉佑 | Ping Yu-Chen</title>
     <link rel="preload" href="assets/profile-photo.jpg" as="image" />
     <link rel="preload" href="assets/life-cat-hero.jpg" as="image" />
-    <link rel="stylesheet" href="styles.css?v=20261010-process" />
+    <link rel="stylesheet" href="styles.css?v=20261010-about3" />
   </head>
   <body>
     <canvas id="water-canvas" aria-hidden="true"></canvas>
@@ -38,14 +38,14 @@
     <main>
       <section class="hero" id="home" data-page>
         <div class="hero-copy">
-          <p class="eyebrow" data-i18n="hero.eyebrow">Process Integration · TCAD · Cleanroom · PFA / EFA · Python</p>
-          <h1 data-i18n="hero.title">用製程與 TCAD，把數據變成設計規則。</h1>
+          <p class="eyebrow" data-i18n="hero.eyebrow">TCAD · AI Data Analytics · Device Topology · Process Integration · PFA / EFA</p>
+          <h1 data-i18n="hero.title">從 TCAD 到無塵室，用數據找出設計規則。</h1>
           <div class="hero-bio">
             <p data-i18n="hero.bio1">
-              Hey，我是陳秉佑（Ping Yu-Chen / Bill Chen），中央大學電機所固態組碩士生，指導教授為綦振瀛教授；大學畢業於西安交通大學微電子科學與工程。我的主軸是製程與 TCAD：在無塵室親手完成 EBL 微影、ICP-RIE 蝕刻、PECVD、E-gun 鍍膜與 lift-off，用 FIB、FE-SEM 與 B1500A 做形貌與電性分析，並以 Sentaurus TCAD 先在模擬裡把元件想清楚。
+              Hey，我是陳秉佑（Ping Yu-Chen / Bill Chen），中央大學電機所固態組碩士生，指導教授為綦振瀛教授；大學畢業於西安交通大學微電子科學與工程。我的主軸是 TCAD：以 Sentaurus 建立 GaN 與 SiC 功率元件模型，先在模擬裡把元件想清楚；其次是用 AI 做數據趨勢分析與元件結構拓撲的探索，從大量模擬中找出真正的主導因子；第三是製程：在無塵室親手完成 EBL 微影、ICP-RIE 蝕刻、PECVD、E-gun 鍍膜與 lift-off，並用 FIB、FE-SEM 與 B1500A 做形貌與電性分析。
             </p>
             <p data-i18n="hero.bio2">
-              我希望用 Python 把製程 recipe 和 PFA（形貌）、EFA（電性）數據串在一起，從 DOE 結果整理出可執行的 design rule 與製程窗口，例如把 EBL 的 +20.5 nm 常數偏差轉成 GDS 端統一 bias −20 nm。研究對象涵蓋 GaN 與 SiC 功率元件；大學也完成類比與數位 IC 的電路與版圖設計，能把元件特性連結到電路端的需求。
+              我喜歡用 Python 把製程 recipe 和 PFA（形貌）、EFA（電性）數據串在一起，從 DOE 結果整理出可執行的 design rule 與製程窗口。大學時也完成類比與數位 IC 的電路與版圖設計，能把元件特性連結到電路端的需求。
             </p>
           </div>
           <div class="hero-highlights" aria-label="Research highlights" data-i18n-attr="aria-label:highlight.label">
@@ -85,30 +85,30 @@
         <div class="hero-lower">
           <p class="eyebrow hero-subhead" data-i18n="interest.label">研究興趣</p>
           <div class="interest-list" aria-label="Research interests" data-i18n-attr="aria-label:interest.label">
+            <a class="interest-item interest-tcad" href="#research">
+              <span class="interest-tag">TCAD</span>
+              <span class="interest-copy">
+                <strong data-i18n="interest.tcadTitle">先在模擬裡把元件想清楚</strong>
+                <span data-i18n="interest.tcadBody">
+                  以 Sentaurus 建立 GaN FinFET、多通道 AlGaN/GaN 與 SiC VDMOS 元件模型，涵蓋工藝、結構到 300–1000 K 變溫特性仿真，並用量測回頭校準；相關成果整理成 IWN 2026 與 IEDMS 2026 第一作者論文。
+                </span>
+              </span>
+            </a>
+            <a class="interest-item interest-data" href="#research">
+              <span class="interest-tag" data-i18n="interest.dataTag">AI 數據分析</span>
+              <span class="interest-copy">
+                <strong data-i18n="interest.dataTitle">看懂數據趨勢與結構拓撲</strong>
+                <span data-i18n="interest.dataBody">
+                  用 physics-guided AI-TCAD 在 Wfin、tox 與 Al 組分的設計空間中，以 81 組取代 960 組全因子掃描，並找出主導因子從極化轉向 Trigate 靜電控制；也把多通道磊晶的 barrier 分配收斂成 Y &gt; X 的結構規則。
+                </span>
+              </span>
+            </a>
             <a class="interest-item interest-process" href="#research">
               <span class="interest-tag" data-i18n="interest.processTag">製程</span>
               <span class="interest-copy">
                 <strong data-i18n="interest.processTitle">在無塵室把元件做出來</strong>
                 <span data-i18n="interest.processBody">
                   在無塵室執行 EBL 微影、ICP-RIE 蝕刻、PECVD、E-gun 鍍膜與 lift-off；以 dose matrix、hardmask 厚度與蝕刻參數 DOE 找出 Fin 製程窗口，並用 FIB / FE-SEM 截面從形貌回推 root cause。
-                </span>
-              </span>
-            </a>
-            <a class="interest-item interest-tcad" href="#research">
-              <span class="interest-tag">TCAD</span>
-              <span class="interest-copy">
-                <strong data-i18n="interest.tcadTitle">先在模擬裡把元件想清楚</strong>
-                <span data-i18n="interest.tcadBody">
-                  以 Sentaurus 搭配 Python 建立模型與自動化流程：多通道磊晶 barrier 設計規則（IEDMS 2026）、physics-guided AI-TCAD 參數最佳化（IWN 2026，以 81 組取代 960 組全因子掃描），以及 SiC VDMOS 300–1000 K 變溫仿真。
-                </span>
-              </span>
-            </a>
-            <a class="interest-item interest-data" href="#research">
-              <span class="interest-tag" data-i18n="interest.dataTag">Python × 數據</span>
-              <span class="interest-copy">
-                <strong data-i18n="interest.dataTitle">把 recipe、PFA 與 EFA 串成 design rule</strong>
-                <span data-i18n="interest.dataBody">
-                  用 Python 整理製程 recipe、截面形貌與 I-V / C-V 電性數據，做 DOE 統計、參數萃取與 process-window 分析，把經驗調參變成可重現、可追溯的設計規則；也開發 Runcard Builder 管理製程步驟與版本。
                 </span>
               </span>
             </a>
@@ -124,14 +124,14 @@
           </div>
           <p class="eyebrow hero-subhead" data-i18n="keyword.label">研究關鍵字 · 點擊直接跳到對應投影片</p>
           <div class="keyword-cloud" aria-label="Research keywords">
+            <button type="button" data-i18n="keyword.tcad" data-targets="deck-aitcad-method">3D TCAD Simulation</button>
+            <button type="button" data-i18n="keyword.ai" data-targets="deck-aitcad-method">AI-assisted Device Development</button>
+            <button type="button" data-i18n="keyword.trigate" data-targets="deck-aitcad-results">Trigate / Narrow-fin</button>
+            <button type="button" data-i18n="keyword.power" data-targets="deck-epi-mechanism">GaN Power FinFET</button>
             <button type="button" data-i18n="keyword.ebeam" data-targets="deck-ebl">E-beam Process</button>
             <button type="button" data-i18n="keyword.etch" data-targets="deck-etch">Etch Process</button>
             <button type="button" data-i18n="keyword.efa" data-targets="deck-cv">C-V 電性分析</button>
             <button type="button" data-i18n="keyword.mask" data-targets="runcard-tool">製程 Runcard 自動化</button>
-            <button type="button" data-i18n="keyword.tcad" data-targets="deck-aitcad-method">3D TCAD Simulation</button>
-            <button type="button" data-i18n="keyword.ai" data-targets="deck-aitcad-method">AI-assisted Device Development</button>
-            <button type="button" data-i18n="keyword.power" data-targets="deck-epi-mechanism">GaN Power FinFET</button>
-            <button type="button" data-i18n="keyword.trigate" data-targets="deck-aitcad-results">Trigate / Narrow-fin</button>
             <button type="button" data-i18n="keyword.sic" data-targets="deck-sic-static">SiC MOSFET 高溫特性</button>
             <button type="button" data-i18n="keyword.dpt" data-targets="deck-sic-dynamic">Double Pulse Test</button>
             <button type="button" data-i18n="keyword.analog" data-targets="deck-ana-corner">類比 IC · PVT Corner</button>
@@ -902,7 +902,7 @@
 
     <button class="back-to-top" type="button" aria-label="返回最頂部" title="返回最頂部">↑</button>
 
-    <script src="script.js?v=20261010-process"></script>
-    <script type="module" src="background3d.js?v=20261010-process"></script>
+    <script src="script.js?v=20261010-about3"></script>
+    <script type="module" src="background3d.js?v=20261010-about3"></script>
   </body>
 </html>
