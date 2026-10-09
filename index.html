@@ -11,7 +11,7 @@
     <title data-i18n="meta.title">陳秉佑 | Ping Yu-Chen</title>
     <link rel="preload" href="assets/profile-photo.jpg" as="image" />
     <link rel="preload" href="assets/life-cat-hero.jpg" as="image" />
-    <link rel="stylesheet" href="styles.css?v=20261010-sic-pgan" />
+    <link rel="stylesheet" href="styles.css?v=20261010-split-blocks" />
   </head>
   <body>
     <canvas id="water-canvas" aria-hidden="true"></canvas>
@@ -82,7 +82,7 @@
               <span class="interest-copy">
                 <strong data-i18n="interest.aiTitle">把 AI 變成工程助理</strong>
                 <span data-i18n="interest.aiBody">
-                  IWN 2026 的 physics-guided AI-TCAD 把工程判斷寫成可追溯的規則：3 輪 81 組取代 960 組全因子掃描，模擬時間減少 92%。另開發 ChyiLab EDA 工具、KLayout DRC 助手、文獻管理與 GaN 產業情報系統。
+                  IWN 2026 的 physics-guided AI-TCAD 把工程判斷寫成可追溯的規則：3 輪 81 組取代 960 組全因子掃描，模擬時間減少 92%。另開發 Runcard Builder、文獻管理與 GaN 產業情報系統。
                 </span>
               </span>
             </a>
@@ -91,8 +91,7 @@
             <button type="button" data-i18n="keyword.power" data-targets="deck-epi-mechanism">GaN Power FinFET</button>
             <button type="button" data-i18n="keyword.trigate" data-targets="deck-aitcad-results">Trigate / Narrow-fin</button>
             <button type="button" data-i18n="keyword.tcad" data-targets="deck-aitcad-method">3D TCAD Simulation</button>
-            <button type="button" data-i18n="keyword.mask" data-targets="chylab-tools">Mask & Layout Automation</button>
-            <button type="button" data-i18n="keyword.mocvd" data-targets="chylab-tools">MOCVD GaN recipe 參數設計管理</button>
+            <button type="button" data-i18n="keyword.mask" data-targets="runcard-tool">製程 Runcard 自動化</button>
             <button type="button" data-i18n="keyword.ebeam" data-targets="deck-ebl">E-beam Process</button>
             <button type="button" data-i18n="keyword.etch" data-targets="deck-etch">Etch Process</button>
             <button type="button" data-i18n="keyword.ai" data-targets="deck-aitcad-method">AI-assisted Device Development</button>
@@ -220,14 +219,13 @@
           </p>
         </article>
 
-        <div class="deck" data-deck aria-label="GaN FinFET research slides" data-i18n-attr="aria-label:deck.ganLabel">
-          <div class="deck-tabs" role="tablist">
-            <button type="button" role="tab" data-deck-topic="epi"><span>01</span><span data-i18n="deck.tabEpi">磊晶設計</span></button>
-            <button type="button" role="tab" data-deck-topic="aitcad"><span>02</span><span data-i18n="deck.tabAi">AI-TCAD</span></button>
-            <button type="button" role="tab" data-deck-topic="process"><span>03</span><span data-i18n="deck.tabProcess">製程 PFA</span></button>
-            <button type="button" role="tab" data-deck-topic="measure"><span>04</span><span data-i18n="deck.tabMeasure">量測 EFA</span></button>
-            <button type="button" role="tab" data-deck-topic="pgan"><span>05</span><span data-i18n="deck.tabPgan">p-GaN 元件</span></button>
-          </div>
+        <div class="research-block">
+          <h4 class="research-block-title"><span>01</span><span data-i18n="research.block1">TCAD 模擬研究</span></h4>
+          <div class="deck" data-deck aria-label="TCAD simulation slides" data-i18n-attr="aria-label:research.block1">
+            <div class="deck-tabs" role="tablist">
+              <button type="button" role="tab" data-deck-topic="epi"><span>01</span><span data-i18n="deck.tabEpi">多通道 FinFET 厚度分配</span></button>
+              <button type="button" role="tab" data-deck-topic="aitcad"><span>02</span><span data-i18n="deck.tabAi">單通道 FinFET AI 參數最佳化</span></button>
+            </div>
 
           <article class="deck-step" data-topic="epi" data-highlight-id="deck-epi-mechanism">
             <a class="deck-slide" href="assets/slides/deck/gan-epi-mechanism.jpg" target="_blank" rel="noopener">
@@ -277,7 +275,23 @@
             </div>
           </article>
 
-          <article class="deck-step" data-topic="process" data-highlight-id="deck-ebl">
+          <div class="deck-nav">
+            <button type="button" class="deck-prev" aria-label="上一頁" data-i18n-attr="aria-label:deck.prev">←</button>
+            <span class="deck-count" aria-live="polite">1 / 4</span>
+            <button type="button" class="deck-next" aria-label="下一頁" data-i18n-attr="aria-label:deck.next">→</button>
+          </div>
+          </div>
+        </div>
+
+        <div class="research-block">
+          <h4 class="research-block-title"><span>02</span><span data-i18n="research.block2">FinFET 元件製程開發與 PFA</span></h4>
+          <div class="deck" data-deck aria-label="FinFET process development slides" data-i18n-attr="aria-label:research.block2">
+            <div class="deck-tabs" role="tablist">
+              <button type="button" role="tab" data-deck-topic="ebl"><span>01</span><span data-i18n="deck.tabEbl">EBL PFA</span></button>
+              <button type="button" role="tab" data-deck-topic="etch"><span>02</span><span data-i18n="deck.tabEtch">Etch PFA</span></button>
+            </div>
+
+          <article class="deck-step" data-topic="ebl" data-highlight-id="deck-ebl">
             <a class="deck-slide" href="assets/slides/deck/gan-ebl-pfa.jpg" target="_blank" rel="noopener">
               <img src="assets/slides/deck/gan-ebl-pfa.jpg" width="1600" height="721" alt="EBL PFA: top-view SEM separates the effects of dose and beam current" loading="lazy" decoding="async" />
             </a>
@@ -289,7 +303,7 @@
             </div>
           </article>
 
-          <article class="deck-step" data-topic="process" data-highlight-id="deck-etch">
+          <article class="deck-step" data-topic="etch" data-highlight-id="deck-etch">
             <a class="deck-slide" href="assets/slides/deck/gan-etch-pfa.jpg" target="_blank" rel="noopener">
               <img src="assets/slides/deck/gan-etch-pfa.jpg" width="1600" height="721" alt="Etch PFA: FIB cross-sections and etch parameters trace morphology back to root cause" loading="lazy" decoding="async" />
             </a>
@@ -301,7 +315,18 @@
             </div>
           </article>
 
-          <article class="deck-step" data-topic="measure" data-highlight-id="deck-cv">
+          <div class="deck-nav">
+            <button type="button" class="deck-prev" aria-label="上一頁" data-i18n-attr="aria-label:deck.prev">←</button>
+            <span class="deck-count" aria-live="polite">1 / 2</span>
+            <button type="button" class="deck-next" aria-label="下一頁" data-i18n-attr="aria-label:deck.next">→</button>
+          </div>
+          </div>
+        </div>
+
+        <div class="research-block">
+          <h4 class="research-block-title"><span>03</span><span data-i18n="research.block3">多通道 SBD C-V 特性研究</span></h4>
+          <div class="deck" data-deck aria-label="Multi-channel SBD C-V slides" data-i18n-attr="aria-label:research.block3">
+          <article class="deck-step" data-topic="cv" data-highlight-id="deck-cv">
             <a class="deck-slide" href="assets/slides/deck/gan-cv-efa.jpg" target="_blank" rel="noopener">
               <img src="assets/slides/deck/gan-cv-efa.jpg" width="1600" height="721" alt="EFA: C-V measurement verifies epitaxy and separates equipment limits from sample issues" loading="lazy" decoding="async" />
             </a>
@@ -313,7 +338,19 @@
             </div>
           </article>
 
-          <article class="deck-step" data-topic="pgan" data-highlight-id="deck-pgan-samples">
+          </div>
+        </div>
+
+        <div class="research-block">
+          <h4 class="research-block-title"><span>04</span><span data-i18n="research.block4">p-GaN Back-barrier 研究</span></h4>
+          <div class="deck" data-deck aria-label="p-GaN back-barrier slides" data-i18n-attr="aria-label:research.block4">
+            <div class="deck-tabs" role="tablist">
+              <button type="button" role="tab" data-deck-topic="pg1"><span>01</span><span data-i18n="deck.tabPg1">樣品設計與 Vth</span></button>
+              <button type="button" role="tab" data-deck-topic="pg2"><span>02</span><span data-i18n="deck.tabPg2">Ron 與 TLM</span></button>
+              <button type="button" role="tab" data-deck-topic="pg3"><span>03</span><span data-i18n="deck.tabPg3">可靠性判讀</span></button>
+            </div>
+
+          <article class="deck-step" data-topic="pg1" data-highlight-id="deck-pgan-samples">
             <a class="deck-slide" href="assets/slides/deck/gan-pgan-samples.jpg" target="_blank" rel="noopener">
               <img src="assets/slides/deck/gan-pgan-samples.jpg" width="1600" height="721" alt="p-GaN gate HFET: four back-barrier designs and their threshold voltage distribution" loading="lazy" decoding="async" />
             </a>
@@ -325,7 +362,7 @@
             </div>
           </article>
 
-          <article class="deck-step" data-topic="pgan" data-highlight-id="deck-pgan-ron">
+          <article class="deck-step" data-topic="pg2" data-highlight-id="deck-pgan-ron">
             <a class="deck-slide" href="assets/slides/deck/gan-pgan-ron.jpg" target="_blank" rel="noopener">
               <img src="assets/slides/deck/gan-pgan-ron.jpg" width="1600" height="721" alt="p-GaN HFET on-resistance, drive current, and pre-passivation TLM comparison" loading="lazy" decoding="async" />
             </a>
@@ -337,7 +374,7 @@
             </div>
           </article>
 
-          <article class="deck-step" data-topic="pgan" data-highlight-id="deck-pgan-reliability">
+          <article class="deck-step" data-topic="pg3" data-highlight-id="deck-pgan-reliability">
             <a class="deck-slide" href="assets/slides/deck/gan-pgan-reliability.jpg" target="_blank" rel="noopener">
               <img src="assets/slides/deck/gan-pgan-reliability.jpg" width="1600" height="721" alt="p-GaN HFET gate leakage, on/off ratio, hysteresis, and route recommendation" loading="lazy" decoding="async" />
             </a>
@@ -351,9 +388,11 @@
 
           <div class="deck-nav">
             <button type="button" class="deck-prev" aria-label="上一頁" data-i18n-attr="aria-label:deck.prev">←</button>
-            <span class="deck-count" aria-live="polite">1 / 10</span>
+            <span class="deck-count" aria-live="polite">1 / 3</span>
             <button type="button" class="deck-next" aria-label="下一頁" data-i18n-attr="aria-label:deck.next">→</button>
           </div>
+          </div>
+        </div>
         </div>
 
         <div class="device-subsection-title">
@@ -464,13 +503,15 @@
           </p>
         </div>
 
-        <div class="deck" data-deck aria-label="IC design project slides" data-i18n-attr="aria-label:deck.icLabel">
-          <div class="deck-tabs" role="tablist">
-            <button type="button" role="tab" data-deck-topic="digital"><span>01</span><span data-i18n="deck.tabDigital">數位 IC · J-K 正反器</span></button>
-            <button type="button" role="tab" data-deck-topic="analog"><span>02</span><span data-i18n="deck.tabAnalog">類比 IC · 運放 / 比較器</span></button>
-          </div>
+        <div class="research-block">
+          <h4 class="research-block-title"><span>01</span><span data-i18n="analog.digitalHeading">數位 IC：SN74LVC112A J-K 正反器全客製化</span></h4>
+          <div class="deck" data-deck aria-label="Digital IC project slides" data-i18n-attr="aria-label:analog.digitalHeading">
+            <div class="deck-tabs" role="tablist">
+              <button type="button" role="tab" data-deck-topic="jk-design"><span>01</span><span data-i18n="deck.tabJkDesign">設計與版圖</span></button>
+              <button type="button" role="tab" data-deck-topic="jk-spec"><span>02</span><span data-i18n="deck.tabJkSpec">指標分析</span></button>
+            </div>
 
-          <article class="deck-step" data-topic="digital">
+          <article class="deck-step" data-topic="jk-design">
             <a class="deck-slide" href="assets/slides/deck/ic-digital-jk.jpg" target="_blank" rel="noopener">
               <img src="assets/slides/deck/ic-digital-jk.jpg" width="1600" height="721" alt="SN74LVC112A dual negative-edge-triggered J-K flip-flop logic and full-custom layout" loading="lazy" decoding="async" />
             </a>
@@ -482,7 +523,7 @@
             </div>
           </article>
 
-          <article class="deck-step" data-topic="digital">
+          <article class="deck-step" data-topic="jk-spec">
             <a class="deck-slide" href="assets/slides/deck/ic-digital-spec.jpg" target="_blank" rel="noopener">
               <img src="assets/slides/deck/ic-digital-spec.jpg" width="1600" height="721" alt="Digital IC spec analysis: pre- and post-layout results against the SN74LVC112A datasheet" loading="lazy" decoding="async" />
             </a>
@@ -494,7 +535,23 @@
             </div>
           </article>
 
-          <article class="deck-step" data-topic="analog">
+          <div class="deck-nav">
+            <button type="button" class="deck-prev" aria-label="上一頁" data-i18n-attr="aria-label:deck.prev">←</button>
+            <span class="deck-count" aria-live="polite">1 / 2</span>
+            <button type="button" class="deck-next" aria-label="下一頁" data-i18n-attr="aria-label:deck.next">→</button>
+          </div>
+          </div>
+        </div>
+
+        <div class="research-block">
+          <h4 class="research-block-title"><span>02</span><span data-i18n="analog.analogHeading">類比 IC：運放 / 遲滯比較器複用電路</span></h4>
+          <div class="deck" data-deck aria-label="Analog IC project slides" data-i18n-attr="aria-label:analog.analogHeading">
+            <div class="deck-tabs" role="tablist">
+              <button type="button" role="tab" data-deck-topic="ana-circuit"><span>01</span><span data-i18n="deck.tabAnaCircuit">電路與版圖</span></button>
+              <button type="button" role="tab" data-deck-topic="ana-corner"><span>02</span><span data-i18n="deck.tabAnaCorner">Corner 與 spec margin</span></button>
+            </div>
+
+          <article class="deck-step" data-topic="ana-circuit">
             <a class="deck-slide" href="assets/slides/deck/ic-analog-circuit-layout.jpg" target="_blank" rel="noopener">
               <img src="assets/slides/deck/ic-analog-circuit-layout.jpg" width="1600" height="721" alt="Analog IC: op-amp and hysteresis comparator reconfigurable circuit schematic and layout" loading="lazy" decoding="async" />
             </a>
@@ -506,7 +563,7 @@
             </div>
           </article>
 
-          <article class="deck-step" data-topic="analog">
+          <article class="deck-step" data-topic="ana-corner">
             <a class="deck-slide" href="assets/slides/deck/ic-analog-corner.jpg" target="_blank" rel="noopener">
               <img src="assets/slides/deck/ic-analog-corner.jpg" width="1600" height="721" alt="Using corners and layout matching to judge spec margin and yield risk" loading="lazy" decoding="async" />
             </a>
@@ -520,9 +577,11 @@
 
           <div class="deck-nav">
             <button type="button" class="deck-prev" aria-label="上一頁" data-i18n-attr="aria-label:deck.prev">←</button>
-            <span class="deck-count" aria-live="polite">1 / 4</span>
+            <span class="deck-count" aria-live="polite">1 / 2</span>
             <button type="button" class="deck-next" aria-label="下一頁" data-i18n-attr="aria-label:deck.next">→</button>
           </div>
+          </div>
+        </div>
         </div>
       </section>
 
@@ -608,65 +667,26 @@
           <p class="eyebrow" data-i18n="projects.eyebrow">工具開發與專利</p>
           <h2 data-i18n="projects.title">工具開發與專利</h2>
           <p data-i18n="projects.body">
-            我喜歡將能提升生產效率的想法實作成工具：有些協助 EDA 與光罩設計，也有些用來追蹤 GaN 產業動態；此外，我也持續進行一項長期專案，將大學到研究所所學整理成知識圖譜以及對GaN近5年的頂刊頂會的文獻與閱讀筆記報告進行系統化整理。另一方面，大學時結合創業社團的經歷，我深入了解創業團隊在募資與協作上的挑戰，因此開發了仕集區塊鏈眾籌系統，並申請了多項演算法專利。
+            我喜歡把能提升研究效率的想法實作成工具：Runcard Builder 把製程步驟整理成結構化的 run card，Real-time GaN Industry Intelligence 追蹤 GaN 產業動態，Literature Manager 系統化整理 GaN 近 5 年頂刊頂會的文獻與閱讀筆記。另一方面，大學時結合創業社團的經歷，我深入了解創業團隊在募資與協作上的挑戰，因此開發了仕集區塊鏈眾籌系統，並申請了演算法專利。
           </p>
         </div>
         <div class="project-grid">
           <div class="project-subsection">
             <h3 data-i18n="projects.toolsHeading">工具開發</h3>
           </div>
-          <article class="project-card chylab-suite-card" data-highlight-id="chylab-tools">
-            <div class="project-heading-row">
-              <div>
-                <p class="tag">ChyiLab · EDA Tools</p>
-                <h3>ChyiLab EDA Tools</h3>
+          <article class="project-card runcard-tool-card" data-highlight-id="runcard-tool">
+            <p class="tag">Process · Runcard</p>
+            <h3>Runcard Builder</h3>
+            <p data-i18n="projects.runcard">製程 Runcard 生成工具，把晶圓製程步驟整理成結構化 step card，並支援匯出。</p>
+            <details class="project-demo">
+              <summary data-i18n="projects.runcardToggle">展開工具截圖</summary>
+              <div class="literature-gallery runcard-gallery">
+                <figure>
+                  <img src="assets/projects/chylab-runcard-builder.png" alt="Process Runcard Builder 製程步驟編排介面" loading="lazy" decoding="async" />
+                  <figcaption data-i18n="projects.runcardCap">Process Runcard Builder 製程步驟編排</figcaption>
+                </figure>
               </div>
-              <a href="https://billcharlie.github.io/ChyiLab/" data-i18n="projects.openSite">前往網站</a>
-            </div>
-            <div class="chylab-nested-grid">
-              <div class="nested-tool-card epi-card">
-                <p class="tag">ChyiLab · MOCVD</p>
-                <h3>EPI Recipe Builder</h3>
-                <p data-i18n="projects.chyilabEpi">MOCVD 磊晶成長 Recipe 設計工具，用來建立、管理與最佳化晶圓磊晶成長流程。</p>
-                <details class="project-demo chylab-demo">
-                  <summary data-i18n="projects.chyilabToggle">展開工具截圖</summary>
-                  <div class="literature-gallery chylab-gallery">
-                    <figure>
-                      <img src="assets/projects/chylab-epi-manager.png" alt="MOCVD Recipe Manager 工作流程與結構堆疊介面" loading="lazy" decoding="async" />
-                      <figcaption data-i18n="projects.chyilabEpiCap">MOCVD Recipe Manager 工作流程與結構堆疊</figcaption>
-                    </figure>
-                  </div>
-                </details>
-              </div>
-              <div class="nested-tool-card layout-card">
-                <p class="tag">ChyiLab · Layout</p>
-                <h3>Layout Assistant</h3>
-                <p data-i18n="projects.chyilabLayout">AI 輔助的半導體版圖設計工具，以互動式 session 協助元件 Layout 與量測結構設計。</p>
-                <details class="project-demo chylab-demo">
-                  <summary data-i18n="projects.chyilabToggle">展開工具截圖</summary>
-                  <div class="literature-gallery chylab-gallery">
-                    <figure>
-                      <img src="assets/projects/chylab-layout-assistant.png" alt="Layout Assistant 版圖設計工作區介面" loading="lazy" decoding="async" />
-                      <figcaption data-i18n="projects.chyilabLayoutCap">Layout Assistant 版圖設計工作區</figcaption>
-                    </figure>
-                  </div>
-                </details>
-              </div>
-              <div class="nested-tool-card runcard-card">
-                <p class="tag">ChyiLab · Process</p>
-                <h3>Runcard Builder</h3>
-                <p data-i18n="projects.chyilabRuncard">製程 Runcard 生成工具，把晶圓製程步驟整理成結構化 step card，並支援匯出。</p>
-                <details class="project-demo chylab-demo">
-                  <summary data-i18n="projects.chyilabToggle">展開工具截圖</summary>
-                  <div class="literature-gallery chylab-gallery">
-                    <figure>
-                      <img src="assets/projects/chylab-runcard-builder.png" alt="Process Runcard Builder 製程步驟編排介面" loading="lazy" decoding="async" />
-                      <figcaption data-i18n="projects.chyilabRuncardCap">Process Runcard Builder 製程步驟編排</figcaption>
-                    </figure>
-                  </div>
-                </details>
-              </div>
-            </div>
+            </details>
           </article>
           <article class="project-card gan-card">
             <div class="project-heading-row">
@@ -674,31 +694,9 @@
                 <p class="tag">Railway · GaN intelligence</p>
                 <h3>Real-time GaN Industry Intelligence</h3>
               </div>
-              <a href="https://gan-monitor.up.railway.app/" data-i18n="projects.openSite2">前往網站</a>
+              <a href="https://realtimegan.up.railway.app/#pane-feed" data-i18n="projects.openSite2">前往網站</a>
             </div>
             <p data-i18n="projects.gan">追蹤 GaN 產業新聞、論文、公司動態與市場資訊，用來維持研究方向感。</p>
-          </article>
-          <article class="project-card knowledge-card">
-            <p class="tag">Personal knowledge graph</p>
-            <h3>Knowledge-map</h3>
-            <p data-i18n="projects.knowledge">我從大學到研究所課程建立的個人知識圖譜，連接半導體、電子電路、製程、模擬和研究筆記。</p>
-            <details class="project-demo">
-              <summary data-i18n="projects.knowledgeToggle">展開介面截圖</summary>
-              <div class="literature-gallery knowledge-gallery">
-                <figure>
-                  <img src="assets/projects/knowledge-library.png" alt="Knowledge-map 半導體知識圖譜學習資料知識庫介面" loading="lazy" decoding="async" />
-                  <figcaption data-i18n="projects.knowledgeCap1">學習資料知識庫與半導體知識圖譜入口</figcaption>
-                </figure>
-                <figure>
-                  <img src="assets/projects/knowledge-graph.png" alt="Knowledge-map 半導體關係圖譜節點網路介面" loading="lazy" decoding="async" />
-                  <figcaption data-i18n="projects.knowledgeCap2">半導體、電路與製程概念的關係圖譜</figcaption>
-                </figure>
-                <figure>
-                  <img src="assets/projects/knowledge-preview.png" alt="Knowledge-map 課程 PDF 預覽與資料目錄介面" loading="lazy" decoding="async" />
-                  <figcaption data-i18n="projects.knowledgeCap3">課程資料、PDF 預覽與知識節點整理</figcaption>
-                </figure>
-              </div>
-            </details>
           </article>
           <article class="project-card literature-card">
             <p class="tag">Local tool · Literature</p>
@@ -729,18 +727,6 @@
           <div class="project-subsection patent-subsection">
             <h3 data-i18n="projects.patentsHeading">專利</h3>
           </div>
-          <div class="project-subcategory">
-            <h4 data-i18n="projects.mechanicalPatentHeading">機械設計專利</h4>
-          </div>
-          <article class="project-card">
-            <p class="tag">Patent · Mechanical design</p>
-            <h3 data-i18n="projects.mechPatentTitle">具防護功能的自動化設備機架</h3>
-            <p data-i18n="projects.mechPatent">實用新型 CN217890168U：以滑槽、傳動絲桿與限位板固定並翻轉金屬工件，可依加工需求調整面向，送入自動化設備進行多面加工。</p>
-            <a href="https://patents.google.com/patent/CN217890168U/zh" data-i18n="projects.viewPatent">查看專利</a>
-          </article>
-          <div class="project-subcategory algorithm-subcategory">
-            <h4 data-i18n="projects.algorithmPatentHeading">演算法專利</h4>
-          </div>
           <article class="project-card">
             <p class="tag">Patent · Blockchain</p>
             <h3 data-i18n="projects.patent2">眾包區塊鏈平台上的創業項目徵信方法</h3>
@@ -748,34 +734,10 @@
             <a href="https://patents.google.com/patent/CN114693176A/zh" data-i18n="projects.viewPatent">查看專利</a>
           </article>
           <article class="project-card">
-            <p class="tag">Patent · Affective computing</p>
-            <h3 data-i18n="projects.patent3">區塊鏈輔助的人員負面情緒綜合評估方法與系統</h3>
-            <span class="patent-id">CN114692836A</span>
-            <a href="https://patents.google.com/patent/CN114692836A/zh" data-i18n="projects.viewPatent">查看專利</a>
-          </article>
-          <article class="project-card">
-            <p class="tag">Patent · Affective computing</p>
-            <h3 data-i18n="projects.patent4">高可靠性情緒特徵提取與篩選方法</h3>
-            <span class="patent-id">CN114864077A</span>
-            <a href="https://patents.google.com/patent/CN114864077A/zh" data-i18n="projects.viewPatent">查看專利</a>
-          </article>
-          <article class="project-card">
-            <p class="tag">Patent · Social network</p>
-            <h3 data-i18n="projects.patent5">分布式社交網絡熱點預測方法、系統及設備</h3>
-            <span class="patent-id">CN114676304A</span>
-            <a href="https://patents.google.com/patent/CN114676304A/zh" data-i18n="projects.viewPatent">查看專利</a>
-          </article>
-          <article class="project-card">
             <p class="tag">Patent · Blockchain</p>
             <h3 data-i18n="projects.patent6">基於熱度值的社交聯盟鏈共識方法與系統</h3>
             <span class="patent-id">CN114677235A</span>
             <a href="https://patents.google.com/patent/CN114677235A/zh" data-i18n="projects.viewPatent">查看專利</a>
-          </article>
-          <article class="project-card">
-            <p class="tag">Patent · Social network</p>
-            <h3 data-i18n="projects.patent7">基於上下文資訊的網絡流行語熱度值預測模型構建與訓練方法</h3>
-            <span class="patent-id">CN114723172A</span>
-            <a href="https://patents.google.com/patent/CN114723172A/zh" data-i18n="projects.viewPatent">查看專利</a>
           </article>
           <article class="project-card">
             <p class="tag">Patent · Blockchain</p>
@@ -847,7 +809,7 @@
 
     <button class="back-to-top" type="button" aria-label="返回最頂部" title="返回最頂部">↑</button>
 
-    <script src="script.js?v=20261010-sic-pgan"></script>
-    <script type="module" src="background3d.js?v=20261010-sic-pgan"></script>
+    <script src="script.js?v=20261010-split-blocks"></script>
+    <script type="module" src="background3d.js?v=20261010-split-blocks"></script>
   </body>
 </html>
