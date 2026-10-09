@@ -606,7 +606,7 @@ languageButtons.forEach((button) => {
   button.addEventListener("click", () => setLanguage(button.dataset.lang));
 });
 
-setLanguage(localStorage.getItem("preferred-language") || "zh");
+setLanguage(localStorage.getItem("preferred-language") || "en");
 
 const photoStack = document.querySelector(".photo-stack");
 if (photoStack) {
