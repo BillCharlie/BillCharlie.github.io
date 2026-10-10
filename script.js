@@ -598,15 +598,13 @@ function setLanguage(language) {
     button.classList.toggle("active", isActive);
     button.setAttribute("aria-pressed", String(isActive));
   });
-
-  localStorage.setItem("preferred-language", language);
 }
 
 languageButtons.forEach((button) => {
   button.addEventListener("click", () => setLanguage(button.dataset.lang));
 });
 
-setLanguage(localStorage.getItem("preferred-language") || "en");
+setLanguage("en");
 
 const photoStack = document.querySelector(".photo-stack");
 if (photoStack) {
