@@ -737,17 +737,40 @@ function openCollapsedAncestors(element) {
   }
 }
 
+// Deep links accept an element id (#pub-iwn) or a data-highlight-id (#deck-ebl),
+// so every slide and card the keyword cloud can reach is also linkable from outside.
+function findAnchor(id) {
+  if (!id) {
+    return null;
+  }
+  return document.getElementById(id)
+    || document.querySelector(`[data-highlight-id="${CSS.escape(id)}"]`);
+}
+
+let hasRouted = false;
+
 function route() {
   const id = decodeURIComponent(window.location.hash.slice(1));
-  const target = id ? document.getElementById(id) : null;
+  const target = findAnchor(id);
   const page = pageOf(target);
   showPage(page);
 
   // The browser cannot jump to an anchor that was hidden when the hash changed.
   if (target && target !== page) {
     openCollapsedAncestors(target);
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    const deck = target.closest("[data-deck]");
+    if (deck?.showStep) {
+      deck.showStep(target);
+      deck.classList.add("is-visible");
+    }
+    // On arrival from an outside link, jump straight there: a smooth scroll
+    // never starts when the tab opens in the background.
+    target.scrollIntoView({
+      behavior: hasRouted ? "smooth" : "instant",
+      block: target.id ? "start" : "center",
+    });
   }
+  hasRouted = true;
 }
 
 document.querySelectorAll(".block-toolbar [data-blocks]").forEach((button) => {
