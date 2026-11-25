@@ -47,6 +47,7 @@ window.pageTranslations = {
       "做 IC 時，我習慣先看規格與最壞工藝角的裕量；做元件時，我看的是 Vth、Ron、Qg 與 Qrr 如何隨結構、溫度與製程漂移。把兩邊放在一起看，才能決定驅動電壓、dead time 與 guard-band 該留多少。",
     "circuits.sysBlock": "功率開關量測系統：雙脈衝與高溫平台",
     "circuits.implHeading": "元件數據交給電路端的四個設計條件",
+    "circuits.viewSlide": "查看投影片",
     "circuits.impl1Title": "Qg 決定閘極驅動預算",
     "circuits.impl1Body":
       "多通道結構中 Qg 只隨 barrier 總厚度線性上升，無法靠磊晶消除。設計規則是 Y 盡量大、X 盡量小，再依驅動損耗預算決定總厚度。",
@@ -129,6 +130,7 @@ window.pageTranslations = {
       "On the IC side I start from the spec and the margin at the worst corner; on the device side I look at how Vth, Ron, Qg, and Qrr drift with structure, temperature, and process. Only with both in view can I decide how much drive voltage, dead time, and guard-band to leave.",
     "circuits.sysBlock": "Power-switching test system: double-pulse and high-temperature benches",
     "circuits.implHeading": "Four design conditions my device data hands to the circuit",
+    "circuits.viewSlide": "View slide",
     "circuits.impl1Title": "Qg sets the gate-drive budget",
     "circuits.impl1Body":
       "In multi-channel stacks Qg rises linearly with the total barrier thickness and cannot be engineered away by epitaxy. The rule: maximize Y, minimize X, then size the total against the drive-loss budget.",
