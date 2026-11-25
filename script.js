@@ -570,11 +570,6 @@ const translations = {
   },
 };
 
-// A forked page (e.g. /ic/) loads its own copy first and layers it over the shared dictionary.
-Object.entries(window.pageTranslations || {}).forEach(([language, entries]) => {
-  Object.assign(translations[language], entries);
-});
-
 const languageButtons = document.querySelectorAll("[data-lang]");
 
 function setLanguage(language) {
